@@ -1,0 +1,110 @@
+{
+  "Version": 1,
+  "Key": "45881",
+  "Type": "City",
+  "Rank": 21,
+  "LocalizedName": "São Paulo",
+  "EnglishName": "São Paulo",
+  "PrimaryPostalCode": "",
+  "Region": {
+    "ID": "SAM",
+    "LocalizedName": "South America",
+    "EnglishName": "South America"
+  },
+  "Country": {
+    "ID": "BR",
+    "LocalizedName": "Brazil",
+    "EnglishName": "Brazil"
+  },
+  "AdministrativeArea": {
+    "ID": "SP",
+    "LocalizedName": "São Paulo",
+    "EnglishName": "São Paulo",
+    "Level": 1,
+    "LocalizedType": "State",
+    "EnglishType": "State",
+    "CountryID": "BR"
+  },
+  "TimeZone": {
+    "Code": "BRT",
+    "Name": "America/Sao_Paulo",
+    "GmtOffset": -3,
+    "IsDaylightSaving": false,
+    "NextOffsetChange": "2018-10-21T03:00:00Z"
+  },
+  "GeoPosition": {
+    "Latitude": -23.567,
+    "Longitude": -46.57,
+    "Elevation": {
+      "Metric": {
+        "Value": 662,
+        "Unit": "m",
+        "UnitType": 5
+      },
+      "Imperial": {
+        "Value": 2171,
+        "Unit": "ft",
+        "UnitType": 0
+      }
+    }
+  },
+  "IsAlias": false,
+  "SupplementalAdminAreas": [
+    {
+      "Level": 2,
+      "LocalizedName": "São Paulo",
+      "EnglishName": "São Paulo"
+    },
+    {
+      "Level": 3,
+      "LocalizedName": "Água Rasa",
+      "EnglishName": "Água Rasa"
+    }
+  ],
+  "DataSets": [],
+  "Details": {
+    "Key": "45881",
+    "StationCode": "86910",
+    "StationGmtOffset": -3,
+    "BandMap": "BZ",
+    "Climo": "SBMT",
+    "LocalRadar": "",
+    "MediaRegion": null,
+    "Metar": "SBMT",
+    "NXMetro": "",
+    "NXState": "",
+    "Population": 11895893,
+    "PrimaryWarningCountyCode": "",
+    "PrimaryWarningZoneCode": "",
+    "Satellite": "CSAM",
+    "Synoptic": "83780",
+    "MarineStation": "",
+    "MarineStationGMTOffset": null,
+    "VideoCode": "",
+    "PartnerID": null,
+    "Sources": [
+      {
+        "DataType": "CurrentConditions",
+        "Source": "AccuWeather",
+        "SourceId": 1
+      },
+      {
+        "DataType": "DailyForecast",
+        "Source": "AccuWeather",
+        "SourceId": 1
+      },
+      {
+        "DataType": "Dangerous Thunderstorm Alert Push Notifications",
+        "Source": "Earth Networks",
+        "SourceId": 57
+      },
+      {
+        "DataType": "HourlyForecast",
+        "Source": "AccuWeather",
+        "SourceId": 1
+      }
+    ],
+    "CanonicalPostalCode": "",
+    "CanonicalLocationKey": "45881"
+  }
+}
