@@ -17,6 +17,11 @@ body {
   text-align: center;
 }
 
+.current-condition__details {
+  display: flex;
+  justify-content: center;
+}
+
 .current-condition span {
   display: block;
 }
@@ -53,6 +58,16 @@ body {
   font-size: 20vw;
 }
 
+.wind {
+  display: flex;
+  flex-direction: column;
+}
+
+.wind > div {
+  display: flex;
+  flex-direction: row;
+}
+
 .wind__speed {
   align-items: center;
   display: flex;
@@ -73,4 +88,90 @@ body {
 .wind__direction-icon svg {
   fill: #ffffff;
   width: 40px;
+}
+
+
+.uv {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.uv > div {
+  display: flex;
+  flex-direction: row;
+}
+
+.forecast-hourly {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 80px;
+  margin-top: 120px;
+}
+
+.forecast-hourly__item {
+  align-items: center;
+  border-right: 1px solid #ffffff1c;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 60px;
+}
+
+.forecast-hourly__item:last-child {
+  border-right: 0;
+}
+
+.forecast-daily {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.forecast-daily__item {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 60px;
+}
+
+.forecast-hourly__item-hour {
+  margin-bottom: 20px;
+}
+
+.forecast-hourly__item-temperature .temperature__unit-dot {
+  border: 1px solid;
+  display: inline-block;
+  height: 2px;
+  margin-left: 2px;
+  position: absolute;
+  width: 2px;
+}
+
+.rain {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.rain__icon {
+  height: 24px;
+  width: 24px;
+}
+
+.rain__icon svg {
+  fill: #ffffff;
+  width: 24px;
+}
+
+
+.rain__probability {
+  font-size: 12px;
+}
+
+.forecast-hourly__item img {
+  height: 40px;
+  width: 40px;;
 }
