@@ -27,9 +27,22 @@ body {
 }
 
 .location {
-  font-size: 26px;
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+  justify-content: center;
   margin-bottom: 30px;
   margin-top: 30px;
+}
+
+.location__icon {
+  fill: #ffffff;
+  height: 26px;
+  margin-right: 6px;
+}
+
+.location__icon svg {
+  width: 14px;
 }
 
 .temperature {
@@ -120,7 +133,7 @@ body {
   width: 60px;
 }
 
-.forecast-hourly__item:last-child {
+.forecast-hourly__item:last-child, .forecast-daily__item:last-child {
   border-right: 0;
 }
 
@@ -128,12 +141,16 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-bottom: 80px;
 }
 
 .forecast-daily__item {
   align-items: center;
+  border-right: 1px solid #ffffff1c;
   display: flex;
   flex-direction: column;
+  padding-left: 5px;
+  padding-right: 5px;
   width: 60px;
 }
 
@@ -141,7 +158,8 @@ body {
   margin-bottom: 20px;
 }
 
-.forecast-hourly__item-temperature .temperature__unit-dot {
+
+.forecast-hourly__item-temperature .temperature__unit-dot, .forecast-daily__item-temperature .temperature__unit-dot {
   border: 1px solid;
   display: inline-block;
   height: 2px;
@@ -171,7 +189,20 @@ body {
   font-size: 12px;
 }
 
-.forecast-hourly__item img {
+.forecast-hourly__item img, .forecast-daily__item img {
   height: 40px;
   width: 40px;;
+}
+
+.forecast-daily__item-weekday {
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.forecast-daily__item-temperature {
+  margin-top: 0;
+}
+
+.forecast-daily__temperatures {
+  margin-top: 20px;
 }
