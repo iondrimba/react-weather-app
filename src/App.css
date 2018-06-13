@@ -1,3 +1,76 @@
+body {
+  background-color: #ff656a;
+  color: #ffffff;
+  font-family: sans-serif;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+.current-condition {
+  text-align: center;
+}
+
 .current-condition span {
   display: block;
+}
+
+.location {
+  font-size: 26px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.temperature {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.temperature__value {
+  font-size: 35vw;
+}
+
+.temperature__unit {
+  display: flex;
+  flex-direction: row;
+}
+
+.temperature__unit-dot {
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  height: 10px;
+  width: 10px;
+}
+
+.temperature__unit-letter {
+  font-size: 20vw;
+}
+
+.wind__speed {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.wind__speed-icon svg {
+  fill: #ffffff;
+  width: 40px;
+}
+
+.wind__direction {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.wind__direction-icon svg {
+  fill: #ffffff;
+  width: 40px;
 }
