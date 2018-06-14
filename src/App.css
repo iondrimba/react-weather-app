@@ -89,24 +89,35 @@ body {
 
 .wind__speed-icon svg {
   fill: #ffffff;
-  width: 40px;
+  width: 30px;
 }
 
 .wind__direction {
   align-items: center;
   display: flex;
   justify-content: center;
+  margin-left: 10px;
 }
 
 .wind__direction-icon svg {
   fill: #ffffff;
-  width: 40px;
+  width: 24px;
 }
 
+.wrapper-temperature {
+  margin-top: 120px;
+}
 
 .uv {
+  align-items: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  margin-left: 20px;
+}
+
+.uv__label {
+  margin-right: 10px;
+  text-transform: uppercase;
 }
 
 
@@ -120,7 +131,7 @@ body {
   flex-direction: row;
   justify-content: center;
   margin-bottom: 80px;
-  margin-top: 120px;
+  margin-top: 80px;
 }
 
 .forecast-hourly__item {

@@ -41,8 +41,8 @@ class App extends Component {
             </span>
             <span className="location__text">{this.state.currentCondition.location}</span>
           </div>
-          <span>{this.state.currentCondition.weather}</span>
           <div className="wrapper-temperature">
+          <span>{this.state.currentCondition.weather}</span>
             <div className="temperature">
               <span className="temperature__value">{this.state.currentCondition.temperature}</span>
               <div className="temperature__unit">
@@ -52,8 +52,7 @@ class App extends Component {
             </div>
             <div className="current-condition__details">
             <div className="wind">
-              <span className="wind__label">wind</span>
-              <div>
+             <div>
               <div className="wind__speed">
                 <span className="wind__speed-icon">
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -91,10 +90,7 @@ class App extends Component {
             </div>
             <div className="uv">
               <span className="uv__label">uv</span>
-              <div className="">
-                <span className="uv__value">{this.state.currentCondition.uv.indice}</span>
-                <span className="uv__text">{this.state.currentCondition.uv.description}</span>
-              </div>
+              <span className="uv__value">{this.state.currentCondition.uv.indice}</span>
             </div>
             </div>
               </div>
