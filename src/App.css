@@ -1,7 +1,7 @@
 body {
   background-color: #ff656a;
   color: #ffffff;
-  font-family: sans-serif;
+  font-family: monospace;
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -52,12 +52,21 @@ body {
 }
 
 .temperature__value {
-  font-size: 35vw;
+  font-size: 196px;
 }
 
 .temperature__unit {
   display: flex;
   flex-direction: row;
+}
+
+.temperature__unit .temperature__unit-dot {
+  border-radius: 6px;
+  height: 6px;
+  margin-left: -9px;
+  margin-top: -59px;
+  position: absolute;
+  width: 6px;
 }
 
 .temperature__unit-dot {
@@ -68,7 +77,11 @@ body {
 }
 
 .temperature__unit-letter {
-  font-size: 20vw;
+  font-size: 35px;
+  font-weight: 100;
+  margin-left: 7px;
+  margin-top: -68px;
+  position: absolute;
 }
 
 .wind {
@@ -105,7 +118,7 @@ body {
 }
 
 .wrapper-temperature {
-  margin-top: 120px;
+  margin-top: 60px;
 }
 
 .uv {
@@ -119,7 +132,6 @@ body {
   margin-right: 10px;
   text-transform: uppercase;
 }
-
 
 .uv > div {
   display: flex;
@@ -141,6 +153,7 @@ body {
   flex-direction: column;
   padding-left: 5px;
   padding-right: 5px;
+  position: relative;
   width: 60px;
 }
 
@@ -152,7 +165,6 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 80px;
 }
 
 .forecast-daily__item {
@@ -162,6 +174,7 @@ body {
   flex-direction: column;
   padding-left: 5px;
   padding-right: 5px;
+  position: relative;
   width: 60px;
 }
 
@@ -175,6 +188,7 @@ body {
   display: inline-block;
   height: 2px;
   margin-left: 2px;
+  margin-top: 4px;
   position: absolute;
   width: 2px;
 }
@@ -216,4 +230,31 @@ body {
 
 .forecast-daily__temperatures {
   margin-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  #root {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .App {
+    background-color: blue;
+    border-radius: 6px;
+    height: 667px;
+    max-width: 375px;
+    overflow: scroll;
+  }
+}
+
+
+.forecasts {
+  align-items: baseline;
+  align-self: center;
+  display: flex;
+  justify-content: flex-start;
+  overflow: scroll;
+  width: 350px;
 }

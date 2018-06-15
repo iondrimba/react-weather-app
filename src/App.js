@@ -95,6 +95,7 @@ class App extends Component {
             </div>
               </div>
         </section>
+        <section className="forecasts">
         <section className="forecast-hourly">
           {
             this.state.foreCastHourly.map((item) => {
@@ -150,6 +151,7 @@ class App extends Component {
               </div>
             })
           }
+        </section>
         </section>
 
 
