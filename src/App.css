@@ -11,6 +11,8 @@ body {
 .App {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
 }
 
 .current-condition {
@@ -58,6 +60,13 @@ body {
 .temperature__unit {
   display: flex;
   flex-direction: row;
+}
+
+.temperature__status {
+  font-size: 24px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
 }
 
 .temperature__unit .temperature__unit-dot {
@@ -119,6 +128,7 @@ body {
 
 .wrapper-temperature {
   margin-top: 60px;
+  position: relative;
 }
 
 .uv {
@@ -142,8 +152,6 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 80px;
-  margin-top: 80px;
 }
 
 .forecast-hourly__item {
@@ -165,6 +173,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .forecast-daily__item {
@@ -241,20 +250,48 @@ body {
   }
 
   .App {
-    background-color: blue;
+    background-color: #ff656a;
     border-radius: 6px;
+    box-shadow: 0 3px 20px 0 rgba(0, 0, 0, .06);
     height: 667px;
     max-width: 375px;
-    overflow: scroll;
+    overflow-y: scroll;
   }
 }
 
 
 .forecasts {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+}
+
+.forecasts__scroll-panel {
   align-items: baseline;
   align-self: center;
   display: flex;
   justify-content: flex-start;
-  overflow: scroll;
-  width: 350px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 360px;
+}
+
+.navigation {
+  align-items: center;
+  display: flex;
+  height: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 60px;
+  width: 100%;
+}
+
+.navigation-dot {
+  background-color: #ff656a;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  height: 6px;
+  margin-left: 4px;
+  margin-right: 4px;
+  width: 6px;
 }
