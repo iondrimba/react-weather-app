@@ -6,7 +6,7 @@ class Location extends Component {
     requestAnimationFrame(() => {
       document.querySelector('.location__icon').classList.add('animate-in');
       document.querySelector('.location__text').classList.add('animate-in');
-    })
+    });
   }
 
   render() {
