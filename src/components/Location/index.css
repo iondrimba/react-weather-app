@@ -1,0 +1,18 @@
+.location {
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+  justify-content: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.location__icon {
+  fill: #ffffff;
+  height: 26px;
+  margin-right: 6px;
+}
+
+.location__icon svg {
+  width: 14px;
+}
