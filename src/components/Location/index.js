@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
 
-class LOcation extends Component {
+class Location extends Component {
   render() {
     return (
       <section className="location">
@@ -16,4 +16,4 @@ class LOcation extends Component {
   }
 }
 
-export default LOcation;
+export default Location;
