@@ -3,6 +3,14 @@ import React, { Component } from 'react';
 import './index.css';
 
 class Temperature extends Component {
+  componentDidMount() {
+    requestAnimationFrame(() => {
+      document.querySelector('.temperature__status').classList.add('animate-in');
+      document.querySelector('.temperature__value').classList.add('animate-in');
+      document.querySelector('.temperature__unit').classList.add('animate-in');
+    });
+  }
+
   render() {
     return (
       <section className="current-condition">

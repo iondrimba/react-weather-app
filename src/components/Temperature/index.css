@@ -10,19 +10,46 @@
 
 .temperature__value {
   font-size: 196px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), opacity .3s ease-out;
+  will-change: transform, opacity;
+}
+
+.temperature__value.animate-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .temperature__unit {
   display: flex;
   flex-direction: row;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), opacity .3s ease-out;
+  will-change: transform, opacity;
+}
+
+.temperature__unit.animate-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .temperature__status {
   display: block;
   font-size: 24px;
+  opacity: 0;
   position: absolute;
   text-align: center;
+  transform: translateY(20px);
+  transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), opacity .3s ease-out;
   width: 100%;
+  will-change: transform, opacity;
+}
+
+.temperature__status.animate-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .temperature__unit .temperature__unit-dot {
