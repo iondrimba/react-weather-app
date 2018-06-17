@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import './App.css';
-import IpFetcher from './helpers/ipfetcher';
-import IpSearch from './api/ipSearch';
-import CurrentCondition from './api/currentCondition';
-import ForeCastAPI from './api/foreCastAPI';
-import ForeCast from './components/Forecast';
-import ForeCastTemperature from './components/Forecast/Temperature';
-import initialState from './initialState';
-import Location from './components/Location';
-import Temperature from './components/Temperature';
-import Navigation from './components/Navigation';
-import RainProbality from './components/RainProbality';
+import './index.css';
+import IpFetcher from '../helpers/ipfetcher';
+import IpSearch from '../api/ipSearch';
+import CurrentCondition from '../api/currentCondition';
+import ForeCastAPI from '../api/foreCastAPI';
+import ForeCast from '../components/Forecast';
+import ForeCastTemperature from '../components/Forecast/Temperature';
+import initialState from '../initialState';
+import Location from '../components/Location';
+import Temperature from '../components/Temperature';
+import Navigation from '../components/Navigation';
+import RainProbality from '../components/RainProbality';
 
 class App extends Component {
   constructor() {
