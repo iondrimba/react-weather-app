@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import './index.css';
 
 class Location extends Component {
+  componentDidMount() {
+    requestAnimationFrame(() => {
+      document.querySelector('.location__icon').classList.add('animate-in');
+      document.querySelector('.location__text').classList.add('animate-in');
+    })
+  }
+
   render() {
     return (
       <section className="location">
