@@ -15,9 +15,7 @@ body {
   justify-content: space-between;
 }
 
-.current-condition {
-  text-align: center;
-}
+
 
 .current-condition__details {
   display: flex;
@@ -29,106 +27,12 @@ body {
 }
 
 
-.temperature {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-.temperature__value {
-  font-size: 196px;
-}
-
-.temperature__unit {
-  display: flex;
-  flex-direction: row;
-}
-
-.temperature__status {
-  font-size: 24px;
-  position: absolute;
-  text-align: center;
-  width: 100%;
-}
-
-.temperature__unit .temperature__unit-dot {
-  border-radius: 6px;
-  height: 6px;
-  margin-left: -9px;
-  margin-top: -59px;
-  position: absolute;
-  width: 6px;
-}
-
-.temperature__unit-dot {
-  border: 2px solid #ffffff;
-  border-radius: 10px;
-  height: 10px;
-  width: 10px;
-}
-
-.temperature__unit-letter {
-  font-size: 35px;
-  font-weight: 100;
-  margin-left: 7px;
-  margin-top: -68px;
-  position: absolute;
-}
-
-.wind {
-  display: flex;
-  flex-direction: column;
-}
-
-.wind > div {
-  display: flex;
-  flex-direction: row;
-}
-
-.wind__speed {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-.wind__speed-icon svg {
-  fill: #ffffff;
-  width: 30px;
-}
-
-.wind__direction {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  margin-left: 10px;
-}
-
-.wind__direction-icon svg {
-  fill: #ffffff;
-  width: 24px;
-}
 
 .wrapper-temperature {
   margin-top: 60px;
   position: relative;
 }
 
-.uv {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  margin-left: 20px;
-}
-
-.uv__label {
-  margin-right: 10px;
-  text-transform: uppercase;
-}
-
-.uv > div {
-  display: flex;
-  flex-direction: row;
-}
 
 .forecast-hourly {
   display: flex;
@@ -184,30 +88,9 @@ body {
   width: 2px;
 }
 
-.rain {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-.rain__icon {
-  height: 24px;
-  width: 24px;
-}
-
-.rain__icon svg {
-  fill: #ffffff;
-  width: 24px;
-}
-
-
-.rain__probability {
-  font-size: 12px;
-}
-
-.forecast-hourly__item img, .forecast-daily__item img {
+.forecast-hourly__item img, .forecast-daily__item > img {
   height: 40px;
-  width: 40px;;
+  width: 40px;
 }
 
 .forecast-daily__item-weekday {
@@ -256,24 +139,4 @@ body {
   overflow-x: scroll;
   overflow-y: hidden;
   width: 360px;
-}
-
-.navigation {
-  align-items: center;
-  display: flex;
-  height: 20px;
-  justify-content: center;
-  margin-bottom: 20px;
-  margin-top: 60px;
-  width: 100%;
-}
-
-.navigation-dot {
-  background-color: #ff656a;
-  border: 1px solid #ffffff;
-  border-radius: 6px;
-  height: 6px;
-  margin-left: 4px;
-  margin-right: 4px;
-  width: 6px;
 }
