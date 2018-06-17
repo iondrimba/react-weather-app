@@ -1,0 +1,19 @@
+.navigation {
+  align-items: center;
+  display: flex;
+  height: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 60px;
+  width: 100%;
+}
+
+.navigation-dot {
+  background-color: #ff656a;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  height: 6px;
+  margin-left: 4px;
+  margin-right: 4px;
+  width: 6px;
+}
