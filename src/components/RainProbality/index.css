@@ -1,0 +1,20 @@
+
+.rain {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.rain__icon {
+  height: 24px;
+  width: 24px;
+}
+
+.rain__icon svg {
+  width: 24px;
+}
+
+
+.rain__probability {
+  font-size: 12px;
+}
