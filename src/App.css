@@ -15,95 +15,25 @@ body {
   justify-content: space-between;
 }
 
-
-
-.current-condition__details {
-  display: flex;
-  justify-content: center;
-}
-
-.current-condition span {
-  display: block;
-}
-
-
-
 .wrapper-temperature {
   margin-top: 60px;
   position: relative;
 }
 
-
-.forecast-hourly {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.forecast-hourly__item {
-  align-items: center;
-  border-right: 1px solid #ffffff1c;
+.forecasts {
   display: flex;
   flex-direction: column;
-  padding-left: 5px;
-  padding-right: 5px;
-  position: relative;
-  width: 60px;
-}
-
-.forecast-hourly__item:last-child, .forecast-daily__item:last-child {
-  border-right: 0;
-}
-
-.forecast-daily {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.forecast-daily__item {
-  align-items: center;
-  border-right: 1px solid #ffffff1c;
-  display: flex;
-  flex-direction: column;
-  padding-left: 5px;
-  padding-right: 5px;
-  position: relative;
-  width: 60px;
-}
-
-.forecast-hourly__item-hour {
-  margin-bottom: 20px;
-}
-
-
-.forecast-hourly__item-temperature .temperature__unit-dot, .forecast-daily__item-temperature .temperature__unit-dot {
-  border: 1px solid;
-  display: inline-block;
-  height: 2px;
-  margin-left: 2px;
-  margin-top: 4px;
-  position: absolute;
-  width: 2px;
-}
-
-.forecast-hourly__item img, .forecast-daily__item > img {
-  height: 40px;
-  width: 40px;
-}
-
-.forecast-daily__item-weekday {
-  margin-bottom: 20px;
-  text-transform: capitalize;
-}
-
-.forecast-daily__item-temperature {
   margin-top: 0;
 }
 
-.forecast-daily__temperatures {
-  margin-top: 20px;
+.forecasts__scroll-panel {
+  align-items: baseline;
+  align-self: center;
+  display: flex;
+  justify-content: flex-start;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 360px;
 }
 
 @media screen and (min-width: 768px) {
@@ -122,21 +52,4 @@ body {
     max-width: 375px;
     overflow-y: scroll;
   }
-}
-
-
-.forecasts {
-  display: flex;
-  flex-direction: column;
-  margin-top: 0;
-}
-
-.forecasts__scroll-panel {
-  align-items: baseline;
-  align-self: center;
-  display: flex;
-  justify-content: flex-start;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  width: 360px;
 }
