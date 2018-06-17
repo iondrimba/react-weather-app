@@ -36,6 +36,16 @@ body {
   width: 360px;
 }
 
+.forecasts__period {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.forecasts--daily {
+  margin-bottom: 20px;
+}
+
 @media screen and (min-width: 768px) {
   #root {
     align-items: center;

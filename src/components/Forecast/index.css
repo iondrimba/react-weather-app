@@ -23,19 +23,6 @@
   text-transform: capitalize;
 }
 
-.forecast-hourly {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.forecast-daily {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
 .forecast__temperature .temperature__unit-dot {
   border: 1px solid;
   display: inline-block;

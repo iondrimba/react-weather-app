@@ -44,7 +44,7 @@ class App extends Component {
           <Navigation />
 
           <div className="forecasts__scroll-panel">
-            <section className="forecast-hourly">
+            <section className="forecasts__period">
               {
                 this.state.foreCastHourly.map((item) => {
                   return <ForeCast title={`${item.time}:00`} icon={item.icon}>
@@ -55,7 +55,7 @@ class App extends Component {
               }
             </section>
 
-            <section className="forecast-daily">
+            <section className="forecasts__period forecasts--daily">
               {
                 this.state.foreCastDaily.map((item) => {
                   return <ForeCast title={item.weekDay} icon={item.icon}>
