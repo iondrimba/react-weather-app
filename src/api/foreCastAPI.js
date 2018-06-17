@@ -1,7 +1,7 @@
 import dailyMock from '../mock/foreCastDaily.json';
 import hourlyMock from '../mock/foreCastHourly.json';
 
-class ForeCast {
+class ForeCastAPI {
   constructor() {
     this.endpoint = (locationKey, range) => `http://dataservice.accuweather.com/forecasts/v1/${range}/${locationKey}`;
     this.data = null;
@@ -54,4 +54,4 @@ class ForeCast {
   }
 }
 
-export default ForeCast;
+export default ForeCastAPI;
