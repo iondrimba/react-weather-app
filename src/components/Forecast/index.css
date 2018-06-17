@@ -1,0 +1,47 @@
+.forecast {
+  align-items: center;
+  border-right: 1px solid #ffffff1c;
+  display: flex;
+  flex-direction: column;
+  padding-left: 5px;
+  padding-right: 5px;
+  position: relative;
+  width: 60px;
+}
+
+.forecast:last-child {
+  border-right: 0;
+}
+
+.forecast__icon {
+  height: 40px;
+  width: 40px;
+}
+
+.forecast__title {
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.forecast-hourly {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.forecast-daily {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.forecast__temperature .temperature__unit-dot {
+  border: 1px solid;
+  display: inline-block;
+  height: 2px;
+  margin-left: 2px;
+  margin-top: 4px;
+  position: absolute;
+  width: 2px;
+}
