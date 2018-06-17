@@ -18,6 +18,7 @@
 }
 
 .temperature__status {
+  display: block;
   font-size: 24px;
   position: absolute;
   text-align: center;
