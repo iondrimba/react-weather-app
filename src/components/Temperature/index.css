@@ -1,0 +1,49 @@
+.current-condition {
+  text-align: center;
+}
+
+.temperature {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.temperature__value {
+  font-size: 196px;
+}
+
+.temperature__unit {
+  display: flex;
+  flex-direction: row;
+}
+
+.temperature__status {
+  font-size: 24px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.temperature__unit .temperature__unit-dot {
+  border-radius: 6px;
+  height: 6px;
+  margin-left: -9px;
+  margin-top: -59px;
+  position: absolute;
+  width: 6px;
+}
+
+.temperature__unit-dot {
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  height: 10px;
+  width: 10px;
+}
+
+.temperature__unit-letter {
+  font-size: 35px;
+  font-weight: 100;
+  margin-left: 7px;
+  margin-top: -68px;
+  position: absolute;
+}
