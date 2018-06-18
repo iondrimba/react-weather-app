@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './index.css';
 import IpFetcher from '../helpers/ipfetcher';
 import IpSearch from '../api/ipSearch';
+import IpGeoLocation from '../api/ipGeoLocation';
 import CurrentCondition from '../api/currentCondition';
 import ForeCastAPI from '../api/foreCastAPI';
 import ForeCast from '../components/Forecast';
@@ -20,6 +21,7 @@ class App extends Component {
     this.ipSearch = new IpSearch();
     this.currentCondition = new CurrentCondition();
     this.foreCastAPI = new ForeCastAPI();
+    this.ipGeoLocation = new IpGeoLocation();
 
     this.state = { ...initialState };
 
@@ -32,6 +34,7 @@ class App extends Component {
     await this.currentCondition.fetch(this.ipSearch.data.Key);
     await this.foreCastAPI.fetch5Days(this.ipSearch.data.Key);
     await this.foreCastAPI.fetch12hours(this.ipSearch.data.Key);
+    await this.ipGeoLocation.fetch(this.ipFetcher.ip);
   }
 
   render() {

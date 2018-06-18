@@ -8,7 +8,7 @@ class IpSearch {
 
   async fetchLocation(ip) {
     const params = {
-      apikey: process.env.REACT_APP_API_CODE,
+      apikey: process.env.REACT_APP_ACCU_WEATHER,
       q: ip,
       details: true
     };
