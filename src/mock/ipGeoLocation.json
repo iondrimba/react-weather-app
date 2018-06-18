@@ -1,0 +1,30 @@
+{
+  "ip": "189.120.7.35",
+  "type": "ipv4",
+  "continent_code": "SA",
+  "continent_name": "South America",
+  "country_code": "BR",
+  "country_name": "Brazil",
+  "region_code": "SP",
+  "region_name": "Sao Paulo",
+  "city": "São Paulo",
+  "zip": null,
+  "latitude": -23.5733,
+  "longitude": -46.6417,
+  "location": {
+    "geoname_id": 3448439,
+    "capital": "Brasília",
+    "languages": [
+      {
+        "code": "pt",
+        "name": "Portuguese",
+        "native": "Português"
+      }
+    ],
+    "country_flag": "http://assets.ipstack.com/flags/br.svg",
+    "country_flag_emoji": "🇧🇷",
+    "country_flag_emoji_unicode": "U+1F1E7 U+1F1F7",
+    "calling_code": "55",
+    "is_eu": false
+  }
+}
