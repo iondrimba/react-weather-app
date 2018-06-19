@@ -61,7 +61,7 @@ class App extends Component {
             <section className="forecasts__period forecasts--daily">
               {
                 this.state.foreCastDaily.map((item, index) => {
-                  return <ForeCast key={`daily-${index}`} id={`daily-${index}`} title={item.weekDay} icon={item.icon}>
+                  return <ForeCast key={`daily-${index}`} id={`daily-${index}`} title={item.weekDay} icon={item.icon} animationDelay={index}>
                     <div>
                       <ForeCastTemperature temperature={item.temperature.max} />
                       <ForeCastTemperature temperature={item.temperature.min} />
