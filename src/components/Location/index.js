@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
+import rAFTimeout from '../../helpers/rAFTimeout';
 import './index.css';
 
 class Location extends Component {
+  animate() {
+    rAFTimeout(() => this.icon.classList.add('animate-in'), 250);
+    rAFTimeout(() => this.text.classList.add('animate-in'), 350);
+  }
+
   componentDidMount() {
-    requestAnimationFrame(() => {
-      document.querySelector('.location__icon').classList.add('animate-in');
-      document.querySelector('.location__text').classList.add('animate-in');
-    });
+    this.icon = document.querySelector('.location__icon');
+    this.text = document.querySelector('.location__text');
+
+    rAFTimeout(() => this.animate(), 350);
   }
 
   render() {
