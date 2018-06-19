@@ -49,8 +49,8 @@ class App extends Component {
           <div className="forecasts__scroll-panel">
             <section className="forecasts__period">
               {
-                this.state.foreCastHourly.map((item) => {
-                  return <ForeCast title={`${item.time}:00`} icon={item.icon}>
+                this.state.foreCastHourly.map((item, index) => {
+                  return <ForeCast key={`hourly-${index}`} id={`hourly-${index}`} title={`${item.time}:00`} icon={item.icon} animationDelay={index}>
                     <ForeCastTemperature temperature={item.temperature} />
                     <RainProbality probability={item.rainProbability} />
                   </ForeCast>
@@ -60,8 +60,8 @@ class App extends Component {
 
             <section className="forecasts__period forecasts--daily">
               {
-                this.state.foreCastDaily.map((item) => {
-                  return <ForeCast title={item.weekDay} icon={item.icon}>
+                this.state.foreCastDaily.map((item, index) => {
+                  return <ForeCast key={`daily-${index}`} id={`daily-${index}`} title={item.weekDay} icon={item.icon}>
                     <div>
                       <ForeCastTemperature temperature={item.temperature.max} />
                       <ForeCastTemperature temperature={item.temperature.min} />
