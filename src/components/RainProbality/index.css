@@ -5,10 +5,10 @@
   justify-content: center;
   opacity: 0;
   transform: translateY(-20px);
-  transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), opacity .3s ease-out;
+  transition: transform .3s cubic-bezier(.165, .84, .44, 1), opacity .3s ease-out;
 }
 
-.rain.active {
+.rain.animate-in {
   opacity: 1;
   transform: translateY(0);
 }
