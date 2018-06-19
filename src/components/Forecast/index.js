@@ -4,15 +4,15 @@ import './index.css';
 
 class Forecast extends Component {
   animate() {
-    rAFTimeout(() => this.forecast.classList.add('active'), 100);
+    rAFTimeout(() => this.forecast.classList.add('animate-in'), 100);
 
-    rAFTimeout(() => this.title.classList.add('active'), 200);
+    rAFTimeout(() => this.title.classList.add('animate-in'), 200);
 
-    rAFTimeout(() => this.icon.classList.add('active'), 250);
+    rAFTimeout(() => this.icon.classList.add('animate-in'), 250);
 
-    rAFTimeout(() => this.temperature.classList.add('active'), 300);
+    rAFTimeout(() => this.temperature.classList.add('animate-in'), 350);
 
-    rAFTimeout(() => this.rain.classList.add('active'), 350);
+    rAFTimeout(() => this.rain.classList.add('animate-in'), 400);
   }
 
   componentDidMount() {
@@ -23,7 +23,7 @@ class Forecast extends Component {
     this.temperature = this.forecast.querySelector('.forecast__temperature');
     this.rain = this.forecast.querySelector('.rain');
 
-    rAFTimeout(() => this.animate(), this.props.animationDelay * 50);
+    rAFTimeout(() => this.animate(), this.props.animationDelay * 100);
   }
 
   render() {

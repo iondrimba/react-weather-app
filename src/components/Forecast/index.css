@@ -8,11 +8,11 @@
   position: relative;
   transform: scaleY(0);
   transform-origin: bottom center;
-  transition: transform .3s cubic-bezier(.175, .885, .32, 1.275);
+  transition: transform .3s cubic-bezier(.165, .84, .44, 1);
   width: 60px;
 }
 
-.forecast.active {
+.forecast.animate-in {
   transform: scaleY(1);
 }
 
@@ -33,10 +33,10 @@
 .forecast__temperature, .forecast__icon, .forecast__title {
   opacity: 0;
   transform: translateY(-20px);
-  transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), opacity .3s ease-out;
+  transition: transform .3s cubic-bezier(.165, .84, .44, 1), opacity .3s ease-out;
 }
 
-.forecast__title.active, .forecast__icon.active, .forecast__temperature.active {
+.forecast__title.animate-in, .forecast__icon.animate-in, .forecast__temperature.animate-in {
   opacity: 1;
   transform: translateY(0);
 }
