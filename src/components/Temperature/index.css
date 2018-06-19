@@ -12,7 +12,7 @@
   font-size: 196px;
   opacity: 0;
   transform: translateY(40px);
-  transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), opacity .3s ease-out;
+  transition: transform .3s cubic-bezier(.165, .84, .44, 1), opacity .3s ease-out;
   will-change: transform, opacity;
 }
 
@@ -26,7 +26,7 @@
   flex-direction: row;
   opacity: 0;
   transform: translateY(20px);
-  transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), opacity .3s ease-out;
+  transition: transform .3s cubic-bezier(.165, .84, .44, 1), opacity .3s ease-out;
   will-change: transform, opacity;
 }
 
@@ -42,7 +42,7 @@
   position: absolute;
   text-align: center;
   transform: translateY(20px);
-  transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), opacity .3s ease-out;
+  transition: transform .3s cubic-bezier(.165, .84, .44, 1), opacity .3s ease-out;
   width: 100%;
   will-change: transform, opacity;
 }
