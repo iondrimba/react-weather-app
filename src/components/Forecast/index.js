@@ -10,7 +10,9 @@ class Forecast extends Component {
 
     rAFTimeout(() => this.icon.classList.add('animate-in'), 250);
 
-    rAFTimeout(() => this.temperature.classList.add('animate-in'), 350);
+    rAFTimeout(() => {
+      this.temperature.map( elment => elment.classList.add('animate-in'));
+    }, 350);
 
     rAFTimeout(() => this.rain.classList.add('animate-in'), 400);
   }
@@ -20,7 +22,7 @@ class Forecast extends Component {
     this.forecast = document.querySelector(`[data-id=${this.props.id}]`);
     this.title = this.forecast.querySelector('.forecast__title');
     this.icon = this.forecast.querySelector('.forecast__icon');
-    this.temperature = this.forecast.querySelector('.forecast__temperature');
+    this.temperature = [...this.forecast.querySelectorAll('.forecast__temperature')];
     this.rain = this.forecast.querySelector('.rain');
 
     rAFTimeout(() => this.animate(), this.props.animationDelay * 100);
