@@ -4,9 +4,9 @@ import './index.css';
 
 class Temperature extends Component {
   animate() {
-    rAFTimeout(() => this.status.classList.add('animate-in'), 250);
-    rAFTimeout(() => this.value.classList.add('animate-in'), 350);
-    rAFTimeout(() => this.unit.classList.add('animate-in'), 400);
+    rAFTimeout(() => this.status.classList.add('animate-in'), 150);
+    rAFTimeout(() => this.value.classList.add('animate-in'), 250);
+    rAFTimeout(() => this.unit.classList.add('animate-in'), 300);
   }
 
   componentDidMount() {
