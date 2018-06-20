@@ -1,6 +1,6 @@
 .forecast {
   align-items: center;
-  border-right: 1px solid #ffffff1c;
+  border-right: 1px solid #fff;
   display: flex;
   flex-direction: column;
   padding-left: 5px;
@@ -29,7 +29,9 @@
     text-transform: capitalize;
   }
 
-  &__temperature, &__icon, &__title {
+  &__temperature,
+  &__icon,
+  &__title {
     opacity: 0;
     transform: translateY(-20px);
     transition: transform .3s cubic-bezier(.165, .84, .44, 1), opacity .3s ease-out;
@@ -45,7 +47,9 @@
     width: 2px;
   }
 
-  &__title.animate-in, &__icon.animate-in, &__temperature.animate-in {
+  &__title.animate-in,
+  &__icon.animate-in,
+  &__temperature.animate-in {
     opacity: 1;
     transform: translateY(0);
   }
