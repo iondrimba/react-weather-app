@@ -39,4 +39,5 @@ class Forecast extends Component {
     )
   }
 }
+
 export default Forecast;

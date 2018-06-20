@@ -10,4 +10,5 @@ class ForeCastTemperature extends Component {
     )
   }
 }
+
 export default ForeCastTemperature;
