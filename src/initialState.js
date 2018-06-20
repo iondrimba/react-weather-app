@@ -5,6 +5,7 @@ export default {
     weather: 'Clear',
     dayTime: false,
     humidity: 30,
+    dataLoaded: false,
     date: {
       dayShort: 'Wed',
       dayNumber: 13,

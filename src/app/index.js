@@ -3,14 +3,9 @@ import './index.css';
 import IpFetcher from '../helpers/ipfetcher';
 import IpGeoLocation from '../api/ipGeoLocation';
 import ForeCastAPI from '../api/foreCastAPI';
-import ForeCast from '../components/Forecast';
-import ForeCastTemperature from '../components/Forecast/Temperature';
 import initialState from '../initialState';
-import Location from '../components/Location';
-import Temperature from '../components/Temperature';
-import Navigation from '../components/Navigation';
-import RainProbality from '../components/RainProbality';
 import Home from './Home';
+import Loader from '../components/Loader';
 
 class App extends Component {
   constructor() {
@@ -34,7 +29,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Home currentCondition={this.state.currentCondition} foreCastDaily={this.state.foreCastDaily} foreCastHourly={this.state.foreCastHourly}/>
+        {
+          !this.state.dataLoaded ? <Loader /> : <Home currentCondition={this.state.currentCondition}
+            foreCastDaily={this.state.foreCastDaily} foreCastHourly={this.state.foreCastHourly} />
+        }
       </div>
     );
   }
