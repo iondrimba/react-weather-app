@@ -24,6 +24,14 @@ class App extends Component {
     await this.ipFetcher.fetch();
     await this.ipGeoLocation.fetch(this.ipFetcher.ip);
     await this.foreCastAPI.fetch(this.ipGeoLocation.data.latitude, this.ipGeoLocation.data.longitude);
+
+    setTimeout(() => {
+      document.querySelector('.loader').classList.add('animate-out');
+
+      setTimeout(() => {
+        this.setState({ dataLoaded: true });
+      }, 400);
+    }, 2000);
   }
 
   render() {

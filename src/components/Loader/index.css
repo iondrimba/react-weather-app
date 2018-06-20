@@ -10,6 +10,13 @@
   position: relative;
   top: 50%;
   transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: opacity .3s ease-out;
+  will-change: opacity;
+}
+
+.loader.animate-out {
+  opacity: 0;
 }
 
 .loader__circle {
