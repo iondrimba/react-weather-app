@@ -10,6 +10,7 @@ import Location from '../components/Location';
 import Temperature from '../components/Temperature';
 import Navigation from '../components/Navigation';
 import RainProbality from '../components/RainProbality';
+import Home from './Home';
 
 class App extends Component {
   constructor() {
@@ -33,39 +34,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Location location={this.state.currentCondition.location} />
-        <Temperature weather={this.state.currentCondition.weather} temperature={this.state.currentCondition.temperature} />
-
-        <section className="forecasts">
-          <Navigation />
-
-          <div className="forecasts__scroll-panel">
-            <section className="forecasts__period">
-              {
-                this.state.foreCastHourly.map((item, index) => {
-                  return <ForeCast key={`hourly-${index}`} id={`hourly-${index}`} title={`${item.time}:00`} icon={item.icon} animationDelay={index}>
-                    <ForeCastTemperature temperature={item.temperature} />
-                    <RainProbality probability={item.rainProbability} />
-                  </ForeCast>
-                })
-              }
-            </section>
-
-            <section className="forecasts__period forecasts--daily">
-              {
-                this.state.foreCastDaily.map((item, index) => {
-                  return <ForeCast key={`daily-${index}`} id={`daily-${index}`} title={item.weekDay} icon={item.icon} animationDelay={index}>
-                    <div>
-                      <ForeCastTemperature temperature={item.temperature.max} />
-                      <ForeCastTemperature temperature={item.temperature.min} />
-                    </div>
-                    <RainProbality probability={item.rainProbability} />
-                  </ForeCast>
-                })
-              }
-            </section>
-          </div>
-        </section>
+        <Home currentCondition={this.state.currentCondition} foreCastDaily={this.state.foreCastDaily} foreCastHourly={this.state.foreCastHourly}/>
       </div>
     );
   }
