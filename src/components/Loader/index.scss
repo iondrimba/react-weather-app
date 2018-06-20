@@ -1,0 +1,84 @@
+:root {
+  --circle-radius: 100px;
+  --ray-thickness: 6px;
+}
+
+.loader {
+  color: white;
+  left: 50%;
+  position: relative;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: opacity .3s ease-out;
+  will-change: opacity;
+
+  &.animate-out {
+    opacity: 0;
+  }
+
+  &__circle {
+    border: 6px solid;
+    border-radius: var(--circle-radius);
+    height: var(--circle-radius);
+    margin: 0 auto;
+    width: var(--circle-radius);
+  }
+
+
+  &__rays {
+    height: var(--ray-thickness);
+    left: 50%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    width: var(--circle-radius);
+
+    &--north {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    &--west {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &--east {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &--south {
+      transform: translate(-50%, -50%) rotate(-180deg);
+    }
+  }
+
+  &__rays::before {
+    background-color: #fff;
+    border-radius: var(--circle-radius);
+    content: '';
+    display: block;
+    height: 60px;
+    margin: 0 auto;
+    position: absolute;
+    right: -18px;
+    top: var(--ray-thickness);
+    transform: scale(1) rotate(-90deg);
+    transform-origin: 0 0;
+    width: var(--ray-thickness);
+  }
+
+  &__rays::after {
+    background-color: #fff;
+    border-radius: var(--circle-radius);
+    content: '';
+    display: block;
+    height: 60px;
+    margin: 0 auto;
+    position: absolute;
+    transform: scale(1) rotate(90deg);
+    transform-origin: 0 0;
+    width: var(--ray-thickness);
+    left: -12px;
+  }
+}
