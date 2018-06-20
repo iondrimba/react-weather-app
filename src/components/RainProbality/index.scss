@@ -6,22 +6,22 @@
   opacity: 0;
   transform: translateY(-20px);
   transition: transform .3s cubic-bezier(.165, .84, .44, 1), opacity .3s ease-out;
-}
 
-.rain.animate-in {
-  opacity: 1;
-  transform: translateY(0);
-}
+  &.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-.rain__icon {
-  height: 24px;
-  width: 24px;
-}
+  &__icon {
+    height: 24px;
+    width: 24px;
+  }
 
-.rain__icon svg {
-  width: 24px;
-}
+  &__icon svg {
+    width: 24px;
+  }
 
-.rain__probability {
-  font-size: 12px;
+  &__probability {
+    font-size: 12px;
+  }
 }
