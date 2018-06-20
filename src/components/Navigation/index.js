@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import rAFTimeout from '../../helpers/rAFTimeout';
-import './index.css';
+import './index.scss';
 
 class Navigation extends Component {
   animate() {
@@ -30,5 +30,3 @@ class Navigation extends Component {
 }
 
 export default Navigation;
-
-

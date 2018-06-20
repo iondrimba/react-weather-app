@@ -1,0 +1,27 @@
+.navigation {
+  align-items: center;
+  display: flex;
+  height: 20px;
+  justify-content: center;
+  margin-bottom: 50px;
+  margin-top: 10px;
+  width: 100%;
+
+  &__dot {
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    height: 6px;
+    margin-left: 4px;
+    margin-right: 4px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: transform .3s cubic-bezier(.165, .84, .44, 1), opacity .3s ease-out;
+    width: 6px;
+  }
+
+  &__dot.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
