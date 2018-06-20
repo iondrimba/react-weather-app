@@ -1,0 +1,39 @@
+.location {
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+  justify-content: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+
+  &__icon {
+    fill: #fff;
+    height: 26px;
+    margin-right: 6px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: transform .3s cubic-bezier(.68, -.55, .265, 1.55), opacity .3s ease-out;
+    will-change: transform;
+  }
+
+  &__icon.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &__icon svg {
+    width: 14px;
+  }
+
+  &__text {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), opacity .3s .1s ease-out;
+    will-change: transform;
+  }
+
+  &__text.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
