@@ -8,12 +8,20 @@
   width: 100%;
 }
 
-.navigation-dot {
+.navigation__dot {
   background-color: transparent;
   border: 1px solid #ffffff;
   border-radius: 6px;
   height: 6px;
   margin-left: 4px;
   margin-right: 4px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: transform .3s cubic-bezier(.165, .84, .44, 1), opacity .3s ease-out;
   width: 6px;
+}
+
+.navigation__dot.animate-in {
+  opacity: 1;
+  transform: translateY(0);
 }
