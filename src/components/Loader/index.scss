@@ -1,10 +1,11 @@
 :root {
   --circle-radius: 100px;
   --ray-thickness: 6px;
+  --base-color: #fff;
 }
 
 .loader {
-  color: white;
+  color: var(--base-color);
   left: 50%;
   position: relative;
   top: 50%;
@@ -24,7 +25,6 @@
     margin: 0 auto;
     width: var(--circle-radius);
   }
-
 
   &__rays {
     height: var(--ray-thickness);
@@ -54,7 +54,7 @@
   }
 
   &__rays::before {
-    background-color: #fff;
+    background-color: var(--base-color);
     border-radius: var(--circle-radius);
     content: '';
     display: block;
@@ -69,7 +69,7 @@
   }
 
   &__rays::after {
-    background-color: #fff;
+    background-color: var(--base-color);
     border-radius: var(--circle-radius);
     content: '';
     display: block;
