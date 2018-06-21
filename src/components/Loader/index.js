@@ -3,18 +3,38 @@ import rAFTimeout from '../../helpers/rAFTimeout';
 import './index.scss';
 
 class Loader extends Component {
-  animate() {
-    this.rays.map((element, index) => {
-      rAFTimeout(() => element.classList.add('animate-in'), index * 50);
-    });
+  animateIn() {
+    this.animateCircle();
 
-    rAFTimeout(() => this.animate(), 350);
+    rAFTimeout(() => this.animateRays(), 300);
+
+    rAFTimeout(() => this.startRotation(), 500);
+  }
+
+  animateRays() {
+    this.rays.map((element, index) => {
+      return rAFTimeout(() => element.classList.add('animate-in'), index * 80);
+    });
+  }
+
+  startRotation() {
+    rAFTimeout(() => this.circle.classList.add('start-rotation'), 300);
+  }
+
+  animateCircle() {
+    rAFTimeout(() => this.circle.classList.add('animate-in'), 150);
+  }
+
+  animateOut() {
+    this.rays.map((element, index) => {
+      return rAFTimeout(() => element.classList.remove('animate-in'), index * 50);
+    });
   }
 
   componentDidMount() {
+    this.loader = document.querySelector('.loader');
+    this.circle = this.loader.querySelector('.loader__circle');
     this.rays = [...document.querySelectorAll('.ray')];
-
-    this.animate();
   }
 
   render() {

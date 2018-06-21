@@ -1,7 +1,7 @@
 @import './ray';
 
 :root {
-  --circle-radius: 100px;
+  --circle-radius: 60px;
   --ray-thickness: 6px;
   --base-color: #fff;
 }
@@ -14,7 +14,7 @@
   transform: translate(-50%, -50%);
   opacity: 1;
   transition: opacity .3s ease-out;
-  will-change: opacity;
+  will-change: opacity, transform;
 
   &.animate-out {
     opacity: 0;
@@ -27,5 +27,27 @@
     margin: 0 auto;
     width: var(--circle-radius);
     position: relative;
+    transform: translateY(-50px);
+    transition: transform .3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity .3s ease-out;
+    opacity: 0;
+  }
+
+  &__circle.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.start-rotation {
+  animation: rotation 1s linear infinite normal both;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(180deg);
   }
 }

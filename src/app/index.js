@@ -6,6 +6,7 @@ import ForeCastAPI from '../api/foreCastAPI';
 import initialState from '../initialState';
 import Home from './Home';
 import Loader from '../components/Loader';
+import rAFTimeout from '../helpers/rAFTimeout';
 
 class App extends Component {
   constructor() {
@@ -17,6 +18,8 @@ class App extends Component {
 
     this.state = { ...initialState };
 
+    this.loader = React.createRef();
+
     this.init();
   }
 
@@ -24,21 +27,25 @@ class App extends Component {
     await this.ipFetcher.fetch();
     await this.ipGeoLocation.fetch(this.ipFetcher.ip);
     await this.foreCastAPI.fetch(this.ipGeoLocation.data.latitude, this.ipGeoLocation.data.longitude);
+  }
+
+  componentDidMount() {
+    rAFTimeout(() => this.loader.current.animateIn(), 100);
 
     setTimeout(() => {
-      document.querySelector('.loader').classList.add('animate-out');
+      this.loader.current.animateOut();
 
       setTimeout(() => {
-        this.setState({ dataLoaded: true });
+        //this.setState({ dataLoaded: true });
       }, 400);
-    }, 2000);
+    }, 1000);
   }
 
   render() {
     return (
       <div className="App">
         {
-          !this.state.dataLoaded ? <Loader /> : <Home currentCondition={this.state.currentCondition}
+          !this.state.dataLoaded ? <Loader ref={this.loader} /> : <Home currentCondition={this.state.currentCondition}
             foreCastDaily={this.state.foreCastDaily} foreCastHourly={this.state.foreCastHourly} />
         }
       </div>
