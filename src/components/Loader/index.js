@@ -4,25 +4,36 @@ import './index.scss';
 
 class Loader extends Component {
   animate() {
-    // rAFTimeout(() => this.icon.classList.add('animate-in'), 250);
-    // rAFTimeout(() => this.text.classList.add('animate-in'), 350);
+    this.rays.map((element, index) => {
+      rAFTimeout(() => element.classList.add('animate-in'), index * 50);
+    });
+
+    rAFTimeout(() => this.animate(), 350);
   }
 
   componentDidMount() {
-    // this.icon = document.querySelector('.location__icon');
-    // this.text = document.querySelector('.location__text');
+    this.rays = [...document.querySelectorAll('.ray')];
 
-    rAFTimeout(() => this.animate(), 350);
+    this.animate();
   }
 
   render() {
     return (
       <div className="loader">
-        <div className="loader__circle"></div>
-        <div className="loader__rays loader__rays--south"></div>
-        <div className="loader__rays loader__rays--north"></div>
-        <div className="loader__rays loader__rays--west"></div>
-        <div className="loader__rays loader__rays--east"></div>
+        <div className="loader__circle">
+          <div className="rays">
+            <div className="ray ray--north"></div>
+            <div className="ray ray--west"></div>
+            <div className="ray ray--south"></div>
+            <div className="ray ray--east"></div>
+          </div>
+          <div className="rays">
+            <div className="ray ray--north"></div>
+            <div className="ray ray--west"></div>
+            <div className="ray ray--south"></div>
+            <div className="ray ray--east"></div>
+          </div>
+        </div>
       </div>
     )
   }

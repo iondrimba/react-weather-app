@@ -1,0 +1,86 @@
+
+%ray-initial-state {
+  opacity: 0;
+  transform: translate(-50px, 0) rotate(90deg);
+  transition: transform .3s cubic-bezier(.165, .84, .44, 1), opacity .3s ease-out;
+}
+
+.ray {
+  height: var(--ray-thickness);
+  left: 50%;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  width: var(--circle-radius);
+
+  &::after {
+    background-color: var(--base-color);
+    border-radius: var(--circle-radius);
+    content: '';
+    display: block;
+    height: 60px;
+    margin: 0 auto;
+    position: absolute;
+    transform-origin: 0 0;
+    width: var(--ray-thickness);
+  }
+
+  &--north {
+    transform: translate(-50px, -50%) rotate(90deg);
+
+    &::after {
+      @extend %ray-initial-state;
+    }
+  }
+
+  &--west {
+    transform: translate(-50px, -50%) rotate(135deg);
+
+    &::after {
+      @extend %ray-initial-state;
+    }
+  }
+
+  &--east {
+    transform: translate(-50px, -50%) rotate(225deg);
+
+    &::after {
+      @extend %ray-initial-state;
+    }
+  }
+
+  &--south {
+    transform: translate(-50px, -50%) rotate(-180deg);
+
+    &::after {
+      @extend %ray-initial-state;
+    }
+  }
+
+  &.animate-in {
+    &.ray--north::after,
+    &.ray--west::after,
+    &.ray--south::after,
+    &.ray--east::after {
+      opacity: 1;
+      transform: translate(-20px, 0) rotate(90deg);
+    }
+  }
+}
+
+.rays {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.rays:last-child {
+  margin: 0 auto;
+  top: 50%;
+  transform: translate(-50px, 0) rotate(180deg);
+  transform-origin: center;
+  width: 100%;
+}
