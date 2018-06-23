@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import './index.scss';
-import IpFetcher from '../helpers/ipfetcher';
 import IpGeoLocation from '../api/ipGeoLocation';
 import ForeCastAPI from '../api/foreCastAPI';
 import initialState from '../initialState';
 import Home from './Home';
 import Loader from '../components/Loader';
+
+import IpFetcher from '../helpers/ipfetcher';
 import rAFTimeout from '../helpers/rAFTimeout';
 import timeConvert from '../helpers/time';
 import icons from '../helpers/icons';
 import weekdays from '../helpers/weekdays';
-
 
 class App extends Component {
   constructor() {
