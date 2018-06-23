@@ -1,6 +1,6 @@
 export default {
   currentCondition: {
-    location: 'São Paulo',
+    location: 'Rio',
     temperature: 23,
     weather: 'Clear',
     dayTime: false,
@@ -25,7 +25,7 @@ export default {
     {
       weekDay: 'mon',
       rainProbability: 47,
-      icon: 'wi-showers',
+      icon: 'wi-day-sunny',
       temperature: {
         max: 23,
         min: 12
@@ -34,7 +34,7 @@ export default {
     {
       weekDay: 'tue',
       rainProbability: 35,
-      icon: 'wi-night-alt-showers',
+      icon: 'wi-day-sunny',
       temperature: {
         max: 33,
         min: 14
@@ -43,7 +43,7 @@ export default {
     {
       weekDay: 'wed',
       rainProbability: 1,
-      icon: 'wi-showers',
+      icon: 'wi-day-sunny',
       temperature: {
         max: 22,
         min: 21
@@ -85,19 +85,19 @@ export default {
       time: 10,
       rainProbability: 40,
       temperature: 15,
-      icon: 'wi-showers'
+      icon: 'wi-day-sunny'
     },
     {
       time: 11,
       rainProbability: 15,
       temperature: 16,
-      icon: 'wi-day-snow-wind'
+      icon: 'wi-day-sunny'
     },
     {
       time: 12,
       rainProbability: 5,
       temperature: 24,
-      icon: 'wi-night-alt-showers'
+      icon: 'wi-day-sunny'
     }
   ]
 }
