@@ -64,6 +64,7 @@
   &__unit {
     display: flex;
     flex-direction: row;
+    margin-left: 24px;
     opacity: 0;
     transform: translateY(20px);
     transition: transform .3s cubic-bezier(.165, .84, .44, 1), opacity .3s ease-out;
