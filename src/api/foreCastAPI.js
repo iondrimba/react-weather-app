@@ -1,4 +1,4 @@
-import data from '../mock/ipSearch.json';
+import data from '../mock/foreCast.json';
 
 class ForeCastAPI {
   constructor() {
@@ -10,7 +10,7 @@ class ForeCastAPI {
   async fetch(latitude, longitude) {
     try {
       const response = await fetch(this.endpoint(latitude, longitude));
-      this.data =  data;// await response.json();
+      this.data = await response.json();
     } catch (error) {
       console.log(error.message);
     }
