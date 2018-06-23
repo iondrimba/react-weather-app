@@ -1,32 +1,32 @@
 export default {
-  CLEAR_DAY: {
+  'clear-day': {
     id: 'wi-day-sunny'
   },
-  CLEAR_NIGHT: {
+  'clear-night': {
     id: 'wi-night-clear'
   },
-  PARTLY_CLOUDY_DAY: {
+  'partly-cloudy-day': {
     id: 'wi-day-cloudy'
   },
-  PARTLY_CLOUDY_NIGHT: {
+  'partly-cloudy-night': {
     id: 'wi-night-alt-cloudy'
   },
-  CLOUDY: {
+  cloudy: {
     id: 'wi-cloudy'
   },
-  RAIN: {
+  rain: {
     id: 'wi-rain'
   },
-  SLEET: {
+  sleet: {
     id: 'wi-sleet'
   },
-  SNOW: {
+  snow: {
     id: 'wi-snow'
   },
-  WIND: {
+  wind: {
     id: 'wi-windy'
   },
-  FOG: {
+  fog: {
     id: 'wi-fog'
   },
 }
