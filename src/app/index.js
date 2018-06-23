@@ -46,7 +46,7 @@ class App extends Component {
           foreCastHourly: this.foreCastAPI.data.hourly.data.map((item) => {
             return {
               time: timeConvert(item.time).hours,
-              rainProbability: item.precipProbability,
+              rainProbability: item.precipProbability * 100,
               temperature: Math.round(item.temperature),
               icon: icons[item.icon].id
             }
@@ -54,7 +54,7 @@ class App extends Component {
           foreCastDaily: this.foreCastAPI.data.daily.data.map((item) => {
             return {
               weekDay: weekdays(timeConvert(item.time).weekDay),
-              rainProbability: item.precipProbability,
+              rainProbability: item.precipProbability * 100,
               icon: icons[item.icon].id,
               temperature: {
                 max: Math.round(item.temperatureMax),
