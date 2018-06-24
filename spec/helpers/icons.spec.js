@@ -21,6 +21,6 @@ describe('Icons list', () => {
   it('throws error for invalid icon key', () => {
     expect(() => {
       icons('xpto');
-    }).toThrowError(`No icon registered with the key: xpto`);
+    }).toThrowError('No icon registered with the key: xpto');
   });
 });
