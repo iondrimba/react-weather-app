@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Temperature matches snapshot 1`] = `
+<ForeCastTemperature
+  temperature={22}
+>
+  <p
+    className="forecast__temperature"
+  >
+    22
+    <span
+      className="temperature__unit-dot"
+    />
+  </p>
+</ForeCastTemperature>
+`;
