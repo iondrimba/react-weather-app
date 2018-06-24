@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.scss';
 
-class RainProbality extends Component {
+class RainProbability extends Component {
   render() {
     return (
       <div className="rain">
@@ -12,4 +12,4 @@ class RainProbality extends Component {
   }
 }
 
-export default RainProbality;
+export default RainProbability;

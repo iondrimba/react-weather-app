@@ -4,7 +4,7 @@ import ForeCastTemperature from '../components/Forecast/Temperature';
 import Location from '../components/Location';
 import Temperature from '../components/Temperature';
 import Navigation from '../components/Navigation';
-import RainProbality from '../components/RainProbality';
+import RainProbability from '../components/RainProbability';
 import DateCurrent from '../components/DateCurrent';
 
 class Home extends Component {
@@ -23,7 +23,7 @@ class Home extends Component {
               this.props.foreCastHourly.map((item, index) => {
                 return <ForeCast key={`hourly-${index}`} id={`hourly-${index}`} title={`${item.time}:00`} icon={item.icon} animationDelay={index}>
                   <ForeCastTemperature temperature={item.temperature} />
-                  <RainProbality probability={item.rainProbability} />
+                  <RainProbability probability={item.rainProbability} />
                 </ForeCast>
               })
             }
@@ -37,7 +37,7 @@ class Home extends Component {
                     <ForeCastTemperature temperature={item.temperature.max} />
                     <ForeCastTemperature temperature={item.temperature.min} />
                   </div>
-                  <RainProbality probability={item.rainProbability} />
+                  <RainProbability probability={item.rainProbability} />
                 </ForeCast>
               })
             }
