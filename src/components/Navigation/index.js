@@ -3,6 +3,12 @@ import rAFTimeout from '../../helpers/rAFTimeout';
 import './index.scss';
 
 class Navigation extends Component {
+  constructor() {
+    super();
+
+    this.navigation = React.createRef();
+  }
+
   animate() {
     rAFTimeout(() => {
       this.dots.map((elment, index) => {
@@ -14,14 +20,14 @@ class Navigation extends Component {
   }
 
   componentDidMount() {
-    this.dots = [...document.querySelectorAll('.navigation__dot')];
+    this.dots = [...this.navigation.current.querySelectorAll('.navigation__dot')];
 
     rAFTimeout(() => this.animate(), 350);
   }
 
   render() {
     return (
-      <section className="navigation">
+      <section ref={this.navigation} className="navigation">
         <div className="navigation__dot"></div>
         <div className="navigation__dot"></div>
       </section>

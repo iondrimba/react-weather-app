@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation matches snapshot 1`] = `
+<Navigation>
+  <section
+    className="navigation"
+  >
+    <div
+      className="navigation__dot"
+    />
+    <div
+      className="navigation__dot"
+    />
+  </section>
+</Navigation>
+`;
