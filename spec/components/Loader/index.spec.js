@@ -1,9 +1,8 @@
 import React from 'react';
-import Adapter from 'enzyme-adapter-react-16';
-import Enzyme, { mount } from 'enzyme';
 import Loader from '../../../src/components/Loader';
+import { enzymeConfig, mount } from '../../enzymeConfig';
 
-Enzyme.configure({ adapter: new Adapter() });
+enzymeConfig();
 
 describe('Loader', () => {
   it('matches snapshot', () => {
@@ -40,5 +39,5 @@ describe('Loader', () => {
         done();
       }, 800);
     });
-  })
+  });
 });
