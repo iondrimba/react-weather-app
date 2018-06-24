@@ -25,11 +25,11 @@ class Loader extends Component {
   }
 
   startRotation() {
-    rAFTimeout(() => this.circle.classList.add('start-rotation'), 300);
+    rAFTimeout(() => this.circle.current.classList.add('start-rotation'), 300);
   }
 
   animateCircle() {
-    rAFTimeout(() => this.circle.classList.add('animate-in'), 150);
+    rAFTimeout(() => this.circle.current.classList.add('animate-in'), 150);
   }
 
   animateOut() {

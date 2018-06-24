@@ -9,16 +9,16 @@ describe('Time', () => {
     expect(result.localeDateString).toEqual('Friday, June 22, 2018');
   });
 
-  it('matches weekDay with 5', () => {
+  it('matches weekDay with 6', () => {
     const result = time(unixTimeStamp);
 
-    expect(result.weekDay).toEqual(5);
+    expect(result.weekDay).toEqual(6);
   });
 
-  it('matches day with 22', () => {
+  it('matches day with 23', () => {
     const result = time(unixTimeStamp);
 
-    expect(result.day).toEqual(22);
+    expect(result.day).toEqual(23);
   });
 
   it('matches month with "06"', () => {
@@ -33,10 +33,10 @@ describe('Time', () => {
     expect(result.year).toEqual(2018);
   });
 
-  it('matches hours with 22', () => {
+  it('matches hours with 01', () => {
     const result = time(unixTimeStamp);
 
-    expect(result.hours).toEqual(22);
+    expect(result.hours).toEqual('01');
   });
 
   it('matches minutes with 18', () => {

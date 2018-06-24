@@ -10,7 +10,7 @@ class Forecast extends Component {
   }
 
   animate() {
-    rAFTimeout(() => this.forecast.classList.add('animate-in'), 100);
+    rAFTimeout(() => this.forecast.current.classList.add('animate-in'), 100);
 
     rAFTimeout(() => this.title.classList.add('animate-in'), 200);
 
