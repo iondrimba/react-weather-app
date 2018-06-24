@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Temperature matches snapshot 1`] = `
+<Temperature>
+  <section
+    className="current-condition"
+  >
+    <div
+      className="wrapper-temperature"
+    >
+      <span
+        className="temperature__status"
+      />
+      <div
+        className="temperature"
+      >
+        <span
+          className="temperature__value"
+        />
+        <div
+          className="temperature__unit"
+        >
+          <span
+            className="temperature__unit-dot"
+          />
+          <span
+            className="temperature__unit-letter"
+          >
+            c
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+</Temperature>
+`;

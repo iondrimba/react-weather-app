@@ -3,17 +3,21 @@ import rAFTimeout from '../../helpers/rAFTimeout';
 import './index.scss';
 
 class Temperature extends Component {
+  constructor() {
+    super();
+
+    this.status = React.createRef();
+    this.value = React.createRef();
+    this.unit = React.createRef();
+  }
+
   animate() {
-    rAFTimeout(() => this.status.classList.add('animate-in'), 150);
-    rAFTimeout(() => this.value.classList.add('animate-in'), 250);
-    rAFTimeout(() => this.unit.classList.add('animate-in'), 300);
+    rAFTimeout(() => this.status.current.classList.add('animate-in'), 150);
+    rAFTimeout(() => this.value.current.classList.add('animate-in'), 250);
+    rAFTimeout(() => this.unit.current.classList.add('animate-in'), 300);
   }
 
   componentDidMount() {
-    this.status = document.querySelector('.temperature__status');
-    this.value = document.querySelector('.temperature__value');
-    this.unit = document.querySelector('.temperature__unit');
-
     rAFTimeout(() => this.animate(), 400);
   }
 
@@ -21,10 +25,10 @@ class Temperature extends Component {
     return (
       <section className="current-condition">
         <div className="wrapper-temperature">
-          <span className="temperature__status">{this.props.weather}</span>
+          <span ref={this.status} className="temperature__status">{this.props.weather}</span>
           <div className="temperature">
-            <span className="temperature__value">{this.props.temperature}</span>
-            <div className="temperature__unit">
+            <span ref={this.value} className="temperature__value">{this.props.temperature}</span>
+            <div ref={this.unit} className="temperature__unit">
               <span className="temperature__unit-dot"></span>
               <span className="temperature__unit-letter">c</span>
             </div>
