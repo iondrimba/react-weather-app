@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Forecast matches snapshot 1`] = `
+<Forecast
+  animationDelay={1}
+  icon="xpto"
+  id="11"
+  title="some title"
+>
+  <div
+    className="forecast"
+    data-id="11"
+  >
+    <span
+      className="forecast__title"
+    >
+      some title
+    </span>
+    <img
+      alt="icon"
+      className="forecast__icon"
+      src="svg/xpto.svg"
+    />
+     
+    <h1>
+      Children
+    </h1>
+     
+  </div>
+</Forecast>
+`;
