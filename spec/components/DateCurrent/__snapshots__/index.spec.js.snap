@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DateCurrent matches snapshot 1`] = `
+<DateCurrent>
+  <section
+    className="date-current"
+  >
+    <span
+      className="date-current__text"
+    />
+  </section>
+</DateCurrent>
+`;

@@ -3,20 +3,24 @@ import rAFTimeout from '../../helpers/rAFTimeout';
 import './index.scss';
 
 class DateCurrent extends Component {
+  constructor() {
+    super();
+
+    this.text = React.createRef();
+  }
+
   animate() {
-    rAFTimeout(() => this.text.classList.add('animate-in'), 400);
+    rAFTimeout(() => this.text.current.classList.add('animate-in'), 400);
   }
 
   componentDidMount() {
-    this.text = document.querySelector('.date-current__text');
-
     rAFTimeout(() => this.animate(), 350);
   }
 
   render() {
     return (
       <section className="date-current">
-        <span className="date-current__text">{this.props.date}</span>
+        <span ref={this.text} className="date-current__text">{this.props.date}</span>
       </section>
     )
   }
