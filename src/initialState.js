@@ -2,24 +2,11 @@ export default {
   currentCondition: {
     location: 'Rio',
     temperature: 23,
+    date: '--',
     weather: 'Clear',
     dayTime: false,
     humidity: 30,
-    dataLoaded: false,
-    date: {
-      dayShort: 'Wed',
-      dayNumber: 13,
-      month: 'Jun',
-      year: 2018
-    },
-    wind: {
-      speed: 10,
-      direction: 'N'
-    },
-    uv: {
-      indice: 5,
-      description: 'Low'
-    }
+    dataLoaded: false
   },
   foreCastDaily: [
     {

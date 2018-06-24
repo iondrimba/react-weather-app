@@ -40,6 +40,7 @@ class App extends Component {
         this.setState({
           currentCondition: {
             ...initialState, location: this.ipGeoLocation.data.city,
+            date: timeConvert(this.foreCastAPI.data.currently.time).localeDateString,
             temperature: Math.round(this.foreCastAPI.data.currently.temperature),
             weather: this.foreCastAPI.data.currently.summary
           },

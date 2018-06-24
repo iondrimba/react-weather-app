@@ -1,6 +1,6 @@
 const addLeadingZero = (value) => (value < 10) ? `0${value}` : value;
 
-export default function (unixTimestamp) {
+export default function (unixTimestamp, locale = 'en-US') {
   const date = new Date(unixTimestamp * 1000);
   const year = date.getFullYear();
   let month = date.getMonth() + 1;
@@ -14,16 +14,10 @@ export default function (unixTimestamp) {
   hours = addLeadingZero(hours);
   minutes = addLeadingZero(minutes);
 
-  console.log({
-    weekDay,
-    day,
-    month,
-    year,
-    hours,
-    minutes
-  })
+  const localeDateString = date.toLocaleDateString(locale, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
   return {
+    localeDateString,
     weekDay,
     day,
     month,
