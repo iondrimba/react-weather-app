@@ -9,9 +9,8 @@ class IpFetcher {
       const response = await fetch(this.endpoint);
       const result = await response.json();
       this.ip = result.ip;
-
     } catch (error) {
-      console.log(error.message);
+      throw new Error(`Unable to fetch: ${error.message}`);
     }
   }
 }
