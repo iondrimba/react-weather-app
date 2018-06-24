@@ -3,6 +3,13 @@ import rAFTimeout from '../../helpers/rAFTimeout';
 import './index.scss';
 
 class Loader extends Component {
+  constructor() {
+    super();
+
+    this.loader = React.createRef();
+    this.circle = React.createRef();
+  }
+
   animateIn() {
     this.animateCircle();
 
@@ -32,15 +39,13 @@ class Loader extends Component {
   }
 
   componentDidMount() {
-    this.loader = document.querySelector('.loader');
-    this.circle = this.loader.querySelector('.loader__circle');
-    this.rays = [...document.querySelectorAll('.ray')];
+    this.rays = [...this.circle.current.querySelectorAll('.ray')];
   }
 
   render() {
     return (
-      <div className="loader">
-        <div className="loader__circle">
+      <div ref={this.loader} className="loader">
+        <div ref={this.circle} className="loader__circle">
           <div className="rays">
             <div className="ray ray--north"></div>
             <div className="ray ray--west"></div>
