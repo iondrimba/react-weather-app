@@ -2,8 +2,6 @@ import time from '../../src/helpers/time';
 
 const unixTimeStamp = 1529716706;
 
-console.log(time(unixTimeStamp));
-
 describe('Time', () => {
   it('matches localeDateString with Friday, June 22, 2018', () => {
     const result = time(unixTimeStamp);

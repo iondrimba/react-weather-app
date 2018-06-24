@@ -30,13 +30,13 @@ export default (iconKey) => {
     fog: {
       id: 'wi-fog'
     },
-  }
+  };
 
   const icon = data[iconKey];
 
   if (icon) {
     return icon;
-  } else {
-    throw new Error(`No icon registered with the key: ${iconKey}`);
   }
+
+  throw new Error(`No icon registered with the key: ${iconKey}`);
 }
