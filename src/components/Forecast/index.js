@@ -11,14 +11,13 @@ class Forecast extends Component {
     rAFTimeout(() => this.icon.classList.add('animate-in'), 250);
 
     rAFTimeout(() => {
-      this.temperature.map( elment => elment.classList.add('animate-in'));
+      this.temperature.map(elment => elment.classList.add('animate-in'));
     }, 350);
 
     rAFTimeout(() => this.rain.classList.add('animate-in'), 400);
   }
 
   componentDidMount() {
-
     this.forecast = document.querySelector(`[data-id=${this.props.id}]`);
     this.title = this.forecast.querySelector('.forecast__title');
     this.icon = this.forecast.querySelector('.forecast__icon');

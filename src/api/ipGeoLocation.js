@@ -12,10 +12,10 @@ class IpGeoLocation {
     };
 
     try {
-      // const response = await fetch(this.addQueryParams(params, ip));
-      // const result = await response.json();
-      this.data = data;
+      const response = await fetch(this.addQueryParams(params, ip));
+      const result = await response.json();
 
+      this.data = result;
     } catch (error) {
       console.log(error.message);
     }

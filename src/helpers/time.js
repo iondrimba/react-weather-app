@@ -14,6 +14,15 @@ export default function (unixTimestamp) {
   hours = addLeadingZero(hours);
   minutes = addLeadingZero(minutes);
 
+  console.log({
+    weekDay,
+    day,
+    month,
+    year,
+    hours,
+    minutes
+  })
+
   return {
     weekDay,
     day,

@@ -11,7 +11,7 @@ class Home extends Component {
   render() {
     return <Fragment>
         <Location location={this.props.currentCondition.location} />
-        <DateCurrent date='Fry, 18, 2018' />
+        <DateCurrent date='Fry, 18 Jun' />
         <Temperature weather={this.props.currentCondition.weather} temperature={this.props.currentCondition.temperature} />
 
         <section className="forecasts">

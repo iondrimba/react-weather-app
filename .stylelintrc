@@ -4,7 +4,7 @@
     "max-empty-lines": 4,
     "string-quotes": "single",
     "number-leading-zero": null,
-    "unit-whitelist": ["em", "rem", "s", "px", "%", "deg"],
+    "unit-whitelist": ["em", "rem", "s", "px", "%", "deg", "vh"],
     "max-nesting-depth": 2
   }
 }

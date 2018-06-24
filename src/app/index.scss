@@ -1,6 +1,6 @@
 body {
   background: linear-gradient(to bottom, #0e4294, #3393b7);
-  color: #ffffff;
+  color: #fff;
   font-family: monospace;
   height: 100vh;
   margin: 0;
@@ -24,26 +24,26 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: 0;
-}
 
-.forecasts__scroll-panel {
-  align-items: baseline;
-  align-self: center;
-  display: flex;
-  justify-content: flex-start;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  width: 360px;
-}
+  &__scroll-panel {
+    align-items: baseline;
+    align-self: center;
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 360px;
+  }
 
-.forecasts__period {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
+  &__period {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 
-.forecasts--daily {
-  margin-bottom: 20px;
+  &--daily {
+    margin-bottom: 20px;
+  }
 }
 
 @media screen and (min-width: 768px) {

@@ -43,15 +43,15 @@ class App extends Component {
             temperature: Math.round(this.foreCastAPI.data.currently.temperature),
             weather: this.foreCastAPI.data.currently.summary
           },
-          foreCastHourly: this.foreCastAPI.data.hourly.data.map((item) => {
+          foreCastHourly: this.foreCastAPI.data.hourly.data.slice(1, 6).map((item) => {
             return {
               time: timeConvert(item.time).hours,
               rainProbability: item.precipProbability * 100,
               temperature: Math.round(item.temperature),
               icon: icons[item.icon].id
             }
-          }).slice(1, 6),
-          foreCastDaily: this.foreCastAPI.data.daily.data.map((item) => {
+          }),
+          foreCastDaily: this.foreCastAPI.data.daily.data.slice(1, 6).map((item) => {
             return {
               weekDay: weekdays(timeConvert(item.time).weekDay),
               rainProbability: item.precipProbability * 100,
@@ -61,7 +61,7 @@ class App extends Component {
                 min: Math.round(item.temperatureMin)
               }
             }
-          }).slice(1, 6)
+          })
         });
       }, 400);
     }, 1000);
