@@ -1,4 +1,4 @@
-import IpFetcher from '../../src/helpers/ipfetcher';
+import IpFetcher from '../../src/api/ipfetcher';
 
 describe('IpFetcher', () => {
   describe('constructor', () => {
@@ -27,7 +27,7 @@ describe('IpFetcher', () => {
       try {
         await ipFetcher.fetch();
       } catch (error) {
-        expect(error).toEqual(new Error('Unable to fetch: Network request failed'));
+        expect(error).toEqual(new Error('IpFetcher unable to fetch: Network request failed'));
       }
     });
   });
