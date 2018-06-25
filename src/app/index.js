@@ -6,7 +6,7 @@ import initialState from '../initialState';
 import Home from './Home';
 import Loader from '../components/Loader';
 
-import IpFetcher from '../helpers/ipfetcher';
+import IpFetcher from '../api/ipfetcher';
 import rAFTimeout from '../helpers/rAFTimeout';
 import timeConvert from '../helpers/time';
 import icons from '../helpers/icons';
