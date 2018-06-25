@@ -69,6 +69,20 @@ describe('Loader', () => {
     });
   });
 
+  describe('animateCircle', () => {
+    it('adds class animate-in to circle', (done) => {
+      const component = mount(<Loader />);
+      const instance = component.instance();
+
+      instance.animateCircle();
+
+      setTimeout(() => {
+        expect(instance.circle.current.classList).toContain('animate-in');
+        done();
+      }, 350);
+    });
+  });
+
   describe('animateOut', () => {
     it('removes class animate-in from rays', (done) => {
       const component = mount(<Loader />);
