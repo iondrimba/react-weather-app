@@ -55,11 +55,10 @@ body {
   }
 
   .App {
-    background-color: #ff656a;
     border-radius: 6px;
     box-shadow: 0 3px 20px 0 rgba(0, 0, 0, .06);
     height: 667px;
     max-width: 375px;
-    overflow-y: scroll;
+    overflow: hidden;
   }
 }
