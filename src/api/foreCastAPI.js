@@ -1,5 +1,3 @@
-import data from '../mock/foreCast.json';
-
 class ForeCastAPI {
   constructor() {
     this.secret = process.env.REACT_APP_DARK_SKY_API_CODE;
@@ -12,7 +10,7 @@ class ForeCastAPI {
       const response = await fetch(this.endpoint(latitude, longitude));
       this.data = await response.json();
     } catch (error) {
-      console.log(error.message);
+      throw new Error(`ForeCastAPI unable to fetch: ${error.message}`);
     }
   }
 }

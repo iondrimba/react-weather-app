@@ -1,5 +1,3 @@
-import data from '../mock/ipGeoLocation.json';
-
 class IpGeoLocation {
   constructor() {
     this.endpoint = ip => `http://api.ipstack.com/${ip}`;
@@ -17,7 +15,7 @@ class IpGeoLocation {
 
       this.data = result;
     } catch (error) {
-      console.log(error.message);
+      throw new Error(`IpGeoLocation unable to fetch: ${error.message}`);
     }
   }
 

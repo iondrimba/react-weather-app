@@ -10,7 +10,7 @@ class IpFetcher {
       const result = await response.json();
       this.ip = result.ip;
     } catch (error) {
-      throw new Error(`Unable to fetch: ${error.message}`);
+      throw new Error(`IpFetcher unable to fetch: ${error.message}`);
     }
   }
 }
