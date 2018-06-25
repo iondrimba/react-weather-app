@@ -44,7 +44,7 @@ class App extends Component {
             temperature: Math.round(this.foreCastAPI.data.currently.temperature),
             weather: this.foreCastAPI.data.currently.summary
           },
-          foreCastHourly: this.foreCastAPI.data.hourly.data.slice(1, 6).map((item) => {
+          foreCastHourly: this.foreCastAPI.data.hourly.data.slice(0, 5).map((item) => {
             return {
               time: timeConvert(item.time).hours,
               rainProbability: Math.round(item.precipProbability * 100),
