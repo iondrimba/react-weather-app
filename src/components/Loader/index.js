@@ -20,7 +20,8 @@ class Loader extends Component {
 
   animateRays() {
     this.rays.map((element, index) => {
-      return rAFTimeout(() => element.classList.add('animate-in'), index * 80);
+      rAFTimeout(() => element.classList.add('animate-in'), index * 80)
+      return element;
     });
   }
 
@@ -34,7 +35,8 @@ class Loader extends Component {
 
   animateOut() {
     this.rays.map((element, index) => {
-      return rAFTimeout(() => element.classList.remove('animate-in'), index * 50);
+      rAFTimeout(() => element.classList.remove('animate-in'), index * 50);
+      return element;
     });
   }
 

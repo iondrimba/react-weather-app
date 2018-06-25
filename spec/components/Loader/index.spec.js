@@ -40,4 +40,46 @@ describe('Loader', () => {
       }, 800);
     });
   });
+
+  describe('animateRays', () => {
+    it('adds classes animate-in to ray', (done) => {
+      const component = mount(<Loader />);
+      const instance = component.instance();
+
+      instance.animateRays();
+
+      setTimeout(() => {
+        instance.rays.map( element => expect(element.classList).toContain('animate-in'));
+        done();
+      }, 1000);
+    });
+  });
+
+  describe('startRotation', () => {
+    it('adds class startRotation to circle', (done) => {
+      const component = mount(<Loader />);
+      const instance = component.instance();
+
+      instance.startRotation();
+
+      setTimeout(() => {
+        expect(instance.circle.current.classList).toContain('start-rotation');
+        done();
+      }, 350);
+    });
+  });
+
+  describe('animateOut', () => {
+    it('removes class animate-in from rays', (done) => {
+      const component = mount(<Loader />);
+      const instance = component.instance();
+
+      instance.animateOut();
+
+      setTimeout(() => {
+        instance.rays.map( element => expect(element.classList).not.toContain('animate-in'));
+        done();
+      }, 1000);
+    });
+  });
 });
