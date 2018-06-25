@@ -1,4 +1,4 @@
-import ForecastAPI from '../../src/api/forecastAPI';
+import ForecastAPI from '../../src/api/foreCastAPI';
 
 const apiSecret = process.env.REACT_APP_IP_STACK;
 
