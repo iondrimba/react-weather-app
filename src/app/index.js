@@ -36,8 +36,8 @@ class App extends Component {
       this.loader.current.animateOut();
 
       setTimeout(() => {
-        this.setState({ dataLoaded: true });
         this.setState({
+          dataLoaded: true,
           currentCondition: {
             ...initialState, location: this.ipGeoLocation.data.city,
             date: timeConvert(this.foreCastAPI.data.currently.time).localeDateString,
@@ -64,8 +64,8 @@ class App extends Component {
             }
           })
         });
-      }, 400);
-    }, 1000);
+      }, 500);
+    }, 100);
   }
 
   componentDidMount() {

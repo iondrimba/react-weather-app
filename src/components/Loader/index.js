@@ -35,7 +35,7 @@ class Loader extends Component {
 
   animateOut() {
     this.rays.map((element, index) => {
-      rAFTimeout(() => element.classList.remove('animate-in'), index * 50);
+      rAFTimeout(() => element.classList.add('animate-out'), index * 50);
       return element;
     });
   }

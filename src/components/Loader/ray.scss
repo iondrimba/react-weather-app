@@ -68,6 +68,15 @@
       transform: translate(-20px, 0) rotate(90deg);
     }
   }
+
+  &.animate-out {
+    &.ray--north::after,
+    &.ray--west::after,
+    &.ray--south::after,
+    &.ray--east::after {
+      opacity: 0;
+    }
+  }
 }
 
 .rays {
