@@ -12,9 +12,9 @@ class Navigation extends Component {
   animate() {
     rAFTimeout(() => {
       this.dots.map((elment, index) => {
-        return rAFTimeout(() => {
-          elment.classList.add('animate-in')
-        }, index * 150);
+        rAFTimeout(() => elment.classList.add('animate-in'), index * 150);
+
+        return elment;
       });
     }, 350);
   }

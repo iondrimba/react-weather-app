@@ -31,4 +31,18 @@ describe('Navigation', () => {
       }, 400);
     });
   });
+
+  describe('animate', () => {
+    it('adds classes animate-in to dots', (done) => {
+      const component = mount(<Navigation />);
+      const instance = component.instance();
+
+      instance.animate();
+
+      setTimeout(() => {
+        instance.dots.map( element => expect(element.classList).toContain('animate-in'));
+        done();
+      }, 1000);
+    });
+  });
 });
