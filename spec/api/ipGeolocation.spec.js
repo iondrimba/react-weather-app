@@ -1,4 +1,5 @@
 import IpGeoLocation from '../../src/api/ipGeoLocation';
+import nock from 'nock';
 
 const mockResult = {
   "city": "Brooklyn",
@@ -48,7 +49,7 @@ describe('IpGeoLocation', () => {
       const api = new IpGeoLocation(apiSecret);
 
       expect(api.data).toEqual(null);
-      expect(api.secrete).toEqual(apiSecret);
+      expect(api.secret).toEqual(apiSecret);
     });
   });
 
@@ -64,6 +65,11 @@ describe('IpGeoLocation', () => {
     it('returns geolocation based on ip address', async () => {
       const ipGeoLocation = new IpGeoLocation(apiSecret);
 
+      nock('http://api.ipstack.com')
+        .get('/161.185.160.93')
+        .query({ access_key: process.env.REACT_APP_IP_STACK })
+        .reply(200, mockResult, { 'Access-Control-Allow-Origin': '*' });
+
       await ipGeoLocation.fetch('161.185.160.93');
 
       expect(ipGeoLocation.data).toEqual(mockResult);
@@ -71,6 +77,11 @@ describe('IpGeoLocation', () => {
 
     it('returns invalid api key', async () => {
       const ipGeoLocation = new IpGeoLocation('152a7266a35fed3aaad8bf4ff449c363');
+
+      nock('http://api.ipstack.com')
+        .get('/161.185.160.93')
+        .query({ access_key: ipGeoLocation.secret })
+        .reply(200, invalidAPIKeyResult, { 'Access-Control-Allow-Origin': '*' });
 
       await ipGeoLocation.fetch('161.185.160.93');
 

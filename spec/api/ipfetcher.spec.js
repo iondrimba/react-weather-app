@@ -1,4 +1,5 @@
 import IpFetcher from '../../src/api/ipfetcher';
+import nock from 'nock';
 
 describe('IpFetcher', () => {
   describe('constructor', () => {
@@ -13,6 +14,13 @@ describe('IpFetcher', () => {
   describe('fetch', () => {
     it('sets ip after fetch', async () => {
       const ipFetcher = new IpFetcher();
+
+      nock('https://api.ipify.org')
+        .get('/')
+        .query({ format: 'json' })
+        .reply(200, {
+          ip: '128.128.1.1',
+        }, { 'Access-Control-Allow-Origin': '*' });
 
       await ipFetcher.fetch();
 
