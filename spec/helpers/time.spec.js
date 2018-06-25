@@ -1,6 +1,6 @@
 import time from '../../src/helpers/time';
 
-const unixTimeStamp = 1529716706;
+const unixTimeStamp = 1529886488;
 
 describe('Time', () => {
   it('matches localeDateString with Saturday, June 23, 2018', () => {
@@ -33,10 +33,10 @@ describe('Time', () => {
     expect(result.year).toEqual(2018);
   });
 
-  it('matches hours with 04', () => {
+  it('matches hours with 07', () => {
     const result = time(unixTimeStamp);
 
-    expect(result.hours).toEqual('04');
+    expect(result.hours).toEqual('07');
   });
 
   it('matches minutes with 18', () => {

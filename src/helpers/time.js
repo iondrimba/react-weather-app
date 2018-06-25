@@ -1,9 +1,17 @@
+import getTime from 'date-fns/get_time'
+
 const addLeadingZero = (value) => (value < 10) ? `0${value}` : value;
 
 export default function (unixTimestamp, locale = 'en-US') {
   const date = new Date(unixTimestamp * 1000);
-  const utc = date.getTime() + (date.getTimezoneOffset() * 60000);
+  const utc = getTime(date) + (date.getTimezoneOffset() * 60000);
   const finalDate = new Date(utc);
+
+  console.log('date', date);
+  console.log('new Date', new Date());
+  console.log('finalDate', finalDate);
+
+  // finalDate.setUTCHours(finalDate.getUTCHours() + (date.getTimezoneOffset() / 60))
 
   const year = finalDate.getUTCFullYear();
   let month = finalDate.getUTCMonth() + 1;
@@ -29,3 +37,4 @@ export default function (unixTimestamp, locale = 'en-US') {
     minutes
   };
 }
+
