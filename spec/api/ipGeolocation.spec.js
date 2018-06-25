@@ -45,9 +45,10 @@ const apiSecret = process.env.REACT_APP_IP_STACK;
 describe('IpGeoLocation', () => {
   describe('constructor', () => {
     it('defines default props', () => {
-      const result = new IpGeoLocation(apiSecret);
+      const api = new IpGeoLocation(apiSecret);
 
-      expect(result.data).toEqual(null);
+      expect(api.data).toEqual(null);
+      expect(api.secrete).toEqual(apiSecret);
     });
   });
 

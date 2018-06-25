@@ -1,13 +1,13 @@
 class IpGeoLocation {
-  constructor(apiSecret) {
+  constructor(secrete) {
     this.endpoint = ip => `http://api.ipstack.com/${ip}`;
     this.data = null;
-    this.apiSecret = apiSecret;
+    this.secrete = secrete;
   }
 
   async fetch(ip) {
     const params = {
-      access_key: this.apiSecret,
+      access_key: this.secrete,
     };
 
     try {

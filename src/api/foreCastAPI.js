@@ -1,6 +1,6 @@
 class ForeCastAPI {
-  constructor() {
-    this.secret = process.env.REACT_APP_DARK_SKY_API_CODE;
+  constructor(apiSecret) {
+    this.secret = apiSecret;
     this.endpoint = (latitude, longitude) => `https://weather-api-nodejs.herokuapp.com/api?latitude=${latitude}&longitude=${longitude}`;
     this.data = null;
   }
