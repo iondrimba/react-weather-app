@@ -65,7 +65,7 @@ class App extends Component {
           })
         });
       }, 500);
-    }, 100);
+    }, 1000);
   }
 
   componentDidMount() {

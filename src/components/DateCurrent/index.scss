@@ -9,13 +9,13 @@
 
   &__text {
     opacity: 0;
-    transform: translateY(-30px);
+    transform: translateY(-50px);
     transition: transform .3s cubic-bezier(.165, .84, .44, 1), opacity .3s .1s ease-out;
     will-change: opacity, transform;
   }
 
   &__text.animate-in {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(20px);
   }
 }
