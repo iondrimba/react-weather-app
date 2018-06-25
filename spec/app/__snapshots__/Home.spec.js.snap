@@ -1,0 +1,915 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home matches snapshot 1`] = `
+<Home
+  currentCondition={
+    Object {
+      "currentCondition": Object {
+        "dataLoaded": false,
+        "date": "--",
+        "dayTime": false,
+        "humidity": 30,
+        "location": "Rio",
+        "temperature": 23,
+        "weather": "Clear",
+      },
+      "date": "Monday, June 25, 2018",
+      "foreCastDaily": Array [
+        Object {
+          "icon": "wi-day-sunny",
+          "rainProbability": 47,
+          "temperature": Object {
+            "max": 23,
+            "min": 12,
+          },
+          "weekDay": "mon",
+        },
+        Object {
+          "icon": "wi-day-sunny",
+          "rainProbability": 35,
+          "temperature": Object {
+            "max": 33,
+            "min": 14,
+          },
+          "weekDay": "tue",
+        },
+        Object {
+          "icon": "wi-day-sunny",
+          "rainProbability": 1,
+          "temperature": Object {
+            "max": 22,
+            "min": 21,
+          },
+          "weekDay": "wed",
+        },
+        Object {
+          "icon": "wi-day-sunny",
+          "rainProbability": 10,
+          "temperature": Object {
+            "max": 30,
+            "min": 25,
+          },
+          "weekDay": "Thu",
+        },
+        Object {
+          "icon": "wi-fog",
+          "rainProbability": 20,
+          "temperature": Object {
+            "max": 19,
+            "min": 11,
+          },
+          "weekDay": "Fry",
+        },
+      ],
+      "foreCastHourly": Array [
+        Object {
+          "icon": "wi-fog",
+          "rainProbability": 20,
+          "temperature": 23,
+          "time": 8,
+        },
+        Object {
+          "icon": "wi-day-sunny",
+          "rainProbability": 22,
+          "temperature": 25,
+          "time": 9,
+        },
+        Object {
+          "icon": "wi-day-sunny",
+          "rainProbability": 40,
+          "temperature": 15,
+          "time": 10,
+        },
+        Object {
+          "icon": "wi-day-sunny",
+          "rainProbability": 15,
+          "temperature": 16,
+          "time": 11,
+        },
+        Object {
+          "icon": "wi-day-sunny",
+          "rainProbability": 5,
+          "temperature": 24,
+          "time": 12,
+        },
+      ],
+      "location": "São Paulo",
+      "temperature": 20,
+      "weather": "Clear",
+    }
+  }
+  foreCastDaily={
+    Array [
+      Object {
+        "icon": "wi-night-alt-cloudy",
+        "rainProbability": 0,
+        "temperature": Object {
+          "max": 26,
+          "min": 16,
+        },
+        "weekDay": "tue",
+      },
+      Object {
+        "icon": "wi-day-cloudy",
+        "rainProbability": 13,
+        "temperature": Object {
+          "max": 26,
+          "min": 15,
+        },
+        "weekDay": "wed",
+      },
+      Object {
+        "icon": "wi-day-cloudy",
+        "rainProbability": 0,
+        "temperature": Object {
+          "max": 26,
+          "min": 15,
+        },
+        "weekDay": "thu",
+      },
+      Object {
+        "icon": "wi-day-sunny",
+        "rainProbability": 3,
+        "temperature": Object {
+          "max": 26,
+          "min": 15,
+        },
+        "weekDay": "fry",
+      },
+      Object {
+        "icon": "wi-night-alt-cloudy",
+        "rainProbability": 4,
+        "temperature": Object {
+          "max": 26,
+          "min": 14,
+        },
+        "weekDay": "sat",
+      },
+    ]
+  }
+  foreCastHourly={
+    Array [
+      Object {
+        "icon": "wi-night-clear",
+        "rainProbability": 0,
+        "temperature": 21,
+        "time": 22,
+      },
+      Object {
+        "icon": "wi-night-clear",
+        "rainProbability": 0,
+        "temperature": 20,
+        "time": 23,
+      },
+      Object {
+        "icon": "wi-night-clear",
+        "rainProbability": 0,
+        "temperature": 19,
+        "time": "00",
+      },
+      Object {
+        "icon": "wi-night-clear",
+        "rainProbability": 0,
+        "temperature": 19,
+        "time": "01",
+      },
+      Object {
+        "icon": "wi-night-clear",
+        "rainProbability": 0,
+        "temperature": 18,
+        "time": "02",
+      },
+    ]
+  }
+>
+  <Location
+    location="São Paulo"
+  >
+    <section
+      className="location"
+    >
+      <span
+        className="location__icon"
+      >
+        <svg
+          enableBackground="new 0 0 24 24"
+          height="24px"
+          id="Layer_1"
+          version="1.1"
+          viewBox="0 0 24 24"
+          width="24px"
+        >
+          <path
+            d="M11.513,12.38c-2.117,0-3.835-1.729-3.835-3.862c0-2.135,1.718-3.863,3.835-3.863s3.835,1.729,3.835,3.863  C15.348,10.65,13.63,12.38,11.513,12.38 M11.513,0C6.825,0,3.025,3.827,3.025,8.549c0,4.46,3.844,10.213,6.411,13.014  c0.959,1.045,2.076,2.454,2.076,2.454s1.2-1.417,2.229-2.493C16.306,18.84,20,13.451,20,8.549C20,3.827,16.2,0,11.513,0"
+          />
+        </svg>
+      </span>
+      <span
+        className="location__text"
+      >
+        São Paulo
+      </span>
+    </section>
+  </Location>
+  <DateCurrent
+    date="Monday, June 25, 2018"
+  >
+    <section
+      className="date-current"
+    >
+      <span
+        className="date-current__text"
+      >
+        Monday, June 25, 2018
+      </span>
+    </section>
+  </DateCurrent>
+  <Temperature
+    temperature={20}
+    weather="Clear"
+  >
+    <section
+      className="current-condition"
+    >
+      <div
+        className="wrapper-temperature"
+      >
+        <span
+          className="temperature__status"
+        >
+          Clear
+        </span>
+        <div
+          className="temperature"
+        >
+          <span
+            className="temperature__value"
+          >
+            20
+          </span>
+          <div
+            className="temperature__unit"
+          >
+            <span
+              className="temperature__unit-dot"
+            />
+            <span
+              className="temperature__unit-letter"
+            >
+              c
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </Temperature>
+  <section
+    className="forecasts"
+  >
+    <Navigation>
+      <section
+        className="navigation"
+      >
+        <div
+          className="navigation__dot"
+        />
+        <div
+          className="navigation__dot"
+        />
+      </section>
+    </Navigation>
+    <div
+      className="forecasts__scroll-panel"
+    >
+      <section
+        className="forecasts__period"
+      >
+        <Forecast
+          animationDelay={0}
+          icon="wi-night-clear"
+          id="hourly-0"
+          key="hourly-0"
+          title="22:00"
+        >
+          <div
+            className="forecast"
+            data-id="hourly-0"
+          >
+            <span
+              className="forecast__title"
+            >
+              22:00
+            </span>
+            <img
+              alt="icon"
+              className="forecast__icon"
+              src="svg/wi-night-clear.svg"
+            />
+            <ForeCastTemperature
+              temperature={21}
+            >
+              <p
+                className="forecast__temperature"
+              >
+                21
+                <span
+                  className="temperature__unit-dot"
+                />
+              </p>
+            </ForeCastTemperature>
+            <RainProbability
+              probability={0}
+            >
+              <div
+                className="rain"
+              >
+                <img
+                  alt="alt"
+                  className="rain__icon"
+                  height="24"
+                  src="/svg/rain-probality.svg"
+                  width="24"
+                />
+                <span
+                  className="rain__probability"
+                >
+                  0%
+                </span>
+              </div>
+            </RainProbability>
+          </div>
+        </Forecast>
+        <Forecast
+          animationDelay={1}
+          icon="wi-night-clear"
+          id="hourly-1"
+          key="hourly-1"
+          title="23:00"
+        >
+          <div
+            className="forecast"
+            data-id="hourly-1"
+          >
+            <span
+              className="forecast__title"
+            >
+              23:00
+            </span>
+            <img
+              alt="icon"
+              className="forecast__icon"
+              src="svg/wi-night-clear.svg"
+            />
+            <ForeCastTemperature
+              temperature={20}
+            >
+              <p
+                className="forecast__temperature"
+              >
+                20
+                <span
+                  className="temperature__unit-dot"
+                />
+              </p>
+            </ForeCastTemperature>
+            <RainProbability
+              probability={0}
+            >
+              <div
+                className="rain"
+              >
+                <img
+                  alt="alt"
+                  className="rain__icon"
+                  height="24"
+                  src="/svg/rain-probality.svg"
+                  width="24"
+                />
+                <span
+                  className="rain__probability"
+                >
+                  0%
+                </span>
+              </div>
+            </RainProbability>
+          </div>
+        </Forecast>
+        <Forecast
+          animationDelay={2}
+          icon="wi-night-clear"
+          id="hourly-2"
+          key="hourly-2"
+          title="00:00"
+        >
+          <div
+            className="forecast"
+            data-id="hourly-2"
+          >
+            <span
+              className="forecast__title"
+            >
+              00:00
+            </span>
+            <img
+              alt="icon"
+              className="forecast__icon"
+              src="svg/wi-night-clear.svg"
+            />
+            <ForeCastTemperature
+              temperature={19}
+            >
+              <p
+                className="forecast__temperature"
+              >
+                19
+                <span
+                  className="temperature__unit-dot"
+                />
+              </p>
+            </ForeCastTemperature>
+            <RainProbability
+              probability={0}
+            >
+              <div
+                className="rain"
+              >
+                <img
+                  alt="alt"
+                  className="rain__icon"
+                  height="24"
+                  src="/svg/rain-probality.svg"
+                  width="24"
+                />
+                <span
+                  className="rain__probability"
+                >
+                  0%
+                </span>
+              </div>
+            </RainProbability>
+          </div>
+        </Forecast>
+        <Forecast
+          animationDelay={3}
+          icon="wi-night-clear"
+          id="hourly-3"
+          key="hourly-3"
+          title="01:00"
+        >
+          <div
+            className="forecast"
+            data-id="hourly-3"
+          >
+            <span
+              className="forecast__title"
+            >
+              01:00
+            </span>
+            <img
+              alt="icon"
+              className="forecast__icon"
+              src="svg/wi-night-clear.svg"
+            />
+            <ForeCastTemperature
+              temperature={19}
+            >
+              <p
+                className="forecast__temperature"
+              >
+                19
+                <span
+                  className="temperature__unit-dot"
+                />
+              </p>
+            </ForeCastTemperature>
+            <RainProbability
+              probability={0}
+            >
+              <div
+                className="rain"
+              >
+                <img
+                  alt="alt"
+                  className="rain__icon"
+                  height="24"
+                  src="/svg/rain-probality.svg"
+                  width="24"
+                />
+                <span
+                  className="rain__probability"
+                >
+                  0%
+                </span>
+              </div>
+            </RainProbability>
+          </div>
+        </Forecast>
+        <Forecast
+          animationDelay={4}
+          icon="wi-night-clear"
+          id="hourly-4"
+          key="hourly-4"
+          title="02:00"
+        >
+          <div
+            className="forecast"
+            data-id="hourly-4"
+          >
+            <span
+              className="forecast__title"
+            >
+              02:00
+            </span>
+            <img
+              alt="icon"
+              className="forecast__icon"
+              src="svg/wi-night-clear.svg"
+            />
+            <ForeCastTemperature
+              temperature={18}
+            >
+              <p
+                className="forecast__temperature"
+              >
+                18
+                <span
+                  className="temperature__unit-dot"
+                />
+              </p>
+            </ForeCastTemperature>
+            <RainProbability
+              probability={0}
+            >
+              <div
+                className="rain"
+              >
+                <img
+                  alt="alt"
+                  className="rain__icon"
+                  height="24"
+                  src="/svg/rain-probality.svg"
+                  width="24"
+                />
+                <span
+                  className="rain__probability"
+                >
+                  0%
+                </span>
+              </div>
+            </RainProbability>
+          </div>
+        </Forecast>
+      </section>
+      <section
+        className="forecasts__period forecasts--daily"
+      >
+        <Forecast
+          animationDelay={0}
+          icon="wi-night-alt-cloudy"
+          id="daily-0"
+          key="daily-0"
+          title="tue"
+        >
+          <div
+            className="forecast"
+            data-id="daily-0"
+          >
+            <span
+              className="forecast__title"
+            >
+              tue
+            </span>
+            <img
+              alt="icon"
+              className="forecast__icon"
+              src="svg/wi-night-alt-cloudy.svg"
+            />
+            <div>
+              <ForeCastTemperature
+                temperature={26}
+              >
+                <p
+                  className="forecast__temperature"
+                >
+                  26
+                  <span
+                    className="temperature__unit-dot"
+                  />
+                </p>
+              </ForeCastTemperature>
+              <ForeCastTemperature
+                temperature={16}
+              >
+                <p
+                  className="forecast__temperature"
+                >
+                  16
+                  <span
+                    className="temperature__unit-dot"
+                  />
+                </p>
+              </ForeCastTemperature>
+            </div>
+            <RainProbability
+              probability={0}
+            >
+              <div
+                className="rain"
+              >
+                <img
+                  alt="alt"
+                  className="rain__icon"
+                  height="24"
+                  src="/svg/rain-probality.svg"
+                  width="24"
+                />
+                <span
+                  className="rain__probability"
+                >
+                  0%
+                </span>
+              </div>
+            </RainProbability>
+          </div>
+        </Forecast>
+        <Forecast
+          animationDelay={1}
+          icon="wi-day-cloudy"
+          id="daily-1"
+          key="daily-1"
+          title="wed"
+        >
+          <div
+            className="forecast"
+            data-id="daily-1"
+          >
+            <span
+              className="forecast__title"
+            >
+              wed
+            </span>
+            <img
+              alt="icon"
+              className="forecast__icon"
+              src="svg/wi-day-cloudy.svg"
+            />
+            <div>
+              <ForeCastTemperature
+                temperature={26}
+              >
+                <p
+                  className="forecast__temperature"
+                >
+                  26
+                  <span
+                    className="temperature__unit-dot"
+                  />
+                </p>
+              </ForeCastTemperature>
+              <ForeCastTemperature
+                temperature={15}
+              >
+                <p
+                  className="forecast__temperature"
+                >
+                  15
+                  <span
+                    className="temperature__unit-dot"
+                  />
+                </p>
+              </ForeCastTemperature>
+            </div>
+            <RainProbability
+              probability={13}
+            >
+              <div
+                className="rain"
+              >
+                <img
+                  alt="alt"
+                  className="rain__icon"
+                  height="24"
+                  src="/svg/rain-probality.svg"
+                  width="24"
+                />
+                <span
+                  className="rain__probability"
+                >
+                  13%
+                </span>
+              </div>
+            </RainProbability>
+          </div>
+        </Forecast>
+        <Forecast
+          animationDelay={2}
+          icon="wi-day-cloudy"
+          id="daily-2"
+          key="daily-2"
+          title="thu"
+        >
+          <div
+            className="forecast"
+            data-id="daily-2"
+          >
+            <span
+              className="forecast__title"
+            >
+              thu
+            </span>
+            <img
+              alt="icon"
+              className="forecast__icon"
+              src="svg/wi-day-cloudy.svg"
+            />
+            <div>
+              <ForeCastTemperature
+                temperature={26}
+              >
+                <p
+                  className="forecast__temperature"
+                >
+                  26
+                  <span
+                    className="temperature__unit-dot"
+                  />
+                </p>
+              </ForeCastTemperature>
+              <ForeCastTemperature
+                temperature={15}
+              >
+                <p
+                  className="forecast__temperature"
+                >
+                  15
+                  <span
+                    className="temperature__unit-dot"
+                  />
+                </p>
+              </ForeCastTemperature>
+            </div>
+            <RainProbability
+              probability={0}
+            >
+              <div
+                className="rain"
+              >
+                <img
+                  alt="alt"
+                  className="rain__icon"
+                  height="24"
+                  src="/svg/rain-probality.svg"
+                  width="24"
+                />
+                <span
+                  className="rain__probability"
+                >
+                  0%
+                </span>
+              </div>
+            </RainProbability>
+          </div>
+        </Forecast>
+        <Forecast
+          animationDelay={3}
+          icon="wi-day-sunny"
+          id="daily-3"
+          key="daily-3"
+          title="fry"
+        >
+          <div
+            className="forecast"
+            data-id="daily-3"
+          >
+            <span
+              className="forecast__title"
+            >
+              fry
+            </span>
+            <img
+              alt="icon"
+              className="forecast__icon"
+              src="svg/wi-day-sunny.svg"
+            />
+            <div>
+              <ForeCastTemperature
+                temperature={26}
+              >
+                <p
+                  className="forecast__temperature"
+                >
+                  26
+                  <span
+                    className="temperature__unit-dot"
+                  />
+                </p>
+              </ForeCastTemperature>
+              <ForeCastTemperature
+                temperature={15}
+              >
+                <p
+                  className="forecast__temperature"
+                >
+                  15
+                  <span
+                    className="temperature__unit-dot"
+                  />
+                </p>
+              </ForeCastTemperature>
+            </div>
+            <RainProbability
+              probability={3}
+            >
+              <div
+                className="rain"
+              >
+                <img
+                  alt="alt"
+                  className="rain__icon"
+                  height="24"
+                  src="/svg/rain-probality.svg"
+                  width="24"
+                />
+                <span
+                  className="rain__probability"
+                >
+                  3%
+                </span>
+              </div>
+            </RainProbability>
+          </div>
+        </Forecast>
+        <Forecast
+          animationDelay={4}
+          icon="wi-night-alt-cloudy"
+          id="daily-4"
+          key="daily-4"
+          title="sat"
+        >
+          <div
+            className="forecast"
+            data-id="daily-4"
+          >
+            <span
+              className="forecast__title"
+            >
+              sat
+            </span>
+            <img
+              alt="icon"
+              className="forecast__icon"
+              src="svg/wi-night-alt-cloudy.svg"
+            />
+            <div>
+              <ForeCastTemperature
+                temperature={26}
+              >
+                <p
+                  className="forecast__temperature"
+                >
+                  26
+                  <span
+                    className="temperature__unit-dot"
+                  />
+                </p>
+              </ForeCastTemperature>
+              <ForeCastTemperature
+                temperature={14}
+              >
+                <p
+                  className="forecast__temperature"
+                >
+                  14
+                  <span
+                    className="temperature__unit-dot"
+                  />
+                </p>
+              </ForeCastTemperature>
+            </div>
+            <RainProbability
+              probability={4}
+            >
+              <div
+                className="rain"
+              >
+                <img
+                  alt="alt"
+                  className="rain__icon"
+                  height="24"
+                  src="/svg/rain-probality.svg"
+                  width="24"
+                />
+                <span
+                  className="rain__probability"
+                >
+                  4%
+                </span>
+              </div>
+            </RainProbability>
+          </div>
+        </Forecast>
+      </section>
+    </div>
+  </section>
+</Home>
+`;
