@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App matches snapshot 1`] = `
+<App>
+  <div
+    className="App"
+  >
+    <Loader>
+      <div
+        className="loader"
+      >
+        <div
+          className="loader__circle"
+        >
+          <div
+            className="rays"
+          >
+            <div
+              className="ray ray--north"
+            />
+            <div
+              className="ray ray--west"
+            />
+            <div
+              className="ray ray--south"
+            />
+            <div
+              className="ray ray--east"
+            />
+          </div>
+          <div
+            className="rays"
+          >
+            <div
+              className="ray ray--north"
+            />
+            <div
+              className="ray ray--west"
+            />
+            <div
+              className="ray ray--south"
+            />
+            <div
+              className="ray ray--east"
+            />
+          </div>
+        </div>
+      </div>
+    </Loader>
+  </div>
+</App>
+`;
