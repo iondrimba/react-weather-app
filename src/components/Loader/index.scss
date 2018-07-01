@@ -1,8 +1,8 @@
 @import './ray';
 
 :root {
-  --circle-radius: 60px;
-  --ray-thickness: 6px;
+  --circle-radius: 35px;
+  --ray-thickness: 4px;
   --base-color: #fff;
 }
 
@@ -21,7 +21,7 @@
   }
 
   &__circle {
-    border: 6px solid;
+    border: 3px solid;
     border-radius: var(--circle-radius);
     height: var(--circle-radius);
     margin: 0 auto;

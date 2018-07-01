@@ -25,42 +25,44 @@ class App extends Component {
     this.loader = React.createRef();
   }
 
+  updatedState() {
+    this.setState({
+      dataLoaded: true,
+      currentCondition: {
+        ...initialState, location: this.ipGeoLocation.data.city,
+        date: timeConvert(this.foreCastAPI.data.currently.time).localeDateString,
+        temperature: Math.round(this.foreCastAPI.data.currently.temperature),
+        weather: this.foreCastAPI.data.currently.summary
+      },
+      foreCastHourly: this.foreCastAPI.data.hourly.data.slice(0, 5).map((item) => ({
+        time: timeConvert(item.time).hours,
+        rainProbability: Math.round(item.precipProbability * 100),
+        temperature: Math.round(item.temperature),
+        icon: icons(item.icon).id
+      })),
+      foreCastDaily: this.foreCastAPI.data.daily.data.slice(1, 6).map(item => ({
+        weekDay: weekdays(timeConvert(item.time).weekDay),
+        rainProbability: Math.round(item.precipProbability * 100),
+        icon: icons(item.icon).id,
+        temperature: {
+          max: Math.round(item.temperatureMax),
+          min: Math.round(item.temperatureMin)
+        }
+      }))
+    });
+  }
+
   async init() {
     rAFTimeout(() => this.loader.current.animateIn(), 100);
 
-    await this.ipFetcher.fetch();
-    await this.ipGeoLocation.fetch(this.ipFetcher.ip);
-    await this.foreCastAPI.fetch(this.ipGeoLocation.data.latitude, this.ipGeoLocation.data.longitude);
+    // await this.ipFetcher.fetch();
+    // await this.ipGeoLocation.fetch(this.ipFetcher.ip);
+    // ///await this.foreCastAPI.fetch(this.ipGeoLocation.data.latitude, this.ipGeoLocation.data.longitude);
 
     rAFTimeout(() => {
-      this.loader.current.animateOut();
+      // this.loader.current.animateOut();
 
-      rAFTimeout(() => {
-        this.setState({
-          dataLoaded: true,
-          currentCondition: {
-            ...initialState, location: this.ipGeoLocation.data.city,
-            date: timeConvert(this.foreCastAPI.data.currently.time).localeDateString,
-            temperature: Math.round(this.foreCastAPI.data.currently.temperature),
-            weather: this.foreCastAPI.data.currently.summary
-          },
-          foreCastHourly: this.foreCastAPI.data.hourly.data.slice(0, 5).map((item) => ({
-            time: timeConvert(item.time).hours,
-            rainProbability: Math.round(item.precipProbability * 100),
-            temperature: Math.round(item.temperature),
-            icon: icons(item.icon).id
-          })),
-          foreCastDaily: this.foreCastAPI.data.daily.data.slice(1, 6).map(item => ({
-            weekDay: weekdays(timeConvert(item.time).weekDay),
-            rainProbability: Math.round(item.precipProbability * 100),
-            icon: icons(item.icon).id,
-            temperature: {
-              max: Math.round(item.temperatureMax),
-              min: Math.round(item.temperatureMin)
-            }
-          }))
-        });
-      }, 500);
+      // rAFTimeout(() => this.updatedState, 500);
     }, 1000);
   }
 

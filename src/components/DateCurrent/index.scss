@@ -1,11 +1,13 @@
 .date-current {
   align-items: center;
-  color: rgba(255, 255, 255, .63);
+  color: rgba(255, 255, 255, .8);
   display: flex;
   font-size: 18px;
   font-size: 16px;
   justify-content: center;
-  margin-top: -30px;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, 80px);
 
   &__text {
     opacity: 0;
@@ -16,6 +18,6 @@
 
   &__text.animate-in {
     opacity: 1;
-    transform: translateY(20px);
+    transform: translateY(0);
   }
 }
