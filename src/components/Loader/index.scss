@@ -36,6 +36,10 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  &__circle.animate-out {
+    opacity: 0;
+  }
 }
 
 .start-rotation {

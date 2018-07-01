@@ -55,14 +55,14 @@ class App extends Component {
   async init() {
     rAFTimeout(() => this.loader.current.animateIn(), 100);
 
-    // await this.ipFetcher.fetch();
-    // await this.ipGeoLocation.fetch(this.ipFetcher.ip);
-    // ///await this.foreCastAPI.fetch(this.ipGeoLocation.data.latitude, this.ipGeoLocation.data.longitude);
+    await this.ipFetcher.fetch();
+    await this.ipGeoLocation.fetch(this.ipFetcher.ip);
+    await this.foreCastAPI.fetch(this.ipGeoLocation.data.latitude, this.ipGeoLocation.data.longitude);
 
     rAFTimeout(() => {
-      // this.loader.current.animateOut();
+      this.loader.current.animateOut();
 
-      // rAFTimeout(() => this.updatedState, 500);
+      rAFTimeout(() => this.updatedState(), 600);
     }, 1000);
   }
 
