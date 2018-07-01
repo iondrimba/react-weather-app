@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import rAFTimeout from '../../helpers/rAFTimeout';
 import './index.scss';
 
@@ -38,5 +39,10 @@ class Temperature extends Component {
     )
   }
 }
+
+Temperature.propTypes = {
+  weather: PropTypes.string.isRequired,
+  temperature: PropTypes.string.isRequired
+};
 
 export default Temperature;

@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class ForeCastTemperature extends Component {
   render() {
@@ -10,5 +11,9 @@ class ForeCastTemperature extends Component {
     )
   }
 }
+
+ForeCastTemperature.propTypes = {
+  temperature: PropTypes.string.isRequired
+};
 
 export default ForeCastTemperature;

@@ -8,6 +8,7 @@ import Navigation from '../components/Navigation';
 import RainProbability from '../components/RainProbability';
 import DateCurrent from '../components/DateCurrent';
 import rAFTimeout from '../helpers/rAFTimeout';
+import PropTypes from 'prop-types';
 
 class Home extends Component {
   constructor() {
@@ -90,5 +91,11 @@ class Home extends Component {
     </Fragment>
   }
 }
+
+Home.propTypes = {
+  foreCastHourly: PropTypes.array,
+  foreCastDaily: PropTypes.array,
+  currentCondition: PropTypes.object
+};
 
 export default Home;

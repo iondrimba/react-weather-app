@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './index.scss';
 
 class RainProbability extends Component {
@@ -11,5 +12,9 @@ class RainProbability extends Component {
     )
   }
 }
+
+RainProbability.propTypes = {
+  probability: PropTypes.number.isRequired
+};
 
 export default RainProbability;

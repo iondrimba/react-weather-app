@@ -1,0 +1,44 @@
+{
+  "extends": [
+    "plugin:react/recommended"
+  ],
+
+  "parser": "babel-eslint",
+
+  "plugins": [
+    "babel",
+    "import",
+    "jest"
+  ],
+
+  "rules": {
+    "no-unused-vars": 1,
+    "no-console": 1,
+    "func-names": 0,
+    "curly": ["error", "all"],
+    "class-methods-use-this": 0,
+    "no-new": 1,
+    "max-len": 0,
+    "arrow-body-style": 1
+  },
+
+  "globals": {
+    "document": true,
+    "window": true
+  },
+
+  "env": {
+    "jest/globals": true
+  },
+
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    }
+  }
+}

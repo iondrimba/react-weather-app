@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import rAFTimeout from '../../helpers/rAFTimeout';
 import './index.scss';
 
@@ -34,5 +35,9 @@ class Navigation extends Component {
     )
   }
 }
+
+Navigation.propTypes = {
+  currentForecast: PropTypes.string.isRequired
+};
 
 export default Navigation;

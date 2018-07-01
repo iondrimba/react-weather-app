@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import rAFTimeout from '../../helpers/rAFTimeout';
 import './index.scss';
 
@@ -20,10 +21,16 @@ class DateCurrent extends Component {
   render() {
     return (
       <section className="date-current">
-        <span ref={this.text} className="date-current__text">{this.props.date}</span>
+        <span ref={this.text} className="date-current__text">
+          {this.props.date}
+        </span>
       </section>
     )
   }
 }
+
+DateCurrent.propTypes = {
+  date: PropTypes.string.isRequired
+};
 
 export default DateCurrent;

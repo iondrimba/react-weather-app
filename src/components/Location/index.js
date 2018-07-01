@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import rAFTimeout from '../../helpers/rAFTimeout';
 import './index.scss';
 
@@ -32,5 +33,9 @@ class Location extends Component {
     )
   }
 }
+
+Location.propTypes = {
+  location: PropTypes.string.isRequired
+};
 
 export default Location;

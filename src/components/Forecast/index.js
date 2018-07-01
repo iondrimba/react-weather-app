@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import rAFTimeout from '../../helpers/rAFTimeout';
 import './index.scss';
 
@@ -43,5 +44,13 @@ class Forecast extends Component {
     )
   }
 }
+
+Forecast.propTypes = {
+  id: PropTypes.number.isRequired,
+  icon: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  animationDelay: PropTypes.number.isRequired,
+  children: PropTypes.any.isRequired,
+};
 
 export default Forecast;
