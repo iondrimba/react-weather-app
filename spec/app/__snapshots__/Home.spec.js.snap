@@ -266,9 +266,11 @@ exports[`Home matches snapshot 1`] = `
   <section
     className="forecasts"
   >
-    <Navigation>
+    <Navigation
+      currentForecast="hourly"
+    >
       <section
-        className="navigation"
+        className="navigation hourly"
       >
         <div
           className="navigation__dot"

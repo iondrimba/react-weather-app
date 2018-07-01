@@ -2,6 +2,8 @@ import React from 'react';
 import Home from '../../src/app/Home';
 import { enzymeConfig, mount } from '../enzymeConfig';
 
+jest.mock('../../src/helpers/drag');
+
 enzymeConfig();
 
 const currentCondition = {

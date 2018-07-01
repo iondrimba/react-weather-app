@@ -5,6 +5,7 @@ import { enzymeConfig, mount } from '../enzymeConfig';
 jest.mock('../../src/api/ipfetcher');
 jest.mock('../../src/api/ipGeoLocation');
 jest.mock('../../src/api/foreCastAPI');
+jest.mock('../../src/helpers/drag');
 
 enzymeConfig();
 
