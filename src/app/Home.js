@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import Hammer from 'hammerjs';
+import Drag from '../helpers/drag';
 import ForeCast from '../components/Forecast';
 import ForeCastTemperature from '../components/Forecast/Temperature';
 import Location from '../components/Location';
@@ -17,37 +17,38 @@ class Home extends Component {
     this.state = {
       currentForecast: 'hourly'
     };
+
+    this.drag = new Drag();
   }
 
   animateForecastSection(forecasts, callback) {
     forecasts.map(item => rAFTimeout(() => callback(item), 300));
   }
 
+  onDragRightStart() {
+    this.animateForecastSection(this.forecasts, (item) => {
+      item.classList.remove('move-right');
+      item.classList.add('move-left');
+
+      this.setState({ currentForecast: 'hourly' });
+    });
+  }
+
+  onDragLeftStart() {
+    this.animateForecastSection(this.forecasts, (item) => {
+      item.classList.remove('move-left');
+      item.classList.add('move-right');
+
+      this.setState({ currentForecast: 'daily' });
+    });
+  }
+
   componentDidMount() {
-    const stage = document.getElementsByClassName('forecasts__scroll-panel')[0];
-    const forecasts = [...document.querySelectorAll('.forecasts__period')];
-    const mc = new Hammer.Manager(stage, {
-      touchAction: 'pan-y'
-    });
+    this.forecasts = [...document.querySelectorAll('.forecasts__period')];
 
-    mc.add(new Hammer.Pan());
-    mc.on('panstart', (e) => {
-      if (e.additionalEvent === 'panright') {
-        this.animateForecastSection(forecasts, (item) => {
-          item.classList.remove('move-right');
-          item.classList.add('move-left');
+    this.drag.setup(document.getElementsByClassName('forecasts__scroll-panel')[0]);
 
-          this.setState({ currentForecast: 'hourly' });
-        });
-      } else {
-        this.animateForecastSection(forecasts, (item) => {
-          item.classList.remove('move-left');
-          item.classList.add('move-right');
-
-          this.setState({ currentForecast: 'daily' });
-        });
-      }
-    });
+    this.drag.onDragStart(this.onDragRightStart.bind(this), this.onDragLeftStart.bind(this));
   }
 
   render() {
