@@ -60,9 +60,9 @@ class App extends Component {
     await this.foreCastAPI.fetch(this.ipGeoLocation.data.latitude, this.ipGeoLocation.data.longitude);
 
     rAFTimeout(() => {
-      // this.loader.current.animateOut();
+      this.loader.current.animateOut();
 
-      // rAFTimeout(() => this.updatedState(), 600);
+      rAFTimeout(() => this.updatedState(), 600);
     }, 1000);
   }
 
