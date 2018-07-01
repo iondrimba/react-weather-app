@@ -30,25 +30,23 @@ class Home extends Component {
       touchAction: 'pan-y'
     });
 
-    const Swipe = new Hammer.Swipe();
+    mc.add(new Hammer.Pan());
+    mc.on('panstart', (e) => {
+      if (e.additionalEvent === 'panright') {
+        this.animateForecastSection(forecasts, (item) => {
+          item.classList.remove('move-right');
+          item.classList.add('move-left');
 
-    mc.add(Swipe);
-    mc.on('swiperight', () => {
-      this.animateForecastSection(forecasts, (item) => {
-        item.classList.remove('move-right');
-        item.classList.add('move-left');
+          this.setState({ currentForecast: 'hourly' });
+        });
+      } else {
+        this.animateForecastSection(forecasts, (item) => {
+          item.classList.remove('move-left');
+          item.classList.add('move-right');
 
-        this.setState({ currentForecast: 'hourly' });
-      });
-    });
-
-    mc.on('swipeleft', () => {
-      this.animateForecastSection(forecasts, (item) => {
-        item.classList.remove('move-left');
-        item.classList.add('move-right');
-
-        this.setState({ currentForecast: 'daily' });
-      });
+          this.setState({ currentForecast: 'daily' });
+        });
+      }
     });
   }
 
