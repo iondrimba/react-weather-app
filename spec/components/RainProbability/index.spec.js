@@ -6,7 +6,7 @@ enzymeConfig();
 
 describe('RainProbability', () => {
   it('matches snapshot', () => {
-    const component = mount(<RainProbability />);
+    const component = mount(<RainProbability probability={20}/>);
 
     expect(component).toMatchSnapshot();
   });

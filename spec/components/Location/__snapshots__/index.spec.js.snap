@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Location matches snapshot 1`] = `
-<Location>
+<Location
+  location="New York"
+>
   <section
     className="location"
   >
@@ -23,7 +25,9 @@ exports[`Location matches snapshot 1`] = `
     </span>
     <span
       className="location__text"
-    />
+    >
+      New York
+    </span>
   </section>
 </Location>
 `;

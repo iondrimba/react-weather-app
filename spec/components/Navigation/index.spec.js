@@ -5,22 +5,28 @@ import { enzymeConfig, mount } from '../../enzymeConfig';
 enzymeConfig();
 
 describe('Navigation', () => {
-  it('matches snapshot', () => {
-    const component = mount(<Navigation />);
+  it('matches snapshot with currentForecast hourly', () => {
+    const component = mount(<Navigation currentForecast='hourly'/>);
+
+    expect(component).toMatchSnapshot();
+  });
+
+  it('matches snapshot with currentForecast daily', () => {
+    const component = mount(<Navigation currentForecast='daily'/>);
 
     expect(component).toMatchSnapshot();
   });
 
   describe('componentDidMount', () => {
     it('matches count of rays', () => {
-      const component = mount(<Navigation />);
+      const component = mount(<Navigation currentForecast='hourly'/>);
       const instance = component.instance();
 
       expect(instance.dots.length).toEqual(2);
     });
 
     it('calls animate', (done) => {
-      const component = mount(<Navigation />);
+      const component = mount(<Navigation currentForecast='hourly'/>);
       const instance = component.instance();
 
       instance.animate = jest.fn();
@@ -34,7 +40,7 @@ describe('Navigation', () => {
 
   describe('animate', () => {
     it('adds classes animate-in to dots', (done) => {
-      const component = mount(<Navigation />);
+      const component = mount(<Navigation currentForecast='hourly' />);
       const instance = component.instance();
 
       instance.animate();

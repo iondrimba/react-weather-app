@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`RainProbability matches snapshot 1`] = `
-<RainProbability>
+<RainProbability
+  probability={20}
+>
   <div
     className="rain"
   >
@@ -15,7 +17,7 @@ exports[`RainProbability matches snapshot 1`] = `
     <span
       className="rain__probability"
     >
-      undefined%
+      20%
     </span>
   </div>
 </RainProbability>

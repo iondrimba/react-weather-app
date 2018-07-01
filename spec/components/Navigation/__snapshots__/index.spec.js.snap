@@ -1,9 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Navigation matches snapshot 1`] = `
-<Navigation>
+exports[`Navigation matches snapshot with currentForecast daily 1`] = `
+<Navigation
+  currentForecast="daily"
+>
   <section
-    className="navigation"
+    className="navigation daily"
+  >
+    <div
+      className="navigation__dot"
+    />
+    <div
+      className="navigation__dot"
+    />
+  </section>
+</Navigation>
+`;
+
+exports[`Navigation matches snapshot with currentForecast hourly 1`] = `
+<Navigation
+  currentForecast="hourly"
+>
+  <section
+    className="navigation hourly"
   >
     <div
       className="navigation__dot"
