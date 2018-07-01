@@ -13,7 +13,7 @@ class ForeCastTemperature extends Component {
 }
 
 ForeCastTemperature.propTypes = {
-  temperature: PropTypes.string.isRequired
+  temperature: PropTypes.number.isRequired
 };
 
 export default ForeCastTemperature;

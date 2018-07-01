@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(to bottom, #00ffc7, #0b5998);
+  background: rgba(255, 190, 0, .6);
   color: #fff;
   font-family: monospace;
   height: 100vh;
@@ -9,7 +9,7 @@ body {
 }
 
 .App {
-  background: linear-gradient(to bottom, #0e4294, #3393b7);
+  background: linear-gradient(to bottom, #297af9, #333fb7);
   display: flex;
   flex-direction: column;
   height: 100vh;

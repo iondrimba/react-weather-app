@@ -44,25 +44,21 @@ class App extends Component {
             temperature: Math.round(this.foreCastAPI.data.currently.temperature),
             weather: this.foreCastAPI.data.currently.summary
           },
-          foreCastHourly: this.foreCastAPI.data.hourly.data.slice(0, 5).map((item) => {
-            return {
-              time: timeConvert(item.time).hours,
-              rainProbability: Math.round(item.precipProbability * 100),
-              temperature: Math.round(item.temperature),
-              icon: icons(item.icon).id
+          foreCastHourly: this.foreCastAPI.data.hourly.data.slice(0, 5).map((item) => ({
+            time: timeConvert(item.time).hours,
+            rainProbability: Math.round(item.precipProbability * 100),
+            temperature: Math.round(item.temperature),
+            icon: icons(item.icon).id
+          })),
+          foreCastDaily: this.foreCastAPI.data.daily.data.slice(1, 6).map(item => ({
+            weekDay: weekdays(timeConvert(item.time).weekDay),
+            rainProbability: Math.round(item.precipProbability * 100),
+            icon: icons(item.icon).id,
+            temperature: {
+              max: Math.round(item.temperatureMax),
+              min: Math.round(item.temperatureMin)
             }
-          }),
-          foreCastDaily: this.foreCastAPI.data.daily.data.slice(1, 6).map((item) => {
-            return {
-              weekDay: weekdays(timeConvert(item.time).weekDay),
-              rainProbability: Math.round(item.precipProbability * 100),
-              icon: icons(item.icon).id,
-              temperature: {
-                max: Math.round(item.temperatureMax),
-                min: Math.round(item.temperatureMin)
-              }
-            }
-          })
+          }))
         });
       }, 500);
     }, 1000);

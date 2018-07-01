@@ -42,7 +42,7 @@ class Temperature extends Component {
 
 Temperature.propTypes = {
   weather: PropTypes.string.isRequired,
-  temperature: PropTypes.string.isRequired
+  temperature: PropTypes.number.isRequired
 };
 
 export default Temperature;

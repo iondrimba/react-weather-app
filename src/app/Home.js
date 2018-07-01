@@ -33,21 +33,21 @@ class Home extends Component {
     const Swipe = new Hammer.Swipe();
 
     mc.add(Swipe);
-    mc.on('swiperight', (e) => {
+    mc.on('swiperight', () => {
       this.animateForecastSection(forecasts, (item) => {
         item.classList.remove('move-right');
         item.classList.add('move-left');
 
-        this.setState({ currentForecast: 'hourly'});
+        this.setState({ currentForecast: 'hourly' });
       });
     });
 
-    mc.on('swipeleft', (e) => {
+    mc.on('swipeleft', () => {
       this.animateForecastSection(forecasts, (item) => {
         item.classList.remove('move-left');
         item.classList.add('move-right');
 
-        this.setState({ currentForecast: 'daily'});
+        this.setState({ currentForecast: 'daily' });
       });
     });
   }
@@ -64,26 +64,22 @@ class Home extends Component {
         <div className="forecasts__scroll-panel">
           <section className="forecasts__period">
             {
-              this.props.foreCastHourly.map((item, index) => {
-                return <ForeCast key={`hourly-${index}`} id={`hourly-${index}`} title={`${item.time}:00`} icon={item.icon} animationDelay={index}>
-                  <ForeCastTemperature temperature={item.temperature} />
-                  <RainProbability probability={item.rainProbability} />
-                </ForeCast>
-              })
+              this.props.foreCastHourly.map((item, index) => <ForeCast key={`hourly-${index}`} id={`hourly-${index}`} title={`${item.time}:00`} icon={item.icon} animationDelay={index}>
+                <ForeCastTemperature temperature={item.temperature} />
+                <RainProbability probability={item.rainProbability} />
+              </ForeCast>)
             }
           </section>
 
           <section className="forecasts__period forecasts--daily">
             {
-              this.props.foreCastDaily.map((item, index) => {
-                return <ForeCast key={`daily-${index}`} id={`daily-${index}`} title={item.weekDay} icon={item.icon} animationDelay={index}>
-                  <div>
-                    <ForeCastTemperature temperature={item.temperature.max} />
-                    <ForeCastTemperature temperature={item.temperature.min} />
-                  </div>
-                  <RainProbability probability={item.rainProbability} />
-                </ForeCast>
-              })
+              this.props.foreCastDaily.map((item, index) => <ForeCast key={`daily-${index}`} id={`daily-${index}`} title={item.weekDay} icon={item.icon} animationDelay={index}>
+                <div>
+                  <ForeCastTemperature temperature={item.temperature.max} />
+                  <ForeCastTemperature temperature={item.temperature.min} />
+                </div>
+                <RainProbability probability={item.rainProbability} />
+              </ForeCast>)
             }
           </section>
         </div>

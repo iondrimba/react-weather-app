@@ -46,7 +46,7 @@ class Forecast extends Component {
 }
 
 Forecast.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   animationDelay: PropTypes.number.isRequired,
