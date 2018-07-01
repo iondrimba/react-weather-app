@@ -16,12 +16,32 @@
     margin-right: 4px;
     opacity: 0;
     transform: translateY(-20px);
-    transition: transform .3s cubic-bezier(.165, .84, .44, 1), opacity .3s ease-out;
+    transition: transform .3s cubic-bezier(.165, .84, .44, 1), opacity .3s ease-out, background-color .3s ease-out;
     width: 6px;
   }
 
   &__dot.animate-in {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  &.hourly {
+    .navigation__dot:first-child {
+      background-color: #fff;
+    }
+
+    .navigation__dot:last-child {
+      background-color: transparent;
+    }
+  }
+
+  &.daily {
+    .navigation__dot:last-child {
+      background-color: #fff;
+    }
+
+    .navigation__dot:first-child {
+      background-color: transparent;
+    }
   }
 }

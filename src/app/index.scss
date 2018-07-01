@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(to bottom, #0e4294, #3393b7);
+  background: linear-gradient(to bottom, #00ffc7, #0b5998);
   color: #fff;
   font-family: monospace;
   height: 100vh;
@@ -9,6 +9,7 @@ body {
 }
 
 .App {
+  background: linear-gradient(to bottom, #0e4294, #3393b7);
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -21,6 +22,8 @@ body {
 }
 
 .forecasts {
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
   display: flex;
   flex-direction: column;
   margin-top: 0;
@@ -30,8 +33,7 @@ body {
     align-self: center;
     display: flex;
     justify-content: flex-start;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    overflow: hidden;
     width: 360px;
   }
 
@@ -39,6 +41,19 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+
+    &.move-left,
+    &.move-right {
+      transition: transform .5s cubic-bezier(.86, 0, .07, 1);
+    }
+
+    &.move-left {
+      transform: translateX(0);
+    }
+
+    &.move-right {
+      transform: translateX(-350px);
+    }
   }
 
   &--daily {
@@ -55,7 +70,7 @@ body {
   }
 
   .App {
-    border-radius: 6px;
+    border-radius: 10px;
     box-shadow: 0 3px 20px 0 rgba(0, 0, 0, .06);
     height: 667px;
     overflow: hidden;

@@ -27,7 +27,7 @@ class Navigation extends Component {
 
   render() {
     return (
-      <section ref={this.navigation} className="navigation">
+      <section ref={this.navigation} className={`navigation ${this.props.currentForecast}`}>
         <div className="navigation__dot"></div>
         <div className="navigation__dot"></div>
       </section>

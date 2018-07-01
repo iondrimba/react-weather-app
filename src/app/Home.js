@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import Hammer from 'hammerjs';
 import ForeCast from '../components/Forecast';
 import ForeCastTemperature from '../components/Forecast/Temperature';
 import Location from '../components/Location';
@@ -6,8 +7,50 @@ import Temperature from '../components/Temperature';
 import Navigation from '../components/Navigation';
 import RainProbability from '../components/RainProbability';
 import DateCurrent from '../components/DateCurrent';
+import rAFTimeout from '../helpers/rAFTimeout';
 
 class Home extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      currentForecast: 'hourly'
+    };
+  }
+
+  animateForecastSection(forecasts, callback) {
+    forecasts.map(item => rAFTimeout(() => callback(item), 300));
+  }
+
+  componentDidMount() {
+    const stage = document.getElementsByClassName('forecasts__scroll-panel')[0];
+    const forecasts = [...document.querySelectorAll('.forecasts__period')];
+    const mc = new Hammer.Manager(stage, {
+      touchAction: 'pan-y'
+    });
+
+    const Swipe = new Hammer.Swipe();
+
+    mc.add(Swipe);
+    mc.on('swiperight', (e) => {
+      this.animateForecastSection(forecasts, (item) => {
+        item.classList.remove('move-right');
+        item.classList.add('move-left');
+
+        this.setState({ currentForecast: 'hourly'});
+      });
+    });
+
+    mc.on('swipeleft', (e) => {
+      this.animateForecastSection(forecasts, (item) => {
+        item.classList.remove('move-left');
+        item.classList.add('move-right');
+
+        this.setState({ currentForecast: 'daily'});
+      });
+    });
+  }
+
   render() {
     return <Fragment>
       <Location location={this.props.currentCondition.location} />
@@ -15,7 +58,7 @@ class Home extends Component {
       <Temperature weather={this.props.currentCondition.weather} temperature={this.props.currentCondition.temperature} />
 
       <section className="forecasts">
-        <Navigation />
+        <Navigation currentForecast={this.state.currentForecast} />
 
         <div className="forecasts__scroll-panel">
           <section className="forecasts__period">
