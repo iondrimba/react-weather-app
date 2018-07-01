@@ -6,14 +6,14 @@ enzymeConfig();
 
 describe('Temperature', () => {
   it('matches snapshot', () => {
-    const component = mount(<Temperature />);
+    const component = mount(<Temperature weather='clear' temperature={10} />);
 
     expect(component).toMatchSnapshot();
   });
 
   describe('componentDidMount', () => {
     it('calls animate', (done) => {
-      const component = mount(<Temperature />);
+      const component = mount(<Temperature weather='clear' temperature={10} />);
       const instance = component.instance();
 
       instance.animate = jest.fn();

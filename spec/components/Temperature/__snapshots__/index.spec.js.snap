@@ -1,7 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Temperature matches snapshot 1`] = `
-<Temperature>
+<Temperature
+  temperature={10}
+  weather="clear"
+>
   <section
     className="current-condition"
   >
@@ -10,13 +13,17 @@ exports[`Temperature matches snapshot 1`] = `
     >
       <span
         className="temperature__status"
-      />
+      >
+        clear
+      </span>
       <div
         className="temperature"
       >
         <span
           className="temperature__value"
-        />
+        >
+          10
+        </span>
         <div
           className="temperature__unit"
         >
