@@ -95,12 +95,18 @@
   "babel": {
     "presets": [
       "react-app"
-    ]
+    ],
+    "env": {
+      "production": {
+        "plugins": ["transform-react-remove-prop-types"]
+      }
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
   },
   "devDependencies": {
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",
