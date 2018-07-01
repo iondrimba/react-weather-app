@@ -32,10 +32,10 @@ class App extends Component {
     await this.ipGeoLocation.fetch(this.ipFetcher.ip);
     await this.foreCastAPI.fetch(this.ipGeoLocation.data.latitude, this.ipGeoLocation.data.longitude);
 
-    setTimeout(() => {
+    rAFTimeout(() => {
       this.loader.current.animateOut();
 
-      setTimeout(() => {
+      rAFTimeout(() => {
         this.setState({
           dataLoaded: true,
           currentCondition: {
