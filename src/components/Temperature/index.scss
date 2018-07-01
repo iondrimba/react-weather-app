@@ -9,7 +9,7 @@
 
   &__status {
     display: block;
-    font-size: 24px;
+    font-size: 18px;
     opacity: 0;
     position: absolute;
     text-align: center;
@@ -49,7 +49,7 @@
   }
 
   &__value {
-    font-size: 196px;
+    font-size: 140px;
     opacity: 0;
     transform: translateY(40px);
     transition: transform .3s cubic-bezier(.165, .84, .44, 1), opacity .3s ease-out;
