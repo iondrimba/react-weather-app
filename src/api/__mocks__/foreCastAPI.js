@@ -1,11 +1,7 @@
 import data from '../../mock/foreCast.json';
 
-const fetch = jest.fn((latitude, longitude) => {
-  return Promise.resolve({...data});
-});
+const fetch = jest.fn(() => Promise.resolve({...data}));
 
-const mock = jest.fn().mockImplementation(() => {
-  return { fetch: fetch, data: data };
-});
+const mock = jest.fn().mockImplementation(() => ({ fetch: fetch, data: data }));
 
 export default mock;
