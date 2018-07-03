@@ -9,7 +9,7 @@ export default class Drag {
     this.mc.add(new Hammer.Pan());
   }
 
-  onDragStart(dragRightCallback, dragLeftCallback,) {
+  onDragStart(dragRightCallback, dragLeftCallback) {
     this.mc.on('panstart', (e) => {
       if (e.additionalEvent === 'panright') {
         dragRightCallback();

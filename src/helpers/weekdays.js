@@ -2,7 +2,7 @@ export default (day) => {
   const weekdays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fry', 'sat'];
   const result = weekdays[day];
 
-  if(result) {
+  if (result) {
     return result;
   }
 
