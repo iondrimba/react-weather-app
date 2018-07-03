@@ -1,47 +1,49 @@
-import time from '../../src/helpers/time';
+import time, { addLeadingZero, setupDate } from '../../src/helpers/time';
 
 const unixTimeStamp = 1529886488;
 
 describe('Time', () => {
-  it('matches localeDateString with Sunday, June 24, 2018', () => {
+  const fixture = setupDate(unixTimeStamp);
+
+  it('matches localeDateString', () => {
     const result = time(unixTimeStamp);
 
-    expect(result.localeDateString).toEqual('Sunday, June 24, 2018');
+    expect(result.localeDateString).toEqual(fixture.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }));
   });
 
-  it('matches weekDay with 0', () => {
+  it('matches weekDay', () => {
     const result = time(unixTimeStamp);
 
-    expect(result.weekDay).toEqual(0);
+    expect(result.weekDay).toEqual(fixture.getDay());
   });
 
-  it('matches day with 24', () => {
+  it('matches day', () => {
     const result = time(unixTimeStamp);
 
-    expect(result.day).toEqual(24);
+    expect(result.day).toEqual(addLeadingZero(fixture.getDate()));
   });
 
-  it('matches month with "06"', () => {
+  it('matches month', () => {
     const result = time(unixTimeStamp);
 
-    expect(result.month).toEqual('06');
+    expect(result.month).toEqual(addLeadingZero(fixture.getMonth() + 1));
   });
 
-  it('matches year with 2018', () => {
+  it('matches year', () => {
     const result = time(unixTimeStamp);
 
-    expect(result.year).toEqual(2018);
+    expect(result.year).toEqual(fixture.getFullYear());
   });
 
-  it('matches hours with 21', () => {
+  it('matches hours', () => {
     const result = time(unixTimeStamp);
 
-    expect(result.hours).toEqual(21);
+    expect(result.hours).toEqual(addLeadingZero(fixture.getHours()));
   });
 
   it('matches minutes with 28', () => {
     const result = time(unixTimeStamp);
 
-    expect(result.minutes).toEqual(28);
+    expect(result.minutes).toEqual(addLeadingZero(fixture.getMinutes()));
   });
 });

@@ -1,7 +1,6 @@
 const addLeadingZero = (value) => (value < 10) ? `0${value}` : value;
 
 const addTimezonOffset = (date, time) => {
-  console.log('>>>>>> addTimezonOffset', date.toString())
   const match = /GMT\+\d+/.test(date.toString());
   let result = time;
 
@@ -12,14 +11,14 @@ const addTimezonOffset = (date, time) => {
   return result;
 };
 
-export default function (unixTimestamp, locale = 'en-US') {
+const setupDate = (unixTimestamp) => {
   const date = new Date(unixTimestamp * 1000);
-  console.log('data', date);
   const utc = date.getTime();
-  console.log('utc', utc);
-  const finalDate = new Date(addTimezonOffset(date, utc));
-  console.log('finalDate', finalDate);
+  return new Date(addTimezonOffset(date, utc));
+};
 
+export default function (unixTimestamp, locale = 'en-US') {
+  const finalDate = setupDate(unixTimestamp);
   const year = finalDate.getFullYear();
   let month = finalDate.getMonth() + 1;
   let day = finalDate.getDate();
@@ -33,7 +32,6 @@ export default function (unixTimestamp, locale = 'en-US') {
   minutes = addLeadingZero(minutes);
 
   const localeDateString = finalDate.toLocaleDateString(locale, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-  console.log('localeDateString', localeDateString);
 
   return {
     localeDateString,
@@ -46,3 +44,4 @@ export default function (unixTimestamp, locale = 'en-US') {
   };
 }
 
+export { addTimezonOffset, addLeadingZero, setupDate };
