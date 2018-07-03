@@ -32,42 +32,30 @@ const mockResult = {
   "zip": "11206"
 };
 
-const invalidAPIKeyResult = {
-  "error": {
-    "code": 101,
-    "info": "You have not supplied a valid API Access Key. [Technical Support: support@apilayer.com]",
-    "type": "invalid_access_key"
-  },
-  "success": false
-};
-
-const apiSecret = process.env.REACT_APP_IP_STACK;
-
 describe('IpGeoLocation', () => {
   describe('constructor', () => {
     it('defines default props', () => {
-      const api = new IpGeoLocation(apiSecret);
+      const api = new IpGeoLocation();
 
       expect(api.data).toEqual(null);
-      expect(api.secret).toEqual(apiSecret);
     });
   });
 
   describe('endpoint', () => {
     it('returns endpoint with ip addres', () => {
-      const result = new IpGeoLocation(apiSecret);
+      const result = new IpGeoLocation();
 
-      expect(result.endpoint('111.111.1.11')).toEqual('http://api.ipstack.com/111.111.1.11');
+      expect(result.endpoint('111.111.1.11')).toEqual('https://weather-api-nodejs.herokuapp.com/api/ip?ip=111.111.1.11');
     });
   });
 
   describe('fetch', () => {
     it('returns geolocation based on ip address', async () => {
-      const ipGeoLocation = new IpGeoLocation(apiSecret);
+      const ipGeoLocation = new IpGeoLocation();
 
-      nock('http://api.ipstack.com')
-        .get('/161.185.160.93')
-        .query({ access_key: process.env.REACT_APP_IP_STACK })
+      nock('https://weather-api-nodejs.herokuapp.com')
+        .get('/api/ip')
+        .query({ ip: '161.185.160.93' })
         .reply(200, mockResult, { 'Access-Control-Allow-Origin': '*' });
 
       await ipGeoLocation.fetch('161.185.160.93');
@@ -75,21 +63,8 @@ describe('IpGeoLocation', () => {
       expect(ipGeoLocation.data).toEqual(mockResult);
     });
 
-    it('returns invalid api key', async () => {
-      const ipGeoLocation = new IpGeoLocation('152a7266a35fed3aaad8bf4ff449c363');
-
-      nock('http://api.ipstack.com')
-        .get('/161.185.160.93')
-        .query({ access_key: ipGeoLocation.secret })
-        .reply(200, invalidAPIKeyResult, { 'Access-Control-Allow-Origin': '*' });
-
-      await ipGeoLocation.fetch('161.185.160.93');
-
-      expect(ipGeoLocation.data).toEqual(invalidAPIKeyResult);
-    });
-
     it('throws error', async () => {
-      const ipGeoLocation = new IpGeoLocation(apiSecret);
+      const ipGeoLocation = new IpGeoLocation();
 
       try {
         await ipGeoLocation.fetch();

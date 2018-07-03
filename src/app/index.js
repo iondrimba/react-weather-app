@@ -17,7 +17,7 @@ class App extends Component {
     super();
 
     this.ipFetcher = new IpFetcher();
-    this.ipGeoLocation = new IpGeoLocation(process.env.REACT_APP_IP_STACK);
+    this.ipGeoLocation = new IpGeoLocation();
     this.foreCastAPI = new ForeCastAPI(process.env.REACT_APP_DARK_SKY_API_CODE);
 
     this.state = { ...initialState };
