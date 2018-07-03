@@ -4,7 +4,7 @@ const days = [0, 1, 2, 3, 4, 5, 6];
 
 describe('Week Days', () => {
   it('finds all weekdays', () => {
-    const result = days.filter((key) => weekdays(key) !== undefined);
+    const result = days.filter(key => weekdays(key) !== undefined);
 
     expect(result.length).toEqual(days.length);
   });
