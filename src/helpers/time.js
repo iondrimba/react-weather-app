@@ -1,6 +1,7 @@
 const addLeadingZero = (value) => (value < 10) ? `0${value}` : value;
 
 const addTimezonOffset = (date, time) => {
+  console.log('>>>>>> addTimezonOffset', date.toString())
   const match = /GMT\+\d+/.test(date.toString());
   let result = time;
 
