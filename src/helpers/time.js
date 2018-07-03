@@ -13,8 +13,11 @@ const addTimezonOffset = (date, time) => {
 
 export default function (unixTimestamp, locale = 'en-US') {
   const date = new Date(unixTimestamp * 1000);
+  console.log('data', date);
   const utc = date.getTime();
+  console.log('utc', utc);
   const finalDate = new Date(addTimezonOffset(date, utc));
+  console.log('finalDate', finalDate);
 
   const year = finalDate.getFullYear();
   let month = finalDate.getMonth() + 1;
@@ -29,6 +32,7 @@ export default function (unixTimestamp, locale = 'en-US') {
   minutes = addLeadingZero(minutes);
 
   const localeDateString = finalDate.toLocaleDateString(locale, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+  console.log('localeDateString', localeDateString);
 
   return {
     localeDateString,
