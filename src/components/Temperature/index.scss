@@ -21,7 +21,7 @@
 
   &__status.animate-in {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(-20px);
   }
 
   &__unit-dot {
@@ -73,6 +73,6 @@
 
   &__unit.animate-in {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(30px);
   }
 }
