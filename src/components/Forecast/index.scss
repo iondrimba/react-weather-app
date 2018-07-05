@@ -9,7 +9,7 @@
   transform: scaleY(0);
   transform-origin: bottom center;
   transition: transform .3s cubic-bezier(.165, .84, .44, 1);
-  width: 60px;
+  width: 58px;
 
   &.animate-in {
     transform: scaleY(1);

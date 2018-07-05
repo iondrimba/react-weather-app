@@ -7,7 +7,9 @@
   justify-content: center;
   left: 50%;
   position: absolute;
+  text-align: center;
   transform: translate(-50%, 80px);
+  width: 100%;
 
   &__text {
     opacity: 0;
