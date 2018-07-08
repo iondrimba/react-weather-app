@@ -6,6 +6,7 @@ import Location from '../components/Location';
 import Temperature from '../components/Temperature';
 import Navigation from '../components/Navigation';
 import RainProbability from '../components/RainProbability';
+import GPSLocation from '../components/GPSLocation';
 import DateCurrent from '../components/DateCurrent';
 import rAFTimeout from '../helpers/rAFTimeout';
 import PropTypes from 'prop-types';
@@ -53,6 +54,7 @@ class Home extends Component {
 
   render() {
     return <Fragment>
+      <GPSLocation onGetCurrentLocation={this.props.onGetCurrentLocation}/>
       <Location location={this.props.currentCondition.location} />
       <DateCurrent date={this.props.currentCondition.date} />
       <Temperature weather={this.props.currentCondition.weather} temperature={this.props.currentCondition.temperature} />
@@ -90,7 +92,8 @@ class Home extends Component {
 Home.propTypes = {
   foreCastHourly: PropTypes.array,
   foreCastDaily: PropTypes.array,
-  currentCondition: PropTypes.object
+  currentCondition: PropTypes.object,
+  onGetCurrentLocation: PropTypes.func
 };
 
 export default Home;

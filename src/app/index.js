@@ -20,9 +20,29 @@ class App extends Component {
     this.ipGeoLocation = new IpGeoLocation();
     this.foreCastAPI = new ForeCastAPI(process.env.REACT_APP_DARK_SKY_API_CODE);
 
+    this.onGetCurrentLocation = this.onGetCurrentLocation.bind(this);
+
     this.state = { ...initialState };
 
     this.loader = React.createRef();
+  }
+
+  async init() {
+    rAFTimeout(() => this.loader.current.animateIn(), 100);
+
+    await this.ipFetcher.fetch();
+    await this.ipGeoLocation.fetch(this.ipFetcher.ip);
+    await this.foreCastAPI.fetch(this.ipGeoLocation.data.latitude, this.ipGeoLocation.data.longitude);
+
+    rAFTimeout(() => {
+      this.loader.current.animateOut();
+
+      rAFTimeout(() => this.updatedState(), 600);
+    }, 1000);
+  }
+
+  componentDidMount() {
+    this.init();
   }
 
   updatedState() {
@@ -52,22 +72,12 @@ class App extends Component {
     });
   }
 
-  async init() {
-    rAFTimeout(() => this.loader.current.animateIn(), 100);
-
-    await this.ipFetcher.fetch();
-    await this.ipGeoLocation.fetch(this.ipFetcher.ip);
-    await this.foreCastAPI.fetch(this.ipGeoLocation.data.latitude, this.ipGeoLocation.data.longitude);
-
-    rAFTimeout(() => {
-      this.loader.current.animateOut();
-
-      rAFTimeout(() => this.updatedState(), 600);
-    }, 1000);
-  }
-
-  componentDidMount() {
-    this.init();
+  async onGetCurrentLocation({ latitude, longitude }) {
+    console.log('onGetCurrentLocation', latitude, longitude);
+    await this.foreCastAPI.fetch(latitude, longitude);
+    console.log('this.foreCastAPI', this.foreCastAPI);
+    console.log('this.ipGeoLocation', this.ipGeoLocation);
+    this.updatedState();
   }
 
   render() {
@@ -75,7 +85,8 @@ class App extends Component {
       <div className="App">
         {
           !this.state.dataLoaded ? <Loader ref={this.loader} /> : <Home currentCondition={this.state.currentCondition}
-            foreCastDaily={this.state.foreCastDaily} foreCastHourly={this.state.foreCastHourly} />
+            foreCastDaily={this.state.foreCastDaily} foreCastHourly={this.state.foreCastHourly}
+            onGetCurrentLocation={this.onGetCurrentLocation} />
         }
       </div>
     );
