@@ -1,0 +1,19 @@
+[
+  {
+    "latitude": 52.5204075,
+    "longitude": 13.4049136,
+    "country": "Germany",
+    "city": "undefined",
+    "state": "Berlin",
+    "zipcode": "10178",
+    "streetName": "Spandauer Straße",
+    "streetNumber": "4",
+    "countryCode": "de",
+    "county": "undefined",
+    "extra": {
+      "confidence": 9,
+      "confidenceKM": 0.5
+    },
+    "provider": "opencage"
+  }
+]
