@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './index.scss';
 import IpGeoLocation from '../api/ipGeoLocation';
 import ForeCastAPI from '../api/foreCastAPI';
+import ReverseGeoLocation from '../api/reverseGeoLocation';
 import initialState from '../initialState';
 import Home from './Home';
 import Loader from '../components/Loader';
@@ -19,6 +20,7 @@ class App extends Component {
     this.ipFetcher = new IpFetcher();
     this.ipGeoLocation = new IpGeoLocation();
     this.foreCastAPI = new ForeCastAPI(process.env.REACT_APP_DARK_SKY_API_CODE);
+    this.reverseGeoLocation = new ReverseGeoLocation();
 
     this.onGetCurrentLocation = this.onGetCurrentLocation.bind(this);
 
@@ -73,10 +75,10 @@ class App extends Component {
   }
 
   async onGetCurrentLocation({ latitude, longitude }) {
-    console.log('onGetCurrentLocation', latitude, longitude);
+    await this.reverseGeoLocation.fetch(latitude, longitude);
     await this.foreCastAPI.fetch(latitude, longitude);
-    console.log('this.foreCastAPI', this.foreCastAPI);
-    console.log('this.ipGeoLocation', this.ipGeoLocation);
+    this.ipGeoLocation.data.city = this.reverseGeoLocation.data[0].city || this.reverseGeoLocation.data[0].state;
+
     this.updatedState();
   }
 

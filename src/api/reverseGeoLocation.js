@@ -4,9 +4,9 @@ class ReverseGeoLocation {
     this.data = null;
   }
 
-  async fetch(ip) {
+  async fetch(latitude, longitude) {
     try {
-      const response = await fetch(this.endpoint(ip));
+      const response = await fetch(this.endpoint(latitude, longitude));
       const result = await response.json();
 
       this.data = result;
