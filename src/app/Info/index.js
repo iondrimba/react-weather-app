@@ -19,11 +19,11 @@ class Info extends Component {
   }
 
   onInfoClose() {
-    rAFTimeout(() => this.transition.current.classList.remove('animate'), 1);
     rAFTimeout(() => this.view.current.classList.remove('show'), 1);
+    rAFTimeout(() => this.transition.current.classList.remove('animate'), 300);
     rAFTimeout(() => {
       this.props.onInfoClose();
-    }, 300);
+    }, 350);
   }
 
   getStyle(show) {
@@ -36,7 +36,7 @@ class Info extends Component {
     rAFTimeout(() => {
       this.view.current.classList.remove('hide');
       this.view.current.classList.add('show');
-    }, 300);
+    }, 150);
   }
 
   render() {

@@ -8,7 +8,7 @@
   padding: 30px;
   pointer-events: none;
   position: absolute;
-  transition: all .3s .1s ease-out;
+  transition: all .3s ease-out;
   z-index: 1;
 
   ul {
@@ -16,7 +16,7 @@
     margin: 0;
     opacity: 0;
     padding: 0;
-    transition: opacity .3s .2s ease-out;
+    transition: opacity .3s ease-out;
   }
 
   .link {
@@ -38,7 +38,7 @@
     margin-top: 50px;
     opacity: 0;
     text-align: center;
-    transition: opacity .3s .3s ease-out;
+    transition: opacity .3s ease-out;
     width: 100%;
   }
 
