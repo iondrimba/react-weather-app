@@ -16,9 +16,9 @@ class Info extends Component {
   }
 
   onInfoClose() {
-    rAFTimeout(() => this.view.current.classList.remove('show'), 1);
+    rAFTimeout(() => this.view.current.classList.remove('animate-in'), 1);
     rAFTimeout(() => this.close.current.hide(), 30);
-    rAFTimeout(() => this.transition.current.classList.remove('animate'), 300);
+    rAFTimeout(() => this.transition.current.classList.remove('animate-in'), 300);
     rAFTimeout(() => {
       this.props.onInfoClose();
     }, 350);
@@ -29,13 +29,13 @@ class Info extends Component {
       return;
     }
 
-    rAFTimeout(() => this.transition.current.classList.add('animate'), 1);
+    rAFTimeout(() => this.transition.current.classList.add('animate-in'), 1);
 
     rAFTimeout(() => this.close.current.animate(), 100);
 
     rAFTimeout(() => {
       this.view.current.classList.remove('hide');
-      this.view.current.classList.add('show');
+      this.view.current.classList.add('animate-in');
     }, 150);
   }
 

@@ -12,11 +12,11 @@ class Close extends Component {
   }
 
   animate() {
-    rAFTimeout(() => this.button.current.classList.add('animate'), 1);
+    rAFTimeout(() => this.button.current.classList.add('animate-in'), 1);
   }
 
   hide() {
-    rAFTimeout(() => this.button.current.classList.remove('animate'), 1);
+    rAFTimeout(() => this.button.current.classList.remove('animate-in'), 1);
   }
 
   onClick() {
