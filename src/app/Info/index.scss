@@ -3,11 +3,12 @@
   box-sizing: border-box;
   color: transparent;
   height: 100vh;
+  line-height: 1.4;
   overflow: hidden;
   padding: 30px;
   pointer-events: none;
   position: absolute;
-  transition: all .3s ease-out;
+  transition: all .3s .1s ease-out;
   z-index: 1;
 
   ul {
@@ -15,18 +16,14 @@
     margin: 0;
     opacity: 0;
     padding: 0;
-    transition: opacity .3s ease-out;
-
-    li {
-      padding: 2px;
-    }
+    transition: opacity .3s .2s ease-out;
   }
 
   .link {
     color: #000;
     display: block;
-    line-height: 1.4;
-    padding: 6px;
+    line-height: inherit;
+    padding: 6px 0;
     text-decoration: none;
     width: 100%;
 
@@ -41,7 +38,7 @@
     margin-top: 50px;
     opacity: 0;
     text-align: center;
-    transition: opacity .3s ease-out;
+    transition: opacity .3s .3s ease-out;
     width: 100%;
   }
 

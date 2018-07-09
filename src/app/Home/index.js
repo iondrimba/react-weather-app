@@ -22,6 +22,7 @@ class Home extends Component {
 
     this.drag = new Drag();
     this.onInfoClick = this.onInfoClick.bind(this);
+    this.onInfoClose = this.onInfoClose.bind(this);
   }
 
   animateForecastSection(forecasts, callback) {
@@ -39,6 +40,10 @@ class Home extends Component {
 
   onInfoClick() {
     this.props.onInfoClick();
+  }
+
+  onInfoClose() {
+    this.props.onInfoClose();
   }
 
   onDragLeftStart() {
@@ -60,8 +65,8 @@ class Home extends Component {
 
   render() {
     return <Fragment>
-      <GPSLocation onGetCurrentLocation={this.props.onGetCurrentLocation}/>
-      <Info onInfoClick={this.onInfoClick} />
+      <GPSLocation onGetCurrentLocation={this.props.onGetCurrentLocation} />
+      <Info onInfoClick={this.onInfoClick} onInfoClose={this.onInfoClose} />
       <Location location={this.props.currentCondition.location} />
       <DateCurrent date={this.props.currentCondition.date} />
       <Temperature weather={this.props.currentCondition.weather} temperature={this.props.currentCondition.temperature} />
@@ -101,7 +106,8 @@ Home.propTypes = {
   foreCastDaily: PropTypes.array,
   currentCondition: PropTypes.object,
   onGetCurrentLocation: PropTypes.func,
-  onInfoClick: PropTypes.func
+  onInfoClick: PropTypes.func,
+  onInfoClose: PropTypes.func
 };
 
 export default Home;
