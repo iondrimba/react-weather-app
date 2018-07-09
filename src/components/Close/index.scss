@@ -7,8 +7,12 @@
   position: absolute;
   right: 17px;
   top: 24px;
+  transform: translateY(-30px);
+  transition: transform .2s cubic-bezier(.165, .84, .44, 1), opacity .2s ease-out;
+  will-change: opacity, transform;
 
-  .animate {
+  &.animate {
     opacity: 1;
+    transform: translateY(0);
   }
 }

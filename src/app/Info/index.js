@@ -11,15 +11,13 @@ class Info extends Component {
 
     this.transition = React.createRef();
     this.view = React.createRef();
+    this.close = React.createRef();
     this.onInfoClose = this.onInfoClose.bind(this);
-  }
-
-  componentDidMount() {
-
   }
 
   onInfoClose() {
     rAFTimeout(() => this.view.current.classList.remove('show'), 1);
+    rAFTimeout(() => this.close.current.hide(), 30);
     rAFTimeout(() => this.transition.current.classList.remove('animate'), 300);
     rAFTimeout(() => {
       this.props.onInfoClose();
@@ -33,6 +31,8 @@ class Info extends Component {
 
     rAFTimeout(() => this.transition.current.classList.add('animate'), 1);
 
+    rAFTimeout(() => this.close.current.animate(), 100);
+
     rAFTimeout(() => {
       this.view.current.classList.remove('hide');
       this.view.current.classList.add('show');
@@ -43,7 +43,7 @@ class Info extends Component {
     return <Fragment>
       <div ref={this.transition} className="transition"></div>
       <section ref={this.view} className={`info ${this.getStyle(this.props.show)}`}>
-        <Close onCloseClick={this.onInfoClose} />
+        <Close ref={this.close} onCloseClick={this.onInfoClose} />
         <h1>About</h1>
         <p>PWA Weather Application made with React/Scss/ES6</p>
         <p>This is a personal project built in my spare time for learning purposes.</p>
