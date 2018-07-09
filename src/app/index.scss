@@ -5,6 +5,7 @@ body {
   font-size: 16px;
   height: 100vh;
   margin: 0;
+  overflow: hidden;
   padding: 0;
   width: 100%;
 }
@@ -15,6 +16,7 @@ body {
   flex-direction: column;
   height: 100vh;
   justify-content: space-between;
+  position: relative;
 }
 
 .wrapper-temperature {
@@ -37,6 +39,10 @@ body {
     justify-content: flex-start;
     overflow: hidden;
     width: 342px;
+  }
+
+  .swiper-wrapper {
+    display: flex;
   }
 
   &__period {

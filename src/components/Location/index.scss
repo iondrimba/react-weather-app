@@ -12,7 +12,7 @@
     opacity: 0;
     transform: translateY(-20px);
     transition: transform .3s cubic-bezier(.68, -.55, .265, 1.55), opacity .3s ease-out;
-    will-change: transform;
+    will-change: transform, opacity;
   }
 
   &__icon.animate-in {
@@ -28,7 +28,7 @@
     opacity: 0;
     transform: translateY(20px);
     transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), opacity .3s .1s ease-out;
-    will-change: transform;
+    will-change: transform, opacity;
   }
 
   &__text.animate-in {

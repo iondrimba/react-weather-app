@@ -1,0 +1,17 @@
+.transition {
+  background-color: #fff;
+  border-radius: 50px;
+  height: 50px;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  transform: scale(0);
+  transform-origin: center center;
+  transition: transform .3s ease-out;
+  width: 50px;
+  will-change: transform;
+
+  &.animate-in {
+    transform: scale(32);
+  }
+}
