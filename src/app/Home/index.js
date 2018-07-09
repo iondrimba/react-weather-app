@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import Swiper from 'swiper';
+import Swiper from 'swiper/dist/js/swiper.js';
 import ForeCast from '../../components/Forecast';
 import ForeCastTemperature from '../../components/Forecast/Temperature';
 import Location from '../../components/Location';
