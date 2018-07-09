@@ -41,6 +41,10 @@ body {
     width: 342px;
   }
 
+  .swiper-wrapper {
+    display: flex;
+  }
+
   &__period {
     display: flex;
     flex-direction: row;
