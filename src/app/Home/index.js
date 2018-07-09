@@ -1,14 +1,15 @@
 import React, { Component, Fragment } from 'react';
-import Drag from '../helpers/drag';
-import ForeCast from '../components/Forecast';
-import ForeCastTemperature from '../components/Forecast/Temperature';
-import Location from '../components/Location';
-import Temperature from '../components/Temperature';
-import Navigation from '../components/Navigation';
-import RainProbability from '../components/RainProbability';
-import GPSLocation from '../components/GPSLocation';
-import DateCurrent from '../components/DateCurrent';
-import rAFTimeout from '../helpers/rAFTimeout';
+import Drag from '../../helpers/drag';
+import ForeCast from '../../components/Forecast';
+import ForeCastTemperature from '../../components/Forecast/Temperature';
+import Location from '../../components/Location';
+import Temperature from '../../components/Temperature';
+import Navigation from '../../components/Navigation';
+import RainProbability from '../../components/RainProbability';
+import GPSLocation from '../../components/GPSLocation';
+import Info from '../../components/Info';
+import DateCurrent from '../../components/DateCurrent';
+import rAFTimeout from '../../helpers/rAFTimeout';
 import PropTypes from 'prop-types';
 
 class Home extends Component {
@@ -20,6 +21,7 @@ class Home extends Component {
     };
 
     this.drag = new Drag();
+    this.onInfoClick = this.onInfoClick.bind(this);
   }
 
   animateForecastSection(forecasts, callback) {
@@ -33,6 +35,10 @@ class Home extends Component {
 
       this.setState({ currentForecast: 'hourly' });
     });
+  }
+
+  onInfoClick() {
+    this.props.onInfoClick();
   }
 
   onDragLeftStart() {
@@ -55,6 +61,7 @@ class Home extends Component {
   render() {
     return <Fragment>
       <GPSLocation onGetCurrentLocation={this.props.onGetCurrentLocation}/>
+      <Info onInfoClick={this.onInfoClick} />
       <Location location={this.props.currentCondition.location} />
       <DateCurrent date={this.props.currentCondition.date} />
       <Temperature weather={this.props.currentCondition.weather} temperature={this.props.currentCondition.temperature} />
@@ -93,7 +100,8 @@ Home.propTypes = {
   foreCastHourly: PropTypes.array,
   foreCastDaily: PropTypes.array,
   currentCondition: PropTypes.object,
-  onGetCurrentLocation: PropTypes.func
+  onGetCurrentLocation: PropTypes.func,
+  onInfoClick: PropTypes.func
 };
 
 export default Home;
