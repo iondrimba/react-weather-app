@@ -1,0 +1,63 @@
+.info {
+  background-color: transparent;
+  box-sizing: border-box;
+  color: transparent;
+  height: 100vh;
+  line-height: 1.4;
+  overflow: hidden;
+  padding: 30px;
+  pointer-events: none;
+  position: absolute;
+  transition: all .25s .1s ease-out;
+  z-index: 1;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    transition: opacity .25s .15s ease-out;
+  }
+
+  .link {
+    color: #000;
+    display: block;
+    line-height: inherit;
+    padding: 6px 0;
+    text-decoration: none;
+    width: 100%;
+
+    &:hover {
+      color: #2a329e;
+    }
+  }
+
+  .github {
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+    opacity: 0;
+    text-align: center;
+    transition: opacity .25s .2s ease-out;
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-top: 50px;
+  }
+
+  &.animate-in {
+    background-color: #fff;
+    color: #000;
+    pointer-events: unset;
+
+    ul {
+      opacity: 1;
+    }
+
+    .github {
+      opacity: 1;
+    }
+  }
+}

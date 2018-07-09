@@ -1,0 +1,19 @@
+.button-info {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  fill: #fff;
+  opacity: 0;
+  position: absolute;
+  right: 20px;
+  top: 27px;
+  transform: translateY(-30px);
+  transition: transform .2s cubic-bezier(.165, .84, .44, 1), opacity .2s ease-out;
+  width: 30px;
+  will-change: opacity, transform;
+
+  &.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,19 @@
+.gps-location {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  fill: #fff;
+  left: 20px;
+  opacity: 0;
+  position: absolute;
+  top: 20px;
+  transform: translateY(-30px);
+  transition: transform .2s cubic-bezier(.165, .84, .44, 1), opacity .2s ease-out;
+  width: 45px;
+  will-change: opacity, transform;
+
+  &.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
