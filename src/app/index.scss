@@ -46,6 +46,7 @@ body {
   }
 
   &__period {
+    align-items: flex-start;
     display: flex;
     flex-direction: row;
     justify-content: center;
