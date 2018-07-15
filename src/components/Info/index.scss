@@ -9,11 +9,15 @@
   top: 27px;
   transform: translateY(-30px);
   transition: transform .2s cubic-bezier(.165, .84, .44, 1), opacity .2s ease-out;
-  width: 30px;
+  width: 34px;
   will-change: opacity, transform;
 
   &.animate-in {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  svg {
+    width: 100%;
   }
 }
