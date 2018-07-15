@@ -8,6 +8,10 @@
   text-align: center;
   transform: translate(-50%, 120px);
 
+  &__time {
+    color: rgba(255, 255, 255, .8);
+  }
+
   .button-refresh {
     background-color: transparent;
     border: none;
