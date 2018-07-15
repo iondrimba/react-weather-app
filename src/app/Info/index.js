@@ -17,11 +17,11 @@ class Info extends Component {
 
   onInfoClose() {
     rAFTimeout(() => this.view.current.classList.remove('animate-in'), 1);
-    rAFTimeout(() => this.close.current.hide(), 30);
-    rAFTimeout(() => this.transition.current.classList.remove('animate-in'), 300);
+    rAFTimeout(() => this.close.current.hide(), 20);
+    rAFTimeout(() => this.transition.current.classList.remove('animate-in'), 100);
     rAFTimeout(() => {
       this.props.onInfoClose();
-    }, 350);
+    }, 110);
   }
 
   getStyle(show) {
@@ -31,7 +31,7 @@ class Info extends Component {
 
     rAFTimeout(() => this.transition.current.classList.add('animate-in'), 1);
 
-    rAFTimeout(() => this.close.current.animate(), 100);
+    rAFTimeout(() => this.close.current.animate(), 50);
 
     rAFTimeout(() => {
       this.view.current.classList.remove('hide');
