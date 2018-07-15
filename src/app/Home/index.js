@@ -54,8 +54,6 @@ class Home extends Component {
       <Temperature weather={this.props.currentCondition.weather} temperature={this.props.currentCondition.temperature} />
 
       <section className="forecasts">
-        <Navigation currentForecast={this.state.currentForecast} />
-
         <div className="forecasts__scroll-panel swiper-container">
           <div className="swiper-wrapper">
             <section className="forecasts__period swiper-slide">
@@ -80,6 +78,7 @@ class Home extends Component {
             </section>
           </div>
         </div>
+        <Navigation currentForecast={this.state.currentForecast} />
       </section>
     </Fragment>
   }
