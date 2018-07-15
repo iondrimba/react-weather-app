@@ -1,0 +1,20 @@
+.refresh {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  left: 50%;
+  margin-top: -10px;
+  position: absolute;
+  text-align: center;
+  transform: translate(-50%, 120px);
+
+  .button-refresh {
+    background-color: transparent;
+    border: none;
+    width: 35px;
+
+    svg {
+      fill: #fff;
+    }
+  }
+}

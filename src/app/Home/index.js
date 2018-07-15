@@ -9,6 +9,7 @@ import RainProbability from '../../components/RainProbability';
 import GPSLocation from '../../components/GPSLocation';
 import Info from '../../components/Info';
 import DateCurrent from '../../components/DateCurrent';
+import Refresh from '../../components/Refresh';
 import PropTypes from 'prop-types';
 
 class Home extends Component {
@@ -52,7 +53,7 @@ class Home extends Component {
       <Location location={this.props.currentCondition.location} />
       <DateCurrent date={this.props.currentCondition.date} />
       <Temperature weather={this.props.currentCondition.weather} temperature={this.props.currentCondition.temperature} />
-
+      <Refresh onClick={this.onRefreshClick} time="10:58" />
       <section className="forecasts">
         <div className="forecasts__scroll-panel swiper-container">
           <div className="swiper-wrapper">
