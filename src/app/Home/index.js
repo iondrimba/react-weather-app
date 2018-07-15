@@ -20,17 +20,6 @@ class Home extends Component {
       currentForecast: 'hourly',
       forecastIndex: ['hourly', 'daily'],
     };
-
-    this.onInfoClick = this.onInfoClick.bind(this);
-    this.onInfoClose = this.onInfoClose.bind(this);
-  }
-
-  onInfoClick() {
-    this.props.onInfoClick();
-  }
-
-  onInfoClose() {
-    this.props.onInfoClose();
   }
 
   componentDidMount() {
@@ -49,11 +38,11 @@ class Home extends Component {
   render() {
     return <Fragment>
       <GPSLocation onGetCurrentLocation={this.props.onGetCurrentLocation} />
-      <Info onInfoClick={this.onInfoClick} onInfoClose={this.onInfoClose} />
+      <Info onInfoClick={this.props.onInfoClick} onInfoClose={this.props.onInfoClose} />
       <Location location={this.props.currentCondition.location} />
       <DateCurrent date={this.props.currentCondition.date} />
       <Temperature weather={this.props.currentCondition.weather} temperature={this.props.currentCondition.temperature} />
-      <Refresh onClick={this.onRefreshClick} time="10:58" />
+      <Refresh onClick={this.props.onRefreshClick} time="10:58" />
       <section className="forecasts">
         <div className="forecasts__scroll-panel swiper-container">
           <div className="swiper-wrapper">
@@ -91,7 +80,8 @@ Home.propTypes = {
   currentCondition: PropTypes.object,
   onGetCurrentLocation: PropTypes.func,
   onInfoClick: PropTypes.func,
-  onInfoClose: PropTypes.func
+  onInfoClose: PropTypes.func,
+  onRefreshClick: PropTypes.func
 };
 
 export default Home;

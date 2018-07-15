@@ -29,6 +29,7 @@ class App extends Component {
     this.loader = React.createRef();
     this.onInfoClick = this.onInfoClick.bind(this);
     this.onInfoClose = this.onInfoClose.bind(this);
+    this.onRefreshClick = this.onRefreshClick.bind(this);
   }
 
   async init() {
@@ -45,14 +46,12 @@ class App extends Component {
     }, 1000);
   }
 
-  componentDidMount() {
-    this.init();
-  }
-
   updatedState() {
     this.setState({
       showInfo: false,
       dataLoaded: true,
+      latitude: this.foreCastAPI.data.latitude,
+      longitude: this.foreCastAPI.data.longitude,
       currentCondition: {
         ...initialState,
         location: this.ipGeoLocation.data.city,
@@ -86,6 +85,12 @@ class App extends Component {
     this.updatedState();
   }
 
+  onRefreshClick() {
+    const { latitude, longitude } = this.foreCastAPI.data;
+
+    this.onGetCurrentLocation({ latitude, longitude });
+  }
+
   onInfoClick() {
     this.setState({ showInfo: true });
   }
@@ -94,13 +99,18 @@ class App extends Component {
     this.setState({ showInfo: false });
   }
 
+
+  componentDidMount() {
+    this.init();
+  }
+
   render() {
     return (
       <div className="App">
         {
           !this.state.dataLoaded ? <Loader ref={this.loader} /> : <Fragment> <Home currentCondition={this.state.currentCondition}
             foreCastDaily={this.state.foreCastDaily} foreCastHourly={this.state.foreCastHourly}
-            onGetCurrentLocation={this.onGetCurrentLocation} onInfoClick={this.onInfoClick} />
+            onGetCurrentLocation={this.onGetCurrentLocation} onInfoClick={this.onInfoClick} onRefreshClick={this.onRefreshClick} />
             <Info onInfoClose={this.onInfoClose} show={this.state.showInfo} />
           </Fragment>
         }
