@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import rAFTimeout from '../../helpers/rAFTimeout';
-import './index.scss';
+import UILoader from './ui';
 
 class Loader extends Component {
   constructor() {
@@ -48,22 +48,7 @@ class Loader extends Component {
 
   render() {
     return (
-      <div ref={this.loader} className="loader">
-        <div ref={this.circle} className="loader__circle">
-          <div className="rays">
-            <div className="ray ray--north"></div>
-            <div className="ray ray--west"></div>
-            <div className="ray ray--south"></div>
-            <div className="ray ray--east"></div>
-          </div>
-          <div className="rays">
-            <div className="ray ray--north"></div>
-            <div className="ray ray--west"></div>
-            <div className="ray ray--south"></div>
-            <div className="ray ray--east"></div>
-          </div>
-        </div>
-      </div>
+      <UILoader ref={[this.loader, this.circle]}/>
     )
   }
 }
