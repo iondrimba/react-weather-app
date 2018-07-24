@@ -14,17 +14,18 @@ const addTimezonOffset = (date, time) => {
 const setupDate = (unixTimestamp) => {
   const date = new Date(unixTimestamp * 1000);
   const utc = date.getTime();
+
   return new Date(addTimezonOffset(date, utc));
 };
 
 export default function (unixTimestamp, locale = 'en-US') {
   const finalDate = setupDate(unixTimestamp);
   const year = finalDate.getFullYear();
+  const weekDay = finalDate.getDay();
   let month = finalDate.getMonth() + 1;
   let day = finalDate.getDate();
   let hours = finalDate.getHours();
   let minutes = finalDate.getMinutes();
-  const weekDay = finalDate.getDay();
 
   month = addLeadingZero(month);
   day = addLeadingZero(day);

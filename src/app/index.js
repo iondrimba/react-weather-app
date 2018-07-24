@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import './index.scss';
 import IpGeoLocation from '../api/ipGeoLocation';
 import ForeCastAPI from '../api/foreCastAPI';
 import ReverseGeoLocation from '../api/reverseGeoLocation';
@@ -7,12 +6,12 @@ import initialState from '../initialState';
 import Home from './Home';
 import Info from './Info';
 import Loader from '../components/Loader';
-
 import IpFetcher from '../api/ipfetcher';
 import rAFTimeout from '../helpers/rAFTimeout';
 import timeConvert from '../helpers/time';
 import icons from '../helpers/icons';
 import weekdays from '../helpers/weekdays';
+import './index.scss';
 
 class App extends Component {
   constructor() {
@@ -98,7 +97,6 @@ class App extends Component {
   onInfoClose() {
     this.setState({ showInfo: false });
   }
-
 
   componentDidMount() {
     this.init();
