@@ -8,7 +8,6 @@ class Close extends Component {
     super();
 
     this.button = React.createRef();
-    this.onClick = this.onClick.bind(this);
   }
 
   animate() {
@@ -19,13 +18,9 @@ class Close extends Component {
     rAFTimeout(() => this.button.current.classList.remove('animate-in'), 1);
   }
 
-  onClick() {
-    this.props.onCloseClick();
-  }
-
   render() {
     return (
-      <UIClose ref={this.button} onClick={this.onClick} />
+      <UIClose ref={this.button} onClick={this.props.onCloseClick} />
     )
   }
 }

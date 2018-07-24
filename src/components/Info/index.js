@@ -8,25 +8,19 @@ class Info extends Component {
     super();
 
     this.button = React.createRef();
-    this.onClick = this.onClick.bind(this);
   }
 
   animate() {
     rAFTimeout(() => this.button.current.classList.add('animate-in'), 500);
   }
 
-  onClick() {
-    this.props.onInfoClick();
-  }
-
   componentDidMount() {
     rAFTimeout(() => this.animate(), 350);
-
   }
 
   render() {
     return (
-      <UIInfo ref={this.button} onClick={this.onClick} />
+      <UIInfo ref={this.button} onClick={this.props.onInfoClick} />
     )
   }
 }
