@@ -25,7 +25,6 @@ class GPSLocation extends Component {
 
   componentDidMount() {
     rAFTimeout(() => this.animate(), 350);
-
   }
 
   render() {

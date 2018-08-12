@@ -7,7 +7,7 @@ class Refresh extends Component {
   constructor() {
     super();
 
-    // this.button = React.createRef();
+    this.button = React.createRef();
     this.onClick = this.onClick.bind(this);
   }
 
@@ -25,7 +25,7 @@ class Refresh extends Component {
 
   render() {
     return (
-      <section className="refresh">
+      <section className={`refresh ${this.props.updating ? 'fetching': ''}`}>
         <span className="refresh__time">{this.props.time}</span>
         <button ref={this.button} type="button" className="button-refresh" aria-label="Refresh content" onClick={this.onClick}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96">
@@ -33,14 +33,14 @@ class Refresh extends Component {
           </svg>
         </button>
       </section>
-
     )
   }
 }
 
 Refresh.propTypes = {
   time: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
+  updating: PropTypes.bool
 };
 
 export default Refresh;

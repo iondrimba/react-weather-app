@@ -15,10 +15,29 @@
   .button-refresh {
     background-color: transparent;
     border: none;
+    cursor: pointer;
+    padding: 6px;
     width: 35px;
+    will-change: transform;
 
     svg {
       fill: #fff;
     }
+  }
+}
+
+.fetching {
+  svg {
+    animation: fetching .5s linear infinite normal both;
+  }
+}
+
+@keyframes fetching {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
   }
 }

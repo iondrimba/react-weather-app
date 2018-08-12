@@ -37,13 +37,16 @@ class App extends Component {
       ...data,
       showInfo: false,
       dataLoaded: true,
+      updating: false,
     });
   }
 
   async onGetCurrentLocation({ latitude, longitude }) {
+    this.setState({ updating: true });
+
     this.storage.getLocation(latitude, longitude);
 
-    this.updatedState(this.storage.data);
+    rAFTimeout(() => this.updatedState(this.storage.data), 600);
   }
 
   onRefreshClick() {
@@ -70,7 +73,7 @@ class App extends Component {
         {
           !this.state.dataLoaded ? <Loader ref={this.loader} /> : <Fragment> <Home currentCondition={this.state.currentCondition}
             foreCastDaily={this.state.foreCastDaily} foreCastHourly={this.state.foreCastHourly}
-            onGetCurrentLocation={this.onGetCurrentLocation} onInfoClick={this.onInfoClick} onRefreshClick={this.onRefreshClick} />
+            onGetCurrentLocation={this.onGetCurrentLocation} onInfoClick={this.onInfoClick} updating={this.state.updating} onRefreshClick={this.onRefreshClick} />
             <Info onInfoClose={this.onInfoClose} show={this.state.showInfo} />
           </Fragment>
         }

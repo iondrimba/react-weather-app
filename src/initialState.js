@@ -3,6 +3,7 @@ export default {
   dataLoaded: false,
   latitude: 0,
   longitude: 0,
+  updating: false,
   currentCondition: {
     currentCondition: {
       location: "--",
