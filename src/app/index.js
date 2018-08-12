@@ -48,20 +48,24 @@ class App extends Component {
   }
 
   onGPSLocationClick() {
-    this.setState({ updating: true });
+    if (!this.state.updating) {
+      this.setState({ updating: true });
 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
-        this.onGetCurrentLocation(position.coords);
-      });
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          this.onGetCurrentLocation(position.coords);
+        });
+      }
     }
   }
   onRefreshClick() {
     const { latitude, longitude } = this.storage.data;
 
-    this.setState({ updating: true });
+    if (!this.state.updating) {
+      this.setState({ updating: true });
 
-    this.onGetCurrentLocation({ latitude, longitude });
+      this.onGetCurrentLocation({ latitude, longitude });
+    }
   }
 
   onInfoClick() {
