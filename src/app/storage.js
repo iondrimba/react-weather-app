@@ -14,12 +14,14 @@ export default class Storage {
     this.foreCastAPI = new ForeCastAPI(process.env.REACT_APP_DARK_SKY_API_CODE);
     this.reverseGeoLocation = new ReverseGeoLocation();
     this.data = { ...initialState };
+    this.currentDate = new Date();
   }
 
   update() {
     this.data = {
       latitude: this.foreCastAPI.data.latitude,
       longitude: this.foreCastAPI.data.longitude,
+      lastUpdate: this.getLastUpdate(this.currentDate),
       currentCondition: {
         ...initialState,
         location: this.ipGeoLocation.data.city,
@@ -43,6 +45,10 @@ export default class Storage {
         }
       }))
     }
+  }
+
+  getLastUpdate(currentDate) {
+    return `${currentDate.getHours()}:${currentDate.getMinutes()}`;
   }
 
   async fetch() {
@@ -76,16 +82,18 @@ export default class Storage {
   }
 
   async getLocation(latitude, longitude) {
+    this.currentDate = new Date();
     const prevDate = Number(localStorage.getItem('lastupdate'));
-    const currentDate = new Date().getTime();
-    const hoursDiff = Math.abs(currentDate - prevDate) / 3600000;
+    const hoursDiff = Math.abs(currentDate.getTime() - prevDate) / 3600000;
+
+    this.data.lastUpdate = this.getLastUpdate(currentDate);
 
     await this.reverseGeoLocation.fetch(latitude, longitude);
 
     if (hoursDiff > 0.18) {
       await this.foreCastAPI.fetch(latitude, longitude);
 
-      localStorage.setItem('lastupdate', currentDate);
+      localStorage.setItem('lastupdate',  this.currentDate.getTime());
       localStorage.setItem('forecast', JSON.stringify(this.foreCastAPI.data));
     }
 

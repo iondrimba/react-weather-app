@@ -71,9 +71,15 @@ class App extends Component {
     return (
       <div className="App">
         {
-          !this.state.dataLoaded ? <Loader ref={this.loader} /> : <Fragment> <Home currentCondition={this.state.currentCondition}
-            foreCastDaily={this.state.foreCastDaily} foreCastHourly={this.state.foreCastHourly}
-            onGetCurrentLocation={this.onGetCurrentLocation} onInfoClick={this.onInfoClick} updating={this.state.updating} onRefreshClick={this.onRefreshClick} />
+          !this.state.dataLoaded ? <Loader ref={this.loader} /> : <Fragment>
+            <Home currentCondition={this.state.currentCondition}
+              foreCastDaily={this.state.foreCastDaily}
+              foreCastHourly={this.state.foreCastHourly}
+              onGetCurrentLocation={this.onGetCurrentLocation}
+              onInfoClick={this.onInfoClick}
+              updating={this.state.updating}
+              lastUpdate={this.state.lastUpdate}
+              onRefreshClick={this.onRefreshClick} />
             <Info onInfoClose={this.onInfoClose} show={this.state.showInfo} />
           </Fragment>
         }

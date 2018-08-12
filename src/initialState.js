@@ -4,6 +4,7 @@ export default {
   latitude: 0,
   longitude: 0,
   updating: false,
+  lastUpdate: "00:00",
   currentCondition: {
     currentCondition: {
       location: "--",

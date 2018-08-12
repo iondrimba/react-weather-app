@@ -42,7 +42,7 @@ class Home extends Component {
       <Location location={this.props.currentCondition.location} />
       <DateCurrent date={this.props.currentCondition.date} />
       <Temperature weather={this.props.currentCondition.weather} temperature={this.props.currentCondition.temperature} />
-      <Refresh onClick={this.props.onRefreshClick} updating={this.props.updating} time="10:58" />
+      <Refresh onClick={this.props.onRefreshClick} updating={this.props.updating} time={this.props.lastUpdate} />
       <section className="forecasts">
         <div className="forecasts__scroll-panel swiper-container">
           <div className="swiper-wrapper">
@@ -78,6 +78,7 @@ Home.propTypes = {
   foreCastHourly: PropTypes.array,
   foreCastDaily: PropTypes.array,
   updating: PropTypes.bool,
+  lastUpdate: PropTypes.string,
   currentCondition: PropTypes.object,
   onGetCurrentLocation: PropTypes.func,
   onInfoClick: PropTypes.func,
