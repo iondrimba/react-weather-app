@@ -86,6 +86,8 @@ export default class Storage {
     const prevDate = Number(localStorage.getItem('lastupdate'));
     const hoursDiff = Math.abs(this.currentDate.getTime() - prevDate) / 3600000;
 
+    this.foreCastAPI.data.latitude = latitude;
+    this.foreCastAPI.data.longitude = longitude;
     this.data.lastUpdate = this.getLastUpdate(this.currentDate);
 
     await this.reverseGeoLocation.fetch(latitude, longitude);
