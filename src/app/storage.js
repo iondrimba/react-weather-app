@@ -2,7 +2,7 @@ import IpGeoLocation from '../api/ipGeoLocation';
 import ForeCastAPI from '../api/foreCastAPI';
 import ReverseGeoLocation from '../api/reverseGeoLocation';
 import IpFetcher from '../api/ipfetcher';
-import timeConvert from '../helpers/time';
+import timeConvert, { addLeadingZero } from '../helpers/time';
 import icons from '../helpers/icons';
 import weekdays from '../helpers/weekdays';
 import initialState from '../initialState';
@@ -48,7 +48,7 @@ export default class Storage {
   }
 
   getLastUpdate(currentDate) {
-    return `${currentDate.getHours()}:${currentDate.getMinutes()}`;
+    return `${addLeadingZero(currentDate.getHours())}:${addLeadingZero(currentDate.getMinutes())}`;
   }
 
   async fetch() {
@@ -95,7 +95,7 @@ export default class Storage {
     if (hoursDiff > 0.18) {
       await this.foreCastAPI.fetch(latitude, longitude);
 
-      localStorage.setItem('lastupdate',  this.currentDate.getTime());
+      localStorage.setItem('lastupdate', this.currentDate.getTime());
       localStorage.setItem('forecast', JSON.stringify(this.foreCastAPI.data));
     }
 
