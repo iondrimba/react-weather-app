@@ -8,19 +8,10 @@ class GPSLocation extends Component {
     super();
 
     this.button = React.createRef();
-    this.onClick = this.onClick.bind(this);
   }
 
   animate() {
     rAFTimeout(() => this.button.current.classList.add('animate-in'), 430);
-  }
-
-  onClick() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
-        this.props.onGetCurrentLocation(position.coords);
-      });
-    }
   }
 
   componentDidMount() {
@@ -29,7 +20,7 @@ class GPSLocation extends Component {
 
   render() {
     return (
-      <button ref={this.button} type="button" className="gps-location" aria-label="Get current location" onClick={this.onClick}>
+      <button ref={this.button} type="button" className="gps-location" aria-label="Get current location" onClick={this.props.onGPSLocationClick}>
         <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 96 96">
           <g id="XMLID_1_">
             <circle id="XMLID_3_" cx="48" cy="48" r="9.8" />
@@ -42,7 +33,7 @@ class GPSLocation extends Component {
 }
 
 GPSLocation.propTypes = {
-  onGetCurrentLocation: PropTypes.func
+  onGPSLocationClick: PropTypes.func
 };
 
 export default GPSLocation;

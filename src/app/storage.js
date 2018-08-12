@@ -84,9 +84,9 @@ export default class Storage {
   async getLocation(latitude, longitude) {
     this.currentDate = new Date();
     const prevDate = Number(localStorage.getItem('lastupdate'));
-    const hoursDiff = Math.abs(currentDate.getTime() - prevDate) / 3600000;
+    const hoursDiff = Math.abs(this.currentDate.getTime() - prevDate) / 3600000;
 
-    this.data.lastUpdate = this.getLastUpdate(currentDate);
+    this.data.lastUpdate = this.getLastUpdate(this.currentDate);
 
     await this.reverseGeoLocation.fetch(latitude, longitude);
 

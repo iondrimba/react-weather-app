@@ -37,7 +37,7 @@ class Home extends Component {
 
   render() {
     return <Fragment>
-      <GPSLocation onGetCurrentLocation={this.props.onGetCurrentLocation} />
+      <GPSLocation onGPSLocationClick={this.props.onGPSLocationClick} />
       <Info onInfoClick={this.props.onInfoClick} onInfoClose={this.props.onInfoClose} />
       <Location location={this.props.currentCondition.location} />
       <DateCurrent date={this.props.currentCondition.date} />
@@ -80,7 +80,7 @@ Home.propTypes = {
   updating: PropTypes.bool,
   lastUpdate: PropTypes.string,
   currentCondition: PropTypes.object,
-  onGetCurrentLocation: PropTypes.func,
+  onGPSLocationClick: PropTypes.func,
   onInfoClick: PropTypes.func,
   onInfoClose: PropTypes.func,
   onRefreshClick: PropTypes.func

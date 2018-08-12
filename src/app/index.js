@@ -14,7 +14,7 @@ class App extends Component {
     this.onInfoClick = this.onInfoClick.bind(this);
     this.onInfoClose = this.onInfoClose.bind(this);
     this.onRefreshClick = this.onRefreshClick.bind(this);
-    this.onGetCurrentLocation = this.onGetCurrentLocation.bind(this);
+    this.onGPSLocationClick = this.onGPSLocationClick.bind(this);
 
     this.storage = new Storage(process.env.REACT_APP_DARK_SKY_API_CODE);
     this.state = { ...this.storage.data };
@@ -42,15 +42,24 @@ class App extends Component {
   }
 
   async onGetCurrentLocation({ latitude, longitude }) {
-    this.setState({ updating: true });
-
     this.storage.getLocation(latitude, longitude);
 
     rAFTimeout(() => this.updatedState(this.storage.data), 600);
   }
 
+  onGPSLocationClick() {
+    this.setState({ updating: true });
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        this.onGetCurrentLocation(position.coords);
+      });
+    }
+  }
   onRefreshClick() {
     const { latitude, longitude } = this.storage.data;
+
+    this.setState({ updating: true });
 
     this.onGetCurrentLocation({ latitude, longitude });
   }
@@ -75,8 +84,8 @@ class App extends Component {
             <Home currentCondition={this.state.currentCondition}
               foreCastDaily={this.state.foreCastDaily}
               foreCastHourly={this.state.foreCastHourly}
-              onGetCurrentLocation={this.onGetCurrentLocation}
               onInfoClick={this.onInfoClick}
+              onGPSLocationClick={this.onGPSLocationClick}
               updating={this.state.updating}
               lastUpdate={this.state.lastUpdate}
               onRefreshClick={this.onRefreshClick} />
