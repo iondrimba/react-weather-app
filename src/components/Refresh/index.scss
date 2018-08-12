@@ -4,9 +4,11 @@
   justify-content: center;
   left: 50%;
   margin-top: -10px;
+  opacity: 0;
   position: absolute;
   text-align: center;
-  transform: translate(-50%, 120px);
+  transform: translate(-50%, 140px);
+  transition: transform .3s cubic-bezier(.165, .84, .44, 1), opacity .3s ease-out;
 
   &__time {
     color: rgba(255, 255, 255, .8);
@@ -23,6 +25,11 @@
     svg {
       fill: #fff;
     }
+  }
+
+  &.animate-in {
+    opacity: 1;
+    transform: translate(-50%, 120px);
   }
 }
 
