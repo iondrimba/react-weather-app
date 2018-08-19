@@ -8,6 +8,7 @@ class Loader extends Component {
 
     this.loader = React.createRef();
     this.circle = React.createRef();
+    this.rays = [1, 2];
   }
 
   animateIn() {
@@ -50,18 +51,16 @@ class Loader extends Component {
     return (
       <div ref={this.loader} className="loader">
         <div ref={this.circle} className="loader__circle">
-          <div className="rays">
-            <div className="ray ray--north"></div>
-            <div className="ray ray--west"></div>
-            <div className="ray ray--south"></div>
-            <div className="ray ray--east"></div>
-          </div>
-          <div className="rays">
-            <div className="ray ray--north"></div>
-            <div className="ray ray--west"></div>
-            <div className="ray ray--south"></div>
-            <div className="ray ray--east"></div>
-          </div>
+          {
+            this.rays.map((index) => {
+              return <div key={index} className="rays">
+                <div className="ray ray--north"></div>
+                <div className="ray ray--west"></div>
+                <div className="ray ray--south"></div>
+                <div className="ray ray--east"></div>
+              </div>
+            })
+          }
         </div>
       </div>
     )

@@ -3,8 +3,8 @@
   border-radius: 50px;
   height: 50px;
   position: absolute;
-  right: -10px;
-  top: -10px;
+  right: 12px;
+  top: 12px;
   transform: scale(0);
   transform-origin: center center;
   transition: transform .3s ease-out;
@@ -12,6 +12,6 @@
   will-change: transform;
 
   &.animate-in {
-    transform: scale(32);
+    transform: scale(36);
   }
 }
