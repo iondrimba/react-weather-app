@@ -92,7 +92,7 @@ export default class Storage {
 
     await this.reverseGeoLocation.fetch(latitude, longitude);
 
-    if (hoursDiff > 0.18) {
+    if (hoursDiff > 1.05) {
       await this.foreCastAPI.fetch(latitude, longitude);
 
       localStorage.setItem('lastupdate', this.currentDate.getTime());
