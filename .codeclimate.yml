@@ -9,4 +9,5 @@ exclude_paths:
   - "public"
   - "scripts"
   - "src/**/*.dev.{js,jsx,mjs}"
+  - "src/initialState.js"
   - "spec"
