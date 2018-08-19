@@ -17,32 +17,36 @@ class Info extends Component {
 
   onInfoClose() {
     rAFTimeout(() => this.view.current.classList.remove('animate-in'), 1);
-    rAFTimeout(() => this.close.current.hide(), 30);
-    rAFTimeout(() => this.transition.current.classList.remove('animate-in'), 300);
+    rAFTimeout(() => this.close.current.hide(), 20);
+    rAFTimeout(() => this.transition.current.classList.remove('animate-in'), 100);
     rAFTimeout(() => {
       this.props.onInfoClose();
-    }, 350);
+      this.view.current.setAttribute('aria-hidden', true);
+    }, 110);
   }
 
   getStyle(show) {
     if (!show) {
-      return;
+      return '';
     }
 
     rAFTimeout(() => this.transition.current.classList.add('animate-in'), 1);
 
-    rAFTimeout(() => this.close.current.animate(), 100);
+    rAFTimeout(() => this.close.current.animate(), 50);
 
     rAFTimeout(() => {
       this.view.current.classList.remove('hide');
       this.view.current.classList.add('animate-in');
+      this.view.current.setAttribute('aria-hidden', false);
     }, 150);
+
+    return '';
   }
 
   render() {
     return <Fragment>
       <div ref={this.transition} className="transition"></div>
-      <section ref={this.view} className={`info ${this.getStyle(this.props.show)}`}>
+      <section ref={this.view} className={`info ${this.getStyle(this.props.show)}`} aria-hidden={true}>
         <Close ref={this.close} onCloseClick={this.onInfoClose} />
         <h1>About</h1>
         <p>PWA Weather Application made with React/Scss/ES6</p>

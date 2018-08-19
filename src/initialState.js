@@ -1,90 +1,181 @@
 export default {
+  showInfo: false,
+  dataLoaded: false,
+  latitude: 0,
+  longitude: 0,
+  updating: false,
+  lastUpdate: "00:00",
   currentCondition: {
-    location: 'Rio',
-    temperature: 23,
-    date: '--',
-    weather: 'Clear',
-    dayTime: false,
-    humidity: 30,
-    dataLoaded: false
+    currentCondition: {
+      location: "--",
+      temperature: 0,
+      date: "--",
+      weather: "Clear",
+      dayTime: false,
+      humidity: 0,
+      dataLoaded: false
+    },
+    foreCastDaily: [
+      {
+        weekDay: "mon",
+        rainProbability: 0,
+        icon: "wi-day-sunny",
+        temperature: {
+          max: 0,
+          min: 0
+        }
+      },
+      {
+        weekDay: "tue",
+        rainProbability: 0,
+        icon: "wi-day-sunny",
+        temperature: {
+          max: 0,
+          min: 0
+        }
+      },
+      {
+        weekDay: "wed",
+        rainProbability: 0,
+        icon: "wi-day-sunny",
+        temperature: {
+          max: 0,
+          min: 0
+        }
+      },
+      {
+        weekDay: "Thu",
+        rainProbability: 0,
+        icon: "wi-day-sunny",
+        temperature: {
+          max: 0,
+          min: 0
+        }
+      },
+      {
+        weekDay: "Fry",
+        rainProbability: 0,
+        icon: "wi-fog",
+        temperature: {
+          max: 0,
+          min: 0
+        }
+      }
+    ],
+    foreCastHourly: [
+      {
+        time: 0,
+        rainProbability: 0,
+        temperature: 23,
+        icon: "wi-fog"
+      },
+      {
+        time: 0,
+        rainProbability: 0,
+        temperature: 25,
+        icon: "wi-day-sunny"
+      },
+      {
+        time: 0,
+        rainProbability: 0,
+        temperature: 15,
+        icon: "wi-day-sunny"
+      },
+      {
+        time: 0,
+        rainProbability: 0,
+        temperature: 16,
+        icon: "wi-day-sunny"
+      },
+      {
+        time: 0,
+        rainProbability: 0,
+        temperature: 24,
+        icon: "wi-day-sunny"
+      }
+    ],
+    location: "São Paulo",
+    date: "Sunday, August 12, 2018",
+    temperature: 17,
+    weather: "Mostly Cloudy"
   },
-  foreCastDaily: [
-    {
-      weekDay: 'mon',
-      rainProbability: 47,
-      icon: 'wi-day-sunny',
-      temperature: {
-        max: 23,
-        min: 12
-      }
-    },
-    {
-      weekDay: 'tue',
-      rainProbability: 35,
-      icon: 'wi-day-sunny',
-      temperature: {
-        max: 33,
-        min: 14
-      }
-    },
-    {
-      weekDay: 'wed',
-      rainProbability: 1,
-      icon: 'wi-day-sunny',
-      temperature: {
-        max: 22,
-        min: 21
-      }
-    },
-    {
-      weekDay: 'Thu',
-      rainProbability: 10,
-      icon: 'wi-day-sunny',
-      temperature: {
-        max: 30,
-        min: 25
-      }
-    },
-    {
-      weekDay: 'Fry',
-      rainProbability: 20,
-      icon: 'wi-fog',
-      temperature: {
-        max: 19,
-        min: 11
-      }
-    }
-  ],
   foreCastHourly: [
     {
-      time: 8,
-      rainProbability: 20,
-      temperature: 23,
-      icon: 'wi-fog'
+      time: 0,
+      rainProbability: 0,
+      temperature: 0,
+      icon: "wi-day-cloudy"
     },
     {
-      time: 9,
-      rainProbability: 22,
-      temperature: 25,
-      icon: 'wi-day-sunny'
+      time: 0,
+      rainProbability: 0,
+      temperature: 0,
+      icon: "wi-day-cloudy"
     },
     {
-      time: 10,
-      rainProbability: 40,
-      temperature: 15,
-      icon: 'wi-day-sunny'
+      time: 0,
+      rainProbability: 0,
+      temperature: 0,
+      icon: "wi-day-cloudy"
     },
     {
-      time: 11,
-      rainProbability: 15,
-      temperature: 16,
-      icon: 'wi-day-sunny'
+      time: 0,
+      rainProbability: 0,
+      temperature: 0,
+      icon: "wi-night-clear"
     },
     {
-      time: 12,
-      rainProbability: 5,
-      temperature: 24,
-      icon: 'wi-day-sunny'
+      time: 0,
+      rainProbability: 0,
+      temperature: 14,
+      icon: "wi-night-clear"
+    }
+  ],
+  foreCastDaily: [
+    {
+      weekDay: "mon",
+      rainProbability: 0,
+      icon: "wi-day-sunny",
+      temperature: {
+        max: 0,
+        min: 0
+      }
+    },
+    {
+      weekDay: "tue",
+      rainProbability: 0,
+      icon: "wi-day-sunny",
+      temperature: {
+        max: 0,
+        min: 0
+      }
+    },
+    {
+      weekDay: "wed",
+      rainProbability: 0,
+      icon: "wi-night-alt-cloudy",
+      temperature: {
+        max: 0,
+        min: 0
+      }
+    },
+    {
+      weekDay: "thu",
+      rainProbability: 0,
+      icon: "wi-cloudy",
+      temperature: {
+        max: 0,
+        min: 0
+      }
+    },
+    {
+      weekDay: "fry",
+      rainProbability: 0,
+      icon: "wi-cloudy",
+      temperature: {
+        max: 0,
+        min: 0
+      }
     }
   ]
 }

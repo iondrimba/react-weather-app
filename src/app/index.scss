@@ -10,6 +10,15 @@ body {
   width: 100%;
 }
 
+input,
+textarea,
+button,
+select,
+label,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .App {
   background: linear-gradient(to bottom, #297af9, #333fb7);
   display: flex;
@@ -35,6 +44,8 @@ body {
   &__scroll-panel {
     align-items: baseline;
     align-self: center;
+    background-color: rgba(0, 0, 0, .05);
+    border-radius: 6px;
     display: flex;
     justify-content: flex-start;
     overflow: hidden;
@@ -42,13 +53,16 @@ body {
   }
 
   .swiper-wrapper {
+    align-items: flex-start;
     display: flex;
   }
 
   &__period {
+    align-items: flex-start;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding: 10px 0;
 
     &.move-left,
     &.move-right {

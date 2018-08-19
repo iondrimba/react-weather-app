@@ -182,7 +182,12 @@ const foreCastHourly = [
 
 describe('Home', () => {
   it('matches snapshot', () => {
-    const component = mount(<Home currentCondition={currentCondition} foreCastHourly={foreCastHourly} foreCastDaily={foreCastDaily} />);
+    const component = mount(<Home
+      updating={false}
+      lastUpdate={"00:00"}
+      currentCondition={currentCondition}
+      foreCastHourly={foreCastHourly}
+      foreCastDaily={foreCastDaily} />);
 
     expect(component).toMatchSnapshot();
   });

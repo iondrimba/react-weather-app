@@ -16,4 +16,10 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  &.press {
+    left: 21px;
+    opacity: .6;
+    top: 21px;
+  }
 }

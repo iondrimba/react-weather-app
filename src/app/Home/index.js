@@ -9,6 +9,7 @@ import RainProbability from '../../components/RainProbability';
 import GPSLocation from '../../components/GPSLocation';
 import Info from '../../components/Info';
 import DateCurrent from '../../components/DateCurrent';
+import Refresh from '../../components/Refresh';
 import PropTypes from 'prop-types';
 
 class Home extends Component {
@@ -19,17 +20,6 @@ class Home extends Component {
       currentForecast: 'hourly',
       forecastIndex: ['hourly', 'daily'],
     };
-
-    this.onInfoClick = this.onInfoClick.bind(this);
-    this.onInfoClose = this.onInfoClose.bind(this);
-  }
-
-  onInfoClick() {
-    this.props.onInfoClick();
-  }
-
-  onInfoClose() {
-    this.props.onInfoClose();
   }
 
   componentDidMount() {
@@ -47,15 +37,13 @@ class Home extends Component {
 
   render() {
     return <Fragment>
-      <GPSLocation onGetCurrentLocation={this.props.onGetCurrentLocation} />
-      <Info onInfoClick={this.onInfoClick} onInfoClose={this.onInfoClose} />
+      <GPSLocation onGPSLocationClick={this.props.onGPSLocationClick} />
+      <Info onInfoClick={this.props.onInfoClick} onInfoClose={this.props.onInfoClose} />
       <Location location={this.props.currentCondition.location} />
       <DateCurrent date={this.props.currentCondition.date} />
       <Temperature weather={this.props.currentCondition.weather} temperature={this.props.currentCondition.temperature} />
-
+      <Refresh onClick={this.props.onRefreshClick} updating={this.props.updating} time={this.props.lastUpdate} />
       <section className="forecasts">
-        <Navigation currentForecast={this.state.currentForecast} />
-
         <div className="forecasts__scroll-panel swiper-container">
           <div className="swiper-wrapper">
             <section className="forecasts__period swiper-slide">
@@ -80,6 +68,7 @@ class Home extends Component {
             </section>
           </div>
         </div>
+        <Navigation currentForecast={this.state.currentForecast} />
       </section>
     </Fragment>
   }
@@ -88,10 +77,13 @@ class Home extends Component {
 Home.propTypes = {
   foreCastHourly: PropTypes.array,
   foreCastDaily: PropTypes.array,
+  updating: PropTypes.bool,
+  lastUpdate: PropTypes.string,
   currentCondition: PropTypes.object,
-  onGetCurrentLocation: PropTypes.func,
+  onGPSLocationClick: PropTypes.func,
   onInfoClick: PropTypes.func,
-  onInfoClose: PropTypes.func
+  onInfoClose: PropTypes.func,
+  onRefreshClick: PropTypes.func
 };
 
 export default Home;
