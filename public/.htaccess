@@ -429,4 +429,5 @@ FileETag None
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule (.*) index.html
+  RewriteRule ^robots.txt - [L]
 </ifModule>
