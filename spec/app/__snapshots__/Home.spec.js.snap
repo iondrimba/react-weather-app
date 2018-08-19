@@ -195,7 +195,7 @@ exports[`Home matches snapshot 1`] = `
       type="button"
     >
       <svg
-        id="Layer_1"
+        id="gpslocation"
         viewBox="0 0 96 96"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -244,7 +244,7 @@ exports[`Home matches snapshot 1`] = `
         <svg
           enableBackground="new 0 0 24 24"
           height="24px"
-          id="Layer_1"
+          id="location"
           version="1.1"
           viewBox="0 0 24 24"
           width="24px"
