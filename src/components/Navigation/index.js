@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import rAFTimeout from '../../helpers/rAFTimeout';
-import UINavigation from './ui';
+import './index.scss';
 
 class Navigation extends Component {
   constructor() {
@@ -28,7 +28,10 @@ class Navigation extends Component {
 
   render() {
     return (
-      <UINavigation ref={this.navigation} currentForecast={this.props.currentForecast} />
+      <section ref={this.navigation} className={`navigation ${this.props.currentForecast}`}>
+        <div className="navigation__dot"></div>
+        <div className="navigation__dot"></div>
+      </section>
     )
   }
 }

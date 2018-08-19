@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import rAFTimeout from '../../helpers/rAFTimeout';
-import UILoader from './ui';
+import './index.scss';
 
 class Loader extends Component {
   constructor() {
@@ -8,6 +8,7 @@ class Loader extends Component {
 
     this.loader = React.createRef();
     this.circle = React.createRef();
+    this.rays = [1, 2];
   }
 
   animateIn() {
@@ -48,7 +49,20 @@ class Loader extends Component {
 
   render() {
     return (
-      <UILoader ref={[this.loader, this.circle]}/>
+      <div ref={this.loader} className="loader">
+        <div ref={this.circle} className="loader__circle">
+          {
+            this.rays.map((index) => {
+              return <div key={index} className="rays">
+                <div className="ray ray--north"></div>
+                <div className="ray ray--west"></div>
+                <div className="ray ray--south"></div>
+                <div className="ray ray--east"></div>
+              </div>
+            })
+          }
+        </div>
+      </div>
     )
   }
 }

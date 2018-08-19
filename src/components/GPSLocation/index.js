@@ -8,10 +8,20 @@ class GPSLocation extends Component {
     super();
 
     this.button = React.createRef();
+    this.onMouseDown = this.onMouseDown.bind(this);
+    this.onMouseUp = this.onMouseUp.bind(this);
   }
 
   animate() {
     rAFTimeout(() => this.button.current.classList.add('animate-in'), 430);
+  }
+
+  onMouseDown() {
+    rAFTimeout(() => this.button.current.classList.add('press'), 1);
+  }
+
+  onMouseUp() {
+    rAFTimeout(() => this.button.current.classList.remove('press'), 1);
   }
 
   componentDidMount() {
@@ -20,7 +30,7 @@ class GPSLocation extends Component {
 
   render() {
     return (
-      <button ref={this.button} type="button" className="gps-location" aria-label="Get current location" onClick={this.props.onGPSLocationClick}>
+      <button ref={this.button} type="button" className="gps-location" aria-label="Get current location" onTouchStart={this.onMouseDown} onTouchEnd={this.onMouseUp} onMouseDown={this.onMouseDown} onMouseUp={this.onMouseUp} onClick={this.props.onGPSLocationClick}>
         <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 96 96">
           <g id="XMLID_1_">
             <circle id="XMLID_3_" cx="48" cy="48" r="9.8" />

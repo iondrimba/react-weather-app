@@ -25,6 +25,13 @@
     svg {
       fill: #fff;
     }
+
+    &.press {
+      left: 1px;
+      opacity: .6;
+      position: relative;
+      top: 1px;
+    }
   }
 
   &.animate-in {
