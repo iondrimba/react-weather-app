@@ -33,6 +33,7 @@ class App extends Component {
   }
 
   updatedState(data) {
+    console.log('updatedState', data);
     this.setState({
       ...data,
       showInfo: false,
@@ -42,7 +43,7 @@ class App extends Component {
   }
 
   async onGetCurrentLocation({ latitude, longitude }) {
-    this.storage.getLocation(latitude, longitude);
+    await this.storage.getLocation(latitude, longitude);
 
     rAFTimeout(() => this.updatedState(this.storage.data), 600);
   }
