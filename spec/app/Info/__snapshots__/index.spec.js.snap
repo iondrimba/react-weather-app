@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Info matches snapshot 1`] = `
+<Info
+  onInfoClick={[Function]}
+  onInfoClose={[Function]}
+  show={true}
+>
+  <div
+    className="transition"
+  />
+  <section
+    aria-hidden={true}
+    className="info "
+  >
+    <Close
+      onCloseClick={[Function]}
+    >
+      <button
+        aria-label="Close view"
+        className="button-close"
+        onClick={[Function]}
+        type="button"
+      >
+        <svg
+          fill="#fff"
+          height="24"
+          stroke="#000"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18 6L6 18M6 6l12 12"
+          />
+        </svg>
+      </button>
+    </Close>
+    <h1>
+      About
+    </h1>
+    <p>
+      PWA Weather Application made with React/Scss/ES6
+    </p>
+    <p>
+      This is a personal project built in my spare time for learning purposes.
+    </p>
+    <h2>
+      APIs
+    </h2>
+    <ul>
+      <li>
+        <a
+          className="link"
+          href="https://www.ipify.org"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Ipify (ip address)
+        </a>
+      </li>
+      <li>
+        <a
+          className="link"
+          href="https://ipstack.com"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          IpStack (ip based geolocation)
+        </a>
+      </li>
+      <li>
+        <a
+          className="link"
+          href="https://darksky.net"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          DarkSky (weather forecasting)
+        </a>
+      </li>
+      <li>
+        <a
+          className="link"
+          href="https://opencagedata.com/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          OpenCage (reverse geolocation)
+        </a>
+      </li>
+    </ul>
+    <a
+      className="github"
+      href="https://github.com/iondrimba/react-weather-app"
+      rel="noopener noreferrer"
+      target="_blank"
+      title="Github"
+    >
+      <img
+        alt="Github icon"
+        height="32"
+        src="/svg/github.svg"
+        width="32"
+      />
+    </a>
+  </section>
+</Info>
+`;
