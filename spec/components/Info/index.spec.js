@@ -20,7 +20,18 @@ describe('Info', () => {
       setTimeout(() => {
         expect(Info.prototype.animate).toBeCalled();
         done();
-      }, 360);
+      }, 500);
+    });
+  });
+
+  describe('animate', () => {
+    it('adds class animate-in to button.current', (done) => {
+      const component = mount(<Info onInfoClick={() => { }} />);
+
+      setTimeout(() => {
+        expect(component.instance().button.current.className).toContain('animate-in');
+        done();
+      }, 900);
     });
   });
 });
