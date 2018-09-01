@@ -94,4 +94,112 @@ describe('Storage', () => {
       });
     });
   });
+
+  describe('.fetch', () => {
+    it('calls through ._updateIP ._updateGeoLocation ._updateForecast .update', async () => {
+      const storage = new Storage();
+
+      spyOn(storage, '_updateIP');
+      spyOn(storage, '_updateGeoLocation');
+      spyOn(storage, '_updateForecast');
+      spyOn(storage, 'update');
+
+      await storage.fetch();
+
+      expect(storage._updateIP).toBeCalled();
+      expect(storage._updateGeoLocation).toBeCalled();
+      expect(storage._updateForecast).toBeCalled();
+      expect(storage.update).toBeCalled();
+    });
+  });
+
+  describe('._updateIP', () => {
+    describe('when IP already cached', () => {
+      it('does not fetch IP', async () => {
+        const storage = new Storage();
+
+        localStorage.setItem('ip', 1111);
+
+        spyOn(storage.ipFetcher, 'fetch');
+
+        await storage._updateIP();
+
+        expect(storage.ipFetcher.fetch).not.toBeCalled();
+      });
+    });
+
+    describe('when IP not present', () => {
+      it('does fetch IP', async () => {
+        const storage = new Storage();
+
+        localStorage.removeItem('ip');
+
+        spyOn(storage.ipFetcher, 'fetch');
+
+        await storage._updateIP();
+
+        expect(storage.ipFetcher.fetch).toBeCalled();
+      });
+    });
+  });
+
+  describe('._updateGeoLocation', () => {
+    describe('when geoLocation already cached', () => {
+      it('does not fetch geoLocation', async () => {
+        const storage = new Storage();
+
+        localStorage.setItem('geoLocation', 1111);
+
+        spyOn(storage.ipGeoLocation, 'fetch');
+
+        await storage._updateGeoLocation();
+
+        expect(storage.ipGeoLocation.fetch).not.toBeCalled();
+      });
+    });
+
+    describe('when geoLocation not present', () => {
+      it('does fetch geoLocation', async () => {
+        const storage = new Storage();
+
+        localStorage.removeItem('geoLocation');
+
+        spyOn(storage.ipGeoLocation, 'fetch');
+
+        await storage._updateGeoLocation();
+
+        expect(storage.ipGeoLocation.fetch).toBeCalled();
+      });
+    });
+  });
+
+  describe('._updateForecast', () => {
+    describe('when forecast already cached', () => {
+      it('does not fetch forecast', async () => {
+        const storage = new Storage();
+
+        localStorage.setItem('forecast', 1111);
+
+        spyOn(storage.foreCastAPI, 'fetch');
+
+        await storage._updateForecast();
+
+        expect(storage.foreCastAPI.fetch).not.toBeCalled();
+      });
+    });
+
+    describe('when forecast not present', () => {
+      it('does fetch forecast', async () => {
+        const storage = new Storage();
+
+        localStorage.removeItem('forecast');
+
+        spyOn(storage.foreCastAPI, 'fetch');
+
+        await storage._updateForecast();
+
+        expect(storage.foreCastAPI.fetch).toBeCalled();
+      });
+    });
+  });
 });

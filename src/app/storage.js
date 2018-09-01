@@ -51,7 +51,7 @@ export default class Storage {
     return `${addLeadingZero(currentDate.getHours())}:${addLeadingZero(currentDate.getMinutes())}`;
   }
 
-  async fetch() {
+  async _updateIP() {
     if (localStorage.getItem('ip')) {
       this.ipFetcher.ip = localStorage.getItem('ip');
     } else {
@@ -59,7 +59,9 @@ export default class Storage {
 
       localStorage.setItem('ip', this.ipFetcher.ip);
     }
+  }
 
+  async _updateGeoLocation() {
     if (localStorage.getItem('geoLocation')) {
       this.ipGeoLocation.data = JSON.parse(localStorage.getItem('geoLocation'));
     } else {
@@ -67,7 +69,9 @@ export default class Storage {
 
       localStorage.setItem('geoLocation', JSON.stringify(this.ipGeoLocation.data));
     }
+  }
 
+  async _updateForecast() {
     if (localStorage.getItem('forecast')) {
       this.foreCastAPI.data = JSON.parse(localStorage.getItem('forecast'));
     } else {
@@ -77,7 +81,12 @@ export default class Storage {
 
       localStorage.setItem('forecast', JSON.stringify(this.foreCastAPI.data));
     }
+  }
 
+  async fetch() {
+    await this._updateIP();
+    await this._updateGeoLocation();
+    await this._updateForecast();
     this.update();
   }
 
