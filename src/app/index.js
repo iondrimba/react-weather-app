@@ -33,7 +33,6 @@ class App extends Component {
   }
 
   updatedState(data) {
-    console.log('updatedState', data);
     this.setState({
       ...data,
       showInfo: false,

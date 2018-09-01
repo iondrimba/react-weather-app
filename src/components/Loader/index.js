@@ -52,14 +52,12 @@ class Loader extends Component {
       <div ref={this.loader} className="loader">
         <div ref={this.circle} className="loader__circle">
           {
-            this.rays.map((index) => {
-              return <div key={index} className="rays">
-                <div className="ray ray--north"></div>
-                <div className="ray ray--west"></div>
-                <div className="ray ray--south"></div>
-                <div className="ray ray--east"></div>
-              </div>
-            })
+            this.rays.map((index) => <div key={index} className="rays">
+              <div className="ray ray--north"></div>
+              <div className="ray ray--west"></div>
+              <div className="ray ray--south"></div>
+              <div className="ray ray--east"></div>
+            </div>)
           }
         </div>
       </div>
