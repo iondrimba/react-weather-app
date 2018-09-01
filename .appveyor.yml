@@ -8,7 +8,7 @@ install:
 test_script:
   - npm run build
   - npm test
-  - npm coverage
+  - npm run coverage
 build: off
 matrix:
   fast_finish: true
