@@ -50,5 +50,23 @@ describe('ForecastAPI', () => {
 
       expect(api.data).toEqual({ code: 400, error: 'The given location is invalid.' });
     });
+
+    it('throws error', async () => {
+      const api = new ForecastAPI(apiSecret);
+
+      nock('https://weather-api-nodejs.herokuapp.com')
+        .get('/api')
+        .query({ latitude: '111', longitude: '111' })
+        .reply(200, { code: 400, error: 'The given location is invalid.' }, { 'Access-Control-Allow-Origin': '*' });
+
+
+      await api.fetch('111', '111');
+
+      try {
+        await api.fetch('111', '111');
+      } catch (error) {
+        expect(error).toEqual(new Error('ForeCastAPI unable to fetch: Network request failed'));
+      }
+    });
   });
 });

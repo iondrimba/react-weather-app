@@ -49,5 +49,20 @@ describe('ReverseGeoLocation', () => {
 
       expect(api.data).toEqual({ code: 400, error: 'The given location is invalid.' });
     });
+
+    it('throws error', async () => {
+      const api = new ReverseGeoLocation(apiSecret);
+
+      nock('https://weather-api-nodejs.herokuapp.com')
+        .get('/api/geolocation')
+        .query({ latitude: '111', longitude: '111' })
+        .reply(200, { code: 400, error: 'The given location is invalid.' }, { 'Access-Control-Allow-Origin': '*' });
+
+      try {
+        await api.fetch('111', '111');
+      } catch (error) {
+        expect(error).toEqual(new Error('ReverseGeoLocation unable to fetch: Network request failed'));
+      }
+    });
   });
 });
