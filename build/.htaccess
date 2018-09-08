@@ -489,7 +489,7 @@ AddDefaultCharset utf-8
 
 <IfModule mod_headers.c>
 
-    Header set Content-Security-Policy "default-src 'none'; manifest-src 'self'; script-src 'self' 'unsafe-inline' www.google-analytics.com; object-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' www.google-analytics.com stats.g.doubleclick.net; media-src 'self'; frame-src 'self'; font-src 'self'; connect-src 'self'"
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' www.google-analytics.com; object-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' www.google-analytics.com stats.g.doubleclick.net; media-src 'self'; frame-src 'self'; font-src 'self'; connect-src 'self' api.ipify.org"
 
     # `mod_headers` cannot match based on the content-type, however,
     # the `Content-Security-Policy` response header should be send
