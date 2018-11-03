@@ -87,6 +87,7 @@ export default class Storage {
     await this._updateIP();
     await this._updateGeoLocation();
     await this._updateForecast();
+
     this.update();
   }
 
