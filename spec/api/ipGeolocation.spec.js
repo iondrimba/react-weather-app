@@ -66,6 +66,11 @@ describe('IpGeoLocation', () => {
     it('throws error', async () => {
       const ipGeoLocation = new IpGeoLocation();
 
+      nock('https://weather-api-nodejs.herokuapp.com')
+        .get('/api/ip')
+        .query({ ip: 'undefined' })
+        .reply(200, mockResult, { 'Access-Control-Allow-Origin': '*' });
+
       try {
         await ipGeoLocation.fetch();
       } catch (error) {

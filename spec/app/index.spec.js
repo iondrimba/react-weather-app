@@ -17,7 +17,6 @@ describe('App', () => {
 
   it('calls setState on dataLoaded to true', (done) => {
     const component = mount(<App />);
-
     setTimeout(() => {
       expect(component.instance().state.dataLoaded).toEqual(true);
       done();
@@ -60,26 +59,7 @@ describe('App', () => {
 
   describe('.updatedState', () => {
     it('calls .setState', () => {
-      const component = shallow(<App />);
-      const instance = component.instance();
-      const data = { mock: 'xpto' };
-
-      spyOn(instance, 'setState');
-
-      instance.updatedState(data);
-
-      expect(instance.setState).toBeCalledWith({
-        ...data,
-        showInfo: false,
-        dataLoaded: true,
-        updating: false,
-      });
-    });
-  });
-
-  describe('.updatedState', () => {
-    it('calls .setState', () => {
-      const component = shallow(<App />);
+      const component = mount(<App />);
       const instance = component.instance();
       const data = { mock: 'xpto' };
 
@@ -98,7 +78,7 @@ describe('App', () => {
 
   describe('.onGetCurrentLocation', () => {
     it('fetches data and updates state', async (done) => {
-      const component = shallow(<App />);
+      const component = mount(<App />);
       const instance = component.instance();
       const data = { latitude: 1111, longitude: 2222 };
 
@@ -110,101 +90,102 @@ describe('App', () => {
       expect(instance.storage.getLocation).toBeCalledWith(1111, 2222);
 
       setTimeout(() => {
+        component.unmount();
         expect(instance.updatedState).toBeCalledWith(instance.storage.data);
         done();
       }, 700);
     });
+  });
 
-    describe('.onGPSLocationClick', () => {
-      describe('when app state is not updating', () => {
-        it('calls onGetCurrentLocation', () => {
-          const component = shallow(<App />);
-          const instance = component.instance();
-
-          navigator.geolocation = {
-            getCurrentPosition: (callback) => { callback({ coords: 1111 }) },
-          };
-
-          spyOn(navigator.geolocation, 'getCurrentPosition').and.callThrough();
-          spyOn(instance, 'onGetCurrentLocation');
-
-          instance.onGPSLocationClick();
-
-          expect(navigator.geolocation.getCurrentPosition).toBeCalled();
-          expect(instance.onGetCurrentLocation).toBeCalled();
-        });
-      });
-
-      describe('when app state is updating', () => {
-        it('does not call onGetCurrentLocation', () => {
-          const component = shallow(<App />);
-          const instance = component.instance();
-
-          component.state().updating = true;
-
-          spyOn(instance, 'onGetCurrentLocation');
-
-          instance.onGPSLocationClick();
-
-          expect(instance.onGetCurrentLocation).not.toBeCalled();
-        });
-      });
-    });
-
-    describe('.onRefreshClick', () => {
-      describe('when app state is not updating', () => {
-        it('calls onGetCurrentLocation', () => {
-          const component = shallow(<App />);
-          const instance = component.instance();
-
-          spyOn(instance, 'onGetCurrentLocation');
-
-          instance.onRefreshClick();
-
-          expect(instance.onGetCurrentLocation).toBeCalled();
-        });
-      });
-
-      describe('when app state is updating', () => {
-        it('does not call onGetCurrentLocation', () => {
-          const component = shallow(<App />);
-          const instance = component.instance();
-
-          component.state().updating = true;
-
-          spyOn(instance, 'onGetCurrentLocation');
-
-          instance.onRefreshClick();
-
-          expect(instance.onGetCurrentLocation).not.toBeCalled();
-        });
-      });
-    });
-
-    describe('.onInfoClick', () => {
-      it('calls setState', () => {
-        const component = shallow(<App />);
+  describe('.onGPSLocationClick', () => {
+    describe('when app state is not updating', () => {
+      it('calls onGetCurrentLocation', () => {
+        const component = mount(<App />);
         const instance = component.instance();
 
-        spyOn(instance, 'setState');
+        navigator.geolocation = {
+          getCurrentPosition: (callback) => { callback({ coords: 1111 }) },
+        };
 
-        instance.onInfoClick();
+        spyOn(navigator.geolocation, 'getCurrentPosition').and.callThrough();
+        spyOn(instance, 'onGetCurrentLocation');
 
-        expect(instance.setState).toBeCalledWith({ showInfo: true });
+        instance.onGPSLocationClick();
+
+        expect(navigator.geolocation.getCurrentPosition).toBeCalled();
+        expect(instance.onGetCurrentLocation).toBeCalled();
       });
     });
 
-    describe('.onInfoClose', () => {
-      it('calls setState', () => {
-        const component = shallow(<App />);
+    describe('when app state is updating', () => {
+      it('does not call onGetCurrentLocation', () => {
+        const component = mount(<App />);
         const instance = component.instance();
 
-        spyOn(instance, 'setState');
+        component.state().updating = true;
 
-        instance.onInfoClose();
+        spyOn(instance, 'onGetCurrentLocation');
 
-        expect(instance.setState).toBeCalledWith({ showInfo: false });
+        instance.onGPSLocationClick();
+
+        expect(instance.onGetCurrentLocation).not.toBeCalled();
       });
+    });
+  });
+
+  describe('.onRefreshClick', () => {
+    describe('when app state is not updating', () => {
+      it('calls onGetCurrentLocation', () => {
+        const component = mount(<App />);
+        const instance = component.instance();
+
+        spyOn(instance, 'onGetCurrentLocation');
+
+        instance.onRefreshClick();
+
+        expect(instance.onGetCurrentLocation).toBeCalled();
+      });
+    });
+
+    describe('when app state is updating', () => {
+      it('does not call onGetCurrentLocation', () => {
+        const component = mount(<App />);
+        const instance = component.instance();
+
+        component.state().updating = true;
+
+        spyOn(instance, 'onGetCurrentLocation');
+
+        instance.onRefreshClick();
+
+        expect(instance.onGetCurrentLocation).not.toBeCalled();
+      });
+    });
+  });
+
+  describe('.onInfoClick', () => {
+    it('calls setState', () => {
+      const component = mount(<App />);
+      const instance = component.instance();
+
+      spyOn(instance, 'setState');
+
+      instance.onInfoClick();
+
+      expect(instance.setState).toBeCalledWith({ showInfo: true });
+    });
+  });
+
+  describe('.onInfoClose', () => {
+    it('calls setState', () => {
+      const component = mount(<App />);
+      const instance = component.instance();
+
+      spyOn(instance, 'setState');
+
+      instance.onInfoClose();
+
+      expect(instance.setState).toBeCalledWith({ showInfo: false });
     });
   });
 });

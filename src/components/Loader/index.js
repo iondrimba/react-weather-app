@@ -8,7 +8,7 @@ class Loader extends Component {
 
     this.loader = React.createRef();
     this.circle = React.createRef();
-    this.rays = [1, 2];
+    this.rays = [];
   }
 
   animateIn() {
@@ -21,7 +21,8 @@ class Loader extends Component {
 
   animateRays() {
     this.rays.map((element, index) => {
-      rAFTimeout(() => element.classList.add('animate-in'), index * 80)
+      rAFTimeout(() => element.classList.add('animate-in'), index * 80);
+
       return element;
     });
   }
@@ -39,6 +40,7 @@ class Loader extends Component {
 
     this.rays.map((element, index) => {
       rAFTimeout(() => element.classList.add('animate-out'), index * 50);
+
       return element;
     });
   }
@@ -52,7 +54,7 @@ class Loader extends Component {
       <div ref={this.loader} className="loader">
         <div ref={this.circle} className="loader__circle">
           {
-            this.rays.map((index) => <div key={index} className="rays">
+            [0, 1].map((index) => <div key={`ray_${index}`} className="rays">
               <div className="ray ray--north"></div>
               <div className="ray ray--west"></div>
               <div className="ray ray--south"></div>

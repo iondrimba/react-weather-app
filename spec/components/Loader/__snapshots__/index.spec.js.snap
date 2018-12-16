@@ -10,7 +10,7 @@ exports[`Loader matches snapshot 1`] = `
     >
       <div
         className="rays"
-        key="1"
+        key="ray_0"
       >
         <div
           className="ray ray--north"
@@ -27,7 +27,7 @@ exports[`Loader matches snapshot 1`] = `
       </div>
       <div
         className="rays"
-        key="2"
+        key="ray_1"
       >
         <div
           className="ray ray--north"
