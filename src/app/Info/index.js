@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import rAFTimeout from '../../helpers/rAFTimeout';
 import Close from '../../components/Close';
+import svg from '../../svg/github.svg';
 import './index.scss';
 import './transition.scss';
 
@@ -59,7 +60,7 @@ class Info extends Component {
           <li><a className="link" href="https://opencagedata.com/" target="_blank" rel="noopener noreferrer">OpenCage (reverse geolocation)</a></li>
         </ul>
         <a target="_blank" rel="noopener noreferrer" href="https://github.com/iondrimba/react-weather-app" className="github" title="Github">
-          <img src="/svg/github.svg" alt="Github icon" width="32" height="32" />
+          <img src={svg} alt="Github icon" width="32" height="32" />
         </a>
       </section>
     </Fragment>
