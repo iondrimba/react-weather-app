@@ -1,4 +1,16 @@
 {
-  "main.js": "static/js/main.cdec95d7.js",
-  "main.js.map": "static/js/main.cdec95d7.js.map"
+  "main.js": "static/js/main.bfc79047.js",
+  "main.js.map": "static/js/main.bfc79047.js.map",
+  "static\\media\\github.svg": "static/media/github.ce7e815e.svg",
+  "static\\media\\rain-probality.svg": "static/media/rain-probality.5e59ef5e.svg",
+  "static\\media\\wi-cloudy.svg": "static/media/wi-cloudy.747252b0.svg",
+  "static\\media\\wi-day-cloudy.svg": "static/media/wi-day-cloudy.66af1915.svg",
+  "static\\media\\wi-day-sunny.svg": "static/media/wi-day-sunny.ea5fd34d.svg",
+  "static\\media\\wi-fog.svg": "static/media/wi-fog.e0112c7f.svg",
+  "static\\media\\wi-night-alt-cloudy.svg": "static/media/wi-night-alt-cloudy.acccbdc9.svg",
+  "static\\media\\wi-night-clear.svg": "static/media/wi-night-clear.94b45031.svg",
+  "static\\media\\wi-rain.svg": "static/media/wi-rain.653d9c8a.svg",
+  "static\\media\\wi-sleet.svg": "static/media/wi-sleet.e4b06b7f.svg",
+  "static\\media\\wi-snow.svg": "static/media/wi-snow.0eaf9625.svg",
+  "static\\media\\wi-windy.svg": "static/media/wi-windy.b0b1663e.svg"
 }
