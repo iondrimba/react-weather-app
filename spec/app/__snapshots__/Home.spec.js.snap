@@ -375,7 +375,7 @@ exports[`Home matches snapshot 1`] = `
               <img
                 alt="icon"
                 className="forecast__icon"
-                src="svg/wi-night-clear.svg"
+                src="wi-night-clear.svg"
               />
               <ForeCastTemperature
                 temperature={21}
@@ -396,10 +396,10 @@ exports[`Home matches snapshot 1`] = `
                   className="rain"
                 >
                   <img
-                    alt="alt"
+                    alt="rain probability 0"
                     className="rain__icon"
                     height="24"
-                    src="/svg/rain-probality.svg"
+                    src="rain-probality.svg"
                     width="24"
                   />
                   <span
@@ -430,7 +430,7 @@ exports[`Home matches snapshot 1`] = `
               <img
                 alt="icon"
                 className="forecast__icon"
-                src="svg/wi-night-clear.svg"
+                src="wi-night-clear.svg"
               />
               <ForeCastTemperature
                 temperature={20}
@@ -451,10 +451,10 @@ exports[`Home matches snapshot 1`] = `
                   className="rain"
                 >
                   <img
-                    alt="alt"
+                    alt="rain probability 0"
                     className="rain__icon"
                     height="24"
-                    src="/svg/rain-probality.svg"
+                    src="rain-probality.svg"
                     width="24"
                   />
                   <span
@@ -485,7 +485,7 @@ exports[`Home matches snapshot 1`] = `
               <img
                 alt="icon"
                 className="forecast__icon"
-                src="svg/wi-night-clear.svg"
+                src="wi-night-clear.svg"
               />
               <ForeCastTemperature
                 temperature={19}
@@ -506,10 +506,10 @@ exports[`Home matches snapshot 1`] = `
                   className="rain"
                 >
                   <img
-                    alt="alt"
+                    alt="rain probability 0"
                     className="rain__icon"
                     height="24"
-                    src="/svg/rain-probality.svg"
+                    src="rain-probality.svg"
                     width="24"
                   />
                   <span
@@ -540,7 +540,7 @@ exports[`Home matches snapshot 1`] = `
               <img
                 alt="icon"
                 className="forecast__icon"
-                src="svg/wi-night-clear.svg"
+                src="wi-night-clear.svg"
               />
               <ForeCastTemperature
                 temperature={19}
@@ -561,10 +561,10 @@ exports[`Home matches snapshot 1`] = `
                   className="rain"
                 >
                   <img
-                    alt="alt"
+                    alt="rain probability 0"
                     className="rain__icon"
                     height="24"
-                    src="/svg/rain-probality.svg"
+                    src="rain-probality.svg"
                     width="24"
                   />
                   <span
@@ -595,7 +595,7 @@ exports[`Home matches snapshot 1`] = `
               <img
                 alt="icon"
                 className="forecast__icon"
-                src="svg/wi-night-clear.svg"
+                src="wi-night-clear.svg"
               />
               <ForeCastTemperature
                 temperature={18}
@@ -616,10 +616,10 @@ exports[`Home matches snapshot 1`] = `
                   className="rain"
                 >
                   <img
-                    alt="alt"
+                    alt="rain probability 0"
                     className="rain__icon"
                     height="24"
-                    src="/svg/rain-probality.svg"
+                    src="rain-probality.svg"
                     width="24"
                   />
                   <span
@@ -654,7 +654,7 @@ exports[`Home matches snapshot 1`] = `
               <img
                 alt="icon"
                 className="forecast__icon"
-                src="svg/wi-night-alt-cloudy.svg"
+                src="wi-night-alt-cloudy.svg"
               />
               <div>
                 <ForeCastTemperature
@@ -689,10 +689,10 @@ exports[`Home matches snapshot 1`] = `
                   className="rain"
                 >
                   <img
-                    alt="alt"
+                    alt="rain probability 0"
                     className="rain__icon"
                     height="24"
-                    src="/svg/rain-probality.svg"
+                    src="rain-probality.svg"
                     width="24"
                   />
                   <span
@@ -723,7 +723,7 @@ exports[`Home matches snapshot 1`] = `
               <img
                 alt="icon"
                 className="forecast__icon"
-                src="svg/wi-day-cloudy.svg"
+                src="wi-day-cloudy.svg"
               />
               <div>
                 <ForeCastTemperature
@@ -758,10 +758,10 @@ exports[`Home matches snapshot 1`] = `
                   className="rain"
                 >
                   <img
-                    alt="alt"
+                    alt="rain probability 13"
                     className="rain__icon"
                     height="24"
-                    src="/svg/rain-probality.svg"
+                    src="rain-probality.svg"
                     width="24"
                   />
                   <span
@@ -792,7 +792,7 @@ exports[`Home matches snapshot 1`] = `
               <img
                 alt="icon"
                 className="forecast__icon"
-                src="svg/wi-day-cloudy.svg"
+                src="wi-day-cloudy.svg"
               />
               <div>
                 <ForeCastTemperature
@@ -827,10 +827,10 @@ exports[`Home matches snapshot 1`] = `
                   className="rain"
                 >
                   <img
-                    alt="alt"
+                    alt="rain probability 0"
                     className="rain__icon"
                     height="24"
-                    src="/svg/rain-probality.svg"
+                    src="rain-probality.svg"
                     width="24"
                   />
                   <span
@@ -861,7 +861,7 @@ exports[`Home matches snapshot 1`] = `
               <img
                 alt="icon"
                 className="forecast__icon"
-                src="svg/wi-day-sunny.svg"
+                src="wi-day-sunny.svg"
               />
               <div>
                 <ForeCastTemperature
@@ -896,10 +896,10 @@ exports[`Home matches snapshot 1`] = `
                   className="rain"
                 >
                   <img
-                    alt="alt"
+                    alt="rain probability 3"
                     className="rain__icon"
                     height="24"
-                    src="/svg/rain-probality.svg"
+                    src="rain-probality.svg"
                     width="24"
                   />
                   <span
@@ -930,7 +930,7 @@ exports[`Home matches snapshot 1`] = `
               <img
                 alt="icon"
                 className="forecast__icon"
-                src="svg/wi-night-alt-cloudy.svg"
+                src="wi-night-alt-cloudy.svg"
               />
               <div>
                 <ForeCastTemperature
@@ -965,10 +965,10 @@ exports[`Home matches snapshot 1`] = `
                   className="rain"
                 >
                   <img
-                    alt="alt"
+                    alt="rain probability 4"
                     className="rain__icon"
                     height="24"
-                    src="/svg/rain-probality.svg"
+                    src="rain-probality.svg"
                     width="24"
                   />
                   <span

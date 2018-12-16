@@ -3,7 +3,7 @@
 exports[`Forecast matches snapshot 1`] = `
 <Forecast
   animationDelay={1}
-  icon="xpto"
+  icon="wi-cloudy"
   id="11"
   title="some title"
 >
@@ -19,7 +19,7 @@ exports[`Forecast matches snapshot 1`] = `
     <img
       alt="icon"
       className="forecast__icon"
-      src="svg/xpto.svg"
+      src="wi-cloudy.svg"
     />
      
     <h1>

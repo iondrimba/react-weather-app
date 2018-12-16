@@ -8,10 +8,10 @@ exports[`RainProbability matches snapshot 1`] = `
     className="rain"
   >
     <img
-      alt="alt"
+      alt="rain probability 20"
       className="rain__icon"
       height="24"
-      src="/svg/rain-probality.svg"
+      src="rain-probality.svg"
       width="24"
     />
     <span

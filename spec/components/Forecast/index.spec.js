@@ -4,7 +4,7 @@ import { enzymeConfig, mount } from '../../enzymeConfig';
 
 enzymeConfig();
 
-const ForecastComponent = (<Forecast id='11' title='some title' icon='xpto' animationDelay={1} > <h1>Children</h1> </Forecast>);
+const ForecastComponent = (<Forecast id='11' title='some title' icon='wi-cloudy' animationDelay={1} > <h1>Children</h1> </Forecast>);
 
 describe('Forecast', () => {
   it('matches snapshot', () => {
@@ -28,10 +28,12 @@ describe('Forecast', () => {
   });
 
   describe('.icon', () => {
-    it('matches source icon path svg/xpto.svg', () => {
+    it('matches source icon path wi-cloudy.svg', () => {
       const component = mount(ForecastComponent);
 
-      expect(component.find('[src="svg/xpto.svg"]').length).toEqual(1);
+      component.debug();
+
+      expect(component.find('[src="wi-cloudy.svg"]').length).toEqual(1);
     });
   });
 });
