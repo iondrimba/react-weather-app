@@ -12,7 +12,7 @@
 .DS_Store
 .env.test
 .env.development.local
-.env.test.local
+.env.local
 .env.production.local
 
 npm-debug.log*
