@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import rAFTimeout from '../../helpers/rAFTimeout';
 import './index.scss';
 
-class Loader extends Component {
+class Loader extends PureComponent {
   constructor() {
     super();
 
