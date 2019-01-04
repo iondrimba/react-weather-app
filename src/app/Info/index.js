@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import rAFTimeout from '../../helpers/rAFTimeout';
 import Close from '../../components/Close';
@@ -6,7 +6,7 @@ import svg from '../../svg/github.svg';
 import './index.scss';
 import './transition.scss';
 
-class Info extends Component {
+class Info extends PureComponent {
   constructor() {
     super();
 

@@ -1,8 +1,8 @@
 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-class ForeCastTemperature extends Component {
+class ForeCastTemperature extends PureComponent {
   render() {
     return (
       <p className="forecast__temperature">{this.props.temperature}

@@ -1,18 +1,17 @@
-import React, { Component, Fragment } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import Swiper from 'swiper/dist/js/swiper.js';
-import ForeCast from '../../components/Forecast';
-import ForeCastTemperature from '../../components/Forecast/Temperature';
+import ForecastHourly from '../../components/ForecastHourly';
+import ForecastDaily from '../../components/ForecastDaily';
 import Location from '../../components/Location';
 import Temperature from '../../components/Temperature';
 import Navigation from '../../components/Navigation';
-import RainProbability from '../../components/RainProbability';
 import GPSLocation from '../../components/GPSLocation';
 import Info from '../../components/Info';
 import DateCurrent from '../../components/DateCurrent';
 import Refresh from '../../components/Refresh';
 import PropTypes from 'prop-types';
 
-class Home extends Component {
+class Home extends PureComponent {
   constructor() {
     super();
 
@@ -46,26 +45,8 @@ class Home extends Component {
       <section className="forecasts">
         <div className="forecasts__scroll-panel swiper-container">
           <div className="swiper-wrapper">
-            <section className="forecasts__period swiper-slide">
-              {
-                this.props.foreCastHourly.map((item, index) => <ForeCast key={`hourly-${index}`} id={`hourly-${index}`} title={`${item.time}:00`} icon={item.icon} animationDelay={index}>
-                  <ForeCastTemperature temperature={item.temperature} />
-                  <RainProbability probability={item.rainProbability} />
-                </ForeCast>)
-              }
-            </section>
-
-            <section className="forecasts__period forecasts--daily swiper-slide">
-              {
-                this.props.foreCastDaily.map((item, index) => <ForeCast key={`daily-${index}`} id={`daily-${index}`} title={item.weekDay} icon={item.icon} animationDelay={index}>
-                  <div>
-                    <ForeCastTemperature temperature={item.temperature.max} />
-                    <ForeCastTemperature temperature={item.temperature.min} />
-                  </div>
-                  <RainProbability probability={item.rainProbability} />
-                </ForeCast>)
-              }
-            </section>
+            <ForecastHourly foreCastHourly={this.props.foreCastHourly} />
+            <ForecastDaily foreCastDaily={this.props.foreCastDaily} />
           </div>
         </div>
         <Navigation currentForecast={this.state.currentForecast} />

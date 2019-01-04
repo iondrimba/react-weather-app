@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import rAFTimeout from '../../helpers/rAFTimeout';
 import './index.scss';
 import { icons } from '../../helpers/icons';
 
-class Forecast extends Component {
+class Forecast extends PureComponent {
   constructor() {
     super();
 

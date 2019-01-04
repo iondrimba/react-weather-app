@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import rAFTimeout from '../../helpers/rAFTimeout';
 import './index.scss';
 
-class DateCurrent extends Component {
+class DateCurrent extends PureComponent {
   constructor() {
     super();
 
