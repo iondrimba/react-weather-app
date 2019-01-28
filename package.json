@@ -132,7 +132,7 @@
   "devDependencies": {
     "babel-plugin-transform-react-remove-prop-types": "^0.4.23",
     "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.6.0",
+    "enzyme-adapter-react-16": "^1.8.0",
     "enzyme-to-json": "^3.3.4",
     "eslint-plugin-babel": "^5.2.1",
     "eslint-plugin-jest": "^22.1.3",
