@@ -5,6 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 https://weather.iondrimbafilho.me/
 
 [![Build Status](https://travis-ci.org/iondrimba/react-weather-app.svg?branch=master)](https://travis-ci.org/iondrimba/react-weather-app) [![Build status](https://ci.appveyor.com/api/projects/status/b4ntyo5bqtfs33mg?svg=true)](https://ci.appveyor.com/project/iondrimba/react-weather-app)
+[![Build status](https://david-dm.org/iondrimba/react-weather-app.svg)](https://david-dm.org/iondrimba/react-weather-app?view=list)
 [![Maintainability](https://api.codeclimate.com/v1/badges/8cd55ce66e034c44f03a/maintainability)](https://codeclimate.com/github/iondrimba/react-weather-app/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/8cd55ce66e034c44f03a/test_coverage)](https://codeclimate.com/github/iondrimba/react-weather-app/test_coverage) [![Greenkeeper badge](https://badges.greenkeeper.io/iondrimba/react-weather-app.svg)](https://greenkeeper.io/) 
 
 ![Demo](https://raw.githubusercontent.com/iondrimba/images/master/weather.gif?raw=true)
