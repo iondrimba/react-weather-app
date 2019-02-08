@@ -1,5 +1,5 @@
 export default (day) => {
-  const weekdays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fry', 'sat'];
+  const weekdays = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
   const result = weekdays[day];
 
   if (result) {

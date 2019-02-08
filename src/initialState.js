@@ -53,7 +53,7 @@ export default {
         }
       },
       {
-        weekDay: "Fry",
+        weekDay: "Fri",
         rainProbability: 0,
         icon: "wi-fog",
         temperature: {
@@ -169,7 +169,7 @@ export default {
       }
     },
     {
-      weekDay: "fry",
+      weekDay: "fri",
       rainProbability: 0,
       icon: "wi-cloudy",
       temperature: {

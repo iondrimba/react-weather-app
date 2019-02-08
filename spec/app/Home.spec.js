@@ -52,7 +52,7 @@ const currentCondition = {
       }
     },
     {
-      "weekDay": "Fry",
+      "weekDay": "Fri",
       "rainProbability": 20,
       "icon": "wi-fog",
       "temperature": {
@@ -128,7 +128,7 @@ const foreCastDaily = [
     }
   },
   {
-    "weekDay": "fry",
+    "weekDay": "fri",
     "rainProbability": 3,
     "icon": "wi-day-sunny",
     "temperature": {
