@@ -58,7 +58,7 @@ exports[`Home matches snapshot 1`] = `
             "max": 19,
             "min": 11,
           },
-          "weekDay": "Fry",
+          "weekDay": "Fri",
         },
       ],
       "foreCastHourly": Array [
@@ -134,7 +134,7 @@ exports[`Home matches snapshot 1`] = `
           "max": 26,
           "min": 15,
         },
-        "weekDay": "fry",
+        "weekDay": "fri",
       },
       Object {
         "icon": "wi-night-alt-cloudy",
@@ -706,7 +706,7 @@ exports[`Home matches snapshot 1`] = `
                   "max": 26,
                   "min": 15,
                 },
-                "weekDay": "fry",
+                "weekDay": "fri",
               },
               Object {
                 "icon": "wi-night-alt-cloudy",
@@ -935,7 +935,7 @@ exports[`Home matches snapshot 1`] = `
               icon="wi-day-sunny"
               id="daily-3"
               key="daily-3"
-              title="fry"
+              title="fri"
             >
               <div
                 className="forecast"
@@ -944,7 +944,7 @@ exports[`Home matches snapshot 1`] = `
                 <span
                   className="forecast__title"
                 >
-                  fry
+                  fri
                 </span>
                 <img
                   alt="icon"
