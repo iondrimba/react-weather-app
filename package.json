@@ -46,7 +46,7 @@
     "prop-types": "^15.7.2",
     "raf": "3.4.1",
     "react": "^16.8.4",
-    "react-app-polyfill": "^0.2.1",
+    "react-app-polyfill": "^0.2.2",
     "react-dev-utils": "^8.0.0",
     "react-dom": "^16.8.4",
     "swiper": "^4.5.0",
