@@ -45,13 +45,13 @@
     "promise": "8.0.3",
     "prop-types": "^15.7.2",
     "raf": "3.4.1",
-    "react": "^16.8.4",
+    "react": "^16.8.6",
     "react-app-polyfill": "^0.2.2",
     "react-dev-utils": "^8.0.0",
-    "react-dom": "^16.8.4",
+    "react-dom": "^16.8.6",
     "swiper": "^4.5.0",
     "resolve": "1.10.0",
-    "react-test-renderer": "^16.8.4",
+    "react-test-renderer": "^16.8.6",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",
     "terser-webpack-plugin": "1.2.3",
@@ -132,13 +132,13 @@
   "devDependencies": {
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.11.2",
+    "enzyme-adapter-react-16": "^1.12.1",
     "enzyme-to-json": "^3.3.4",
     "eslint-plugin-babel": "^5.2.1",
     "eslint-plugin-jest": "^22.4.1",
     "nock": "^10.0.6",
     "node-sass": "^4.9.4",
     "sass-loader": "^7.1.0",
-    "stylelint-config-standard": "^18.2.0"
+    "stylelint-config-standard": "^18.3.0"
   }
 }
