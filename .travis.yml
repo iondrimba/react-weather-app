@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - '9'
+  - '10'
 env:
   global:
     - CC_TEST_REPORTER_ID=$CC_TEST_REPORTER_ID
