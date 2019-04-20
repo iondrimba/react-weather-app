@@ -1,7 +1,10 @@
 {
-  "name": "my-app",
+  "name": "weather-app",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=10"
+  },
   "dependencies": {
     "@babel/core": "7.4.3",
     "@svgr/webpack": "4.2.0",
