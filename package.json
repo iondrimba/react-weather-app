@@ -140,7 +140,7 @@
     "eslint-plugin-babel": "^5.2.1",
     "eslint-plugin-jest": "^22.5.1",
     "nock": "^10.0.6",
-    "node-sass": "^4.9.4",
+    "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",
     "stylelint-config-standard": "^18.3.0"
   }
