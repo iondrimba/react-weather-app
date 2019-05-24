@@ -53,6 +53,7 @@
     -->
   <link rel="preconnect" href="https://weather-api-nodejs.herokuapp.com">
   <link rel="preconnect" href="https://api.ipify.org">
+  <link rel="preload" href="https://browser.sentry-cdn.com/5.2.0/bundle.min.js" as="script">
   <link rel="manifest" href="%PUBLIC_URL%/manifest.webmanifest">
   <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
   <!--
@@ -65,9 +66,8 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
   <title>PWA React Weather App</title>
-  <script src="https://browser.sentry-cdn.com/5.2.0/bundle.min.js" async crossorigin="anonymous">
-    Sentry.init({ dsn: 'https://b56d02b894dc4768bfaf7899ac1b4887@sentry.io/1457676' });
-  </script>
+  <script src="https://browser.sentry-cdn.com/5.2.0/bundle.min.js" crossorigin="anonymous"></script>
+  <script>Sentry.init({ dsn: 'https://b56d02b894dc4768bfaf7899ac1b4887@sentry.io/1457676' });</script>
 </head>
 
 <body>
