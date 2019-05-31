@@ -11,6 +11,14 @@ class Loader extends PureComponent {
     this.rays = [];
   }
 
+  _getCircle() {
+    if(this.circle.current) {
+      return this.circle.current;
+    }
+
+    return document.querySelector('.loader__circle');
+  }
+
   animateIn() {
     this.animateCircle();
 
@@ -28,15 +36,15 @@ class Loader extends PureComponent {
   }
 
   startRotation() {
-    rAFTimeout(() => this.circle.current.classList.add('start-rotation'), 300);
+    rAFTimeout(() => this._getCircle().classList.add('start-rotation'), 300);
   }
 
   animateCircle() {
-    rAFTimeout(() => this.circle.current.classList.add('animate-in'), 150);
+    rAFTimeout(() => this._getCircle().classList.add('animate-in'), 150);
   }
 
   animateOut() {
-    rAFTimeout(() => this.circle.current.classList.add('animate-out'), 550);
+    rAFTimeout(() => this._getCircle().classList.add('animate-out'), 550);
 
     this.rays.map((element, index) => {
       rAFTimeout(() => element.classList.add('animate-out'), index * 50);
@@ -46,7 +54,7 @@ class Loader extends PureComponent {
   }
 
   componentDidMount() {
-    this.rays = [...this.circle.current.querySelectorAll('.ray')];
+    this.rays = [...this._getCircle().querySelectorAll('.ray')];
   }
 
   render() {
