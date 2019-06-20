@@ -1,0 +1,11 @@
+version: '3'
+services:
+  dev:
+    build: .
+    volumes:
+      - .:/app
+      - /app/node_modules
+    working_dir: /app
+    command: npm start
+    ports:
+      - 3000:3000
