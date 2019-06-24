@@ -26,7 +26,7 @@
     "eslint-plugin-flowtype": "3.10.5",
     "eslint-plugin-import": "2.17.3",
     "eslint-plugin-jsx-a11y": "6.2.1",
-    "eslint-plugin-react": "7.13.0",
+    "eslint-plugin-react": "7.14.0",
     "file-loader": "4.0.0",
     "fork-ts-checker-webpack-plugin-alt": "0.4.14",
     "fs-extra": "8.0.1",
