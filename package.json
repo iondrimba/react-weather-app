@@ -24,7 +24,7 @@
     "fork-ts-checker-webpack-plugin-alt": "0.4.14",
     "fs-extra": "8.1.0",
     "hammerjs": "^2.0.8",
-    "html-webpack-plugin": "4.0.0-beta.7",
+    "html-webpack-plugin": "4.0.0-beta.8",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.8.0",
     "jest-localstorage-mock": "^2.4.0",
