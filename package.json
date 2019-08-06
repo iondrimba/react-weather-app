@@ -129,7 +129,7 @@
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
-    "enzyme-to-json": "^3.3.4",
+    "enzyme-to-json": "^3.4.0",
     "eslint": "^6.1.0",
     "eslint-config-react-app": "^4.0.1",
     "eslint-loader": "^2.2.1",
