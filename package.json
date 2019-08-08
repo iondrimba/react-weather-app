@@ -135,7 +135,7 @@
     "eslint-loader": "^2.2.1",
     "eslint-plugin-babel": "^5.2.1",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^22.14.1",
+    "eslint-plugin-jest": "^22.15.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
     "nock": "^10.0.6",
