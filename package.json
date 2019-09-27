@@ -6,7 +6,7 @@
     "node": ">=10"
   },
   "dependencies": {
-    "@babel/core": "7.6.0",
+    "@babel/core": "7.6.2",
     "@svgr/webpack": "4.3.3",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.3",
@@ -52,9 +52,9 @@
     "swiper": "^4.5.0",
     "terser-webpack-plugin": "2.1.0",
     "url-loader": "2.1.0",
-    "webpack": "4.40.2",
+    "webpack": "4.41.0",
     "webpack-dev-server": "3.8.1",
-    "webpack-manifest-plugin": "2.0.4",
+    "webpack-manifest-plugin": "2.1.2",
     "whatwg-fetch": "3.0.0",
     "workbox-webpack-plugin": "4.3.1"
   },
@@ -132,7 +132,7 @@
     "enzyme-to-json": "^3.4.0",
     "eslint": "^6.4.0",
     "eslint-config-react-app": "^5.0.2",
-    "eslint-loader": "^3.0.0",
+    "eslint-loader": "^3.0.2",
     "eslint-plugin-babel": "^5.2.1",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^22.17.0",
