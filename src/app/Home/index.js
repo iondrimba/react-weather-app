@@ -1,5 +1,5 @@
 import React, { PureComponent, Fragment } from 'react';
-import Swiper from 'swiper/dist/js/swiper.js';
+import Swiper from 'swiper';
 import ForecastHourly from '../../components/ForecastHourly';
 import ForecastDaily from '../../components/ForecastDaily';
 import Location from '../../components/Location';
