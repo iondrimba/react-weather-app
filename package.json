@@ -20,7 +20,7 @@
     "css-loader": "3.2.0",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
-    "file-loader": "4.3.0",
+    "file-loader": "5.0.2",
     "fork-ts-checker-webpack-plugin-alt": "0.4.14",
     "fs-extra": "8.1.0",
     "hammerjs": "^2.0.8",
