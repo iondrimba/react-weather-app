@@ -17,7 +17,7 @@
     "bfj": "7.0.1",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
     "chalk": "3.0.0",
-    "css-loader": "3.2.1",
+    "css-loader": "3.3.2",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
     "file-loader": "5.0.2",
