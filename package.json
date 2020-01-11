@@ -138,7 +138,7 @@
     "eslint-plugin-jest": "^23.3.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.17.0",
-    "nock": "^11.7.1",
+    "nock": "^11.7.2",
     "node-sass": "^4.13.0",
     "sass-loader": "^7.3.1",
     "stylelint-config-standard": "^19.0.0"
