@@ -1,6 +1,6 @@
 import React from 'react';
 import App from '../../src/app';
-import { enzymeConfig, mount, shallow } from '../enzymeConfig';
+import { enzymeConfig, mount } from '../enzymeConfig';
 
 jest.mock('../../src/api/ipfetcher');
 jest.mock('../../src/api/ipGeoLocation');
@@ -65,13 +65,30 @@ describe('App', () => {
 
       spyOn(instance, 'setState');
 
-      instance.updatedState(data);
+      instance.updatedState({ ipGeoLocation: { data: null }, data });
 
       expect(instance.setState).toBeCalledWith({
         ...data,
         showInfo: false,
         dataLoaded: true,
         updating: false,
+      });
+    });
+  });
+
+  describe('when error', () => {
+    it('calls .setState with error object', () => {
+      const component = mount(<App />);
+      const instance = component.instance();
+      const data = { mock: 'xpto' };
+
+      spyOn(instance, 'setState');
+
+      instance.updatedState({ ipGeoLocation: { data: { error: 'xpto' } }, data });
+
+      expect(instance.setState).toBeCalledWith({
+        error: 'xpto',
+        dataLoaded: true,
       });
     });
   });
@@ -91,7 +108,7 @@ describe('App', () => {
 
       setTimeout(() => {
         component.unmount();
-        expect(instance.updatedState).toBeCalledWith(instance.storage.data);
+        expect(instance.updatedState).toBeCalledWith(instance.storage);
         done();
       }, 700);
     });

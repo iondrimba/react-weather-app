@@ -52,7 +52,7 @@ class App extends Component {
   async onGetCurrentLocation({ latitude, longitude }) {
     await this.storage.getLocation(latitude, longitude);
 
-    rAFTimeout(() => this.updatedState(this.storage.data), 600);
+    rAFTimeout(() => this.updatedState(this.storage), 600);
   }
 
   onGPSLocationClick() {
