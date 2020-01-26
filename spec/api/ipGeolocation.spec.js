@@ -77,5 +77,34 @@ describe('IpGeoLocation', () => {
         expect(error).toEqual(new Error('IpGeoLocation unable to fetch: Network request failed'));
       }
     });
+
+    describe('when limit reached', () => {
+      it('returns erro message', async () => {
+        const ipGeoLocation = new IpGeoLocation();
+
+        nock('https://weather-api-nodejs.herokuapp.com')
+          .get('/api/ip')
+          .query({ ip: '161.185.160.93' })
+          .reply(200, {
+            "success": false,
+            "error": {
+              "code": 104,
+              "type": "usage_limit_reached",
+              "info": "Your monthly usage limit has been reached. Please upgrade your Subscription Plan."
+            }
+          }, { 'Access-Control-Allow-Origin': '*' });
+
+        await ipGeoLocation.fetch('161.185.160.93');
+
+        expect(ipGeoLocation.data).toEqual({
+          "success": false,
+          "error": {
+            "code": 104,
+            "type": "usage_limit_reached",
+            "info": "Your monthly usage limit has been reached. Please upgrade your Subscription Plan."
+          }
+        });
+      });
+    });
   });
 });

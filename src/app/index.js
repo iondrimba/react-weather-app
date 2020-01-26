@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import Home from './Home';
 import Info from './Info';
 import Loader from '../components/Loader';
+import Error from '../components/Error';
 import rAFTimeout from '../helpers/rAFTimeout';
 import Storage from './storage';
 import './index.scss';
@@ -28,17 +29,24 @@ class App extends Component {
     rAFTimeout(() => {
       this.loader.current.animateOut();
 
-      rAFTimeout(() => this.updatedState(this.storage.data), 600);
+      rAFTimeout(() => this.updatedState(this.storage), 600);
     }, 1000);
   }
 
-  updatedState(data) {
-    this.setState({
-      ...data,
-      showInfo: false,
-      dataLoaded: true,
-      updating: false,
-    });
+  updatedState({ ipGeoLocation, data }) {
+    if (ipGeoLocation.data && ipGeoLocation.data.error) {
+      this.setState({
+        error: ipGeoLocation.data.error,
+        dataLoaded: true,
+      });
+    } else {
+      this.setState({
+        ...data,
+        showInfo: false,
+        dataLoaded: true,
+        updating: false,
+      });
+    }
   }
 
   async onGetCurrentLocation({ latitude, longitude }) {
@@ -80,21 +88,35 @@ class App extends Component {
     this.init();
   }
 
+  errorReachLimit() {
+    return <Error/>
+  }
+
+  display() {
+    return (this.state.error ? this.errorReachLimit() : this.displayHome());
+  }
+
+  displayHome() {
+    return (
+      <Fragment>
+        <Home currentCondition={this.state.currentCondition}
+          foreCastDaily={this.state.foreCastDaily}
+          foreCastHourly={this.state.foreCastHourly}
+          onInfoClick={this.onInfoClick}
+          onGPSLocationClick={this.onGPSLocationClick}
+          updating={this.state.updating}
+          lastUpdate={this.state.lastUpdate}
+          onRefreshClick={this.onRefreshClick} />
+        <Info onInfoClose={this.onInfoClose} show={this.state.showInfo} />
+      </Fragment>
+    )
+  }
+
   render() {
     return (
       <div className="App">
         {
-          !this.state.dataLoaded ? <Loader ref={this.loader} /> : <Fragment>
-            <Home currentCondition={this.state.currentCondition}
-              foreCastDaily={this.state.foreCastDaily}
-              foreCastHourly={this.state.foreCastHourly}
-              onInfoClick={this.onInfoClick}
-              onGPSLocationClick={this.onGPSLocationClick}
-              updating={this.state.updating}
-              lastUpdate={this.state.lastUpdate}
-              onRefreshClick={this.onRefreshClick} />
-            <Info onInfoClose={this.onInfoClose} show={this.state.showInfo} />
-          </Fragment>
+          !this.state.dataLoaded ? <Loader ref={this.loader} /> : this.display()
         }
       </div>
     );
