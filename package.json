@@ -46,7 +46,7 @@
     "react-dev-utils": "^10.2.1",
     "react-dom": "^16.13.1",
     "react-test-renderer": "^16.13.1",
-    "resolve": "1.15.1",
+    "resolve": "1.16.1",
     "sass-loader": "8.0.2",
     "style-loader": "1.1.4",
     "swiper": "^5.3.7",
