@@ -1,0 +1,14 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: weekly
+    day: saturday
+    time: "09:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: react-dev-utils
+    versions:
+    - ">= 10.2.a"
+    - "< 10.3"
