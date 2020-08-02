@@ -59,8 +59,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom",
-    "coverage": "node scripts/test.js --env=jsdom --coverage"
+    "test": "node scripts/test.js --env=jsdom --coverage"
   },
   "eslintConfig": {
     "extends": "react-app"

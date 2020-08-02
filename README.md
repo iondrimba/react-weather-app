@@ -4,9 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 <https://weather.iondrimbafilho.me/>
 
-![Node.js CI](https://github.com/iondrimba/react-weather-app/workflows/Node.js%20CI/badge.svg)
-[![Build status](https://david-dm.org/iondrimba/react-weather-app.svg)](https://david-dm.org/iondrimba/react-weather-app?view=list)
-[![Maintainability](https://api.codeclimate.com/v1/badges/8cd55ce66e034c44f03a/maintainability)](https://codeclimate.com/github/iondrimba/react-weather-app/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/8cd55ce66e034c44f03a/test_coverage)](https://codeclimate.com/github/iondrimba/react-weather-app/test_coverage) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=iondrimba/react-weather-app)](https://dependabot.com)
+![build](https://github.com/iondrimba/react-weather-app/workflows/build/badge.svg)
+![deploy](https://github.com/iondrimba/react-weather-app/workflows/deploy/badge.svg)
+[![Maintainability](https://api.codeclimate.com/v1/badges/8cd55ce66e034c44f03a/maintainability)](https://codeclimate.com/github/iondrimba/react-weather-app/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/8cd55ce66e034c44f03a/test_coverage)](https://codeclimate.com/github/iondrimba/react-weather-app/test_coverage)
 
 ![Demo](https://raw.githubusercontent.com/iondrimba/images/master/weather.gif?raw=true)
 
