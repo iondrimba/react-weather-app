@@ -133,7 +133,7 @@
     "eslint-loader": "^3.0.3",
     "eslint-plugin-babel": "^5.2.1",
     "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jest": "^23.18.0",
+    "eslint-plugin-jest": "^23.20.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.0",
     "jest": "^26.1.0",
