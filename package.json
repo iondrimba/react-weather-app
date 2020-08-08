@@ -123,7 +123,7 @@
     ]
   },
   "devDependencies": {
-    "babel-jest": "^26.1.0",
+    "babel-jest": "^26.2.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
