@@ -45,7 +45,7 @@
     "react-dom": "^16.12.0",
     "react-test-renderer": "^16.13.0",
     "resolve": "1.17.0",
-    "sass-loader": "8.0.2",
+    "sass-loader": "10.0.1",
     "style-loader": "1.2.1",
     "swiper": "^6.1.2",
     "terser-webpack-plugin": "4.1.0",
@@ -139,7 +139,7 @@
     "jest": "^26.4.2",
     "nock": "^13.0.4",
     "node-sass": "^4.14.1",
-    "sass-loader": "^8.0.2",
+    "sass-loader": "^10.0.1",
     "stylelint-config-standard": "^20.0.0"
   }
 }
