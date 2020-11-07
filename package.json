@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=10"
+    "node": ">=15"
   },
   "dependencies": {
     "@babel/core": "7.12.3",
@@ -29,6 +29,7 @@
     "jest-pnp-resolver": "1.2.1",
     "jest-resolve": "26.4.0",
     "mini-css-extract-plugin": "0.11.0",
+    "node-sass": "^4.14.1",
     "object-assign": "4.1.1",
     "optimize-css-assets-webpack-plugin": "5.0.4",
     "pnp-webpack-plugin": "1.6.0",
@@ -53,7 +54,7 @@
     "webpack": "4.44.0",
     "webpack-dev-server": "^3.11.0",
     "webpack-manifest-plugin": "2.2.0",
-    "whatwg-fetch": "3.4.0",
+    "whatwg-fetch": "3.5.0",
     "workbox-webpack-plugin": "5.1.4"
   },
   "scripts": {
@@ -138,7 +139,6 @@
     "eslint-plugin-react": "^7.20.6",
     "jest": "^26.4.2",
     "nock": "^13.0.4",
-    "node-sass": "^4.14.1",
     "sass-loader": "^10.0.1",
     "stylelint-config-standard": "^20.0.0"
   }
