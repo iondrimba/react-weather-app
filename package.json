@@ -47,7 +47,7 @@
     "react-test-renderer": "^16.13.0",
     "resolve": "1.17.0",
     "sass-loader": "10.0.1",
-    "style-loader": "1.2.1",
+    "style-loader": "2.0.0",
     "swiper": "^6.3.5",
     "terser-webpack-plugin": "4.1.0",
     "url-loader": "4.1.1",
