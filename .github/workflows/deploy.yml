@@ -17,7 +17,7 @@ jobs:
       - name: SSH Deploy
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: cd ${{ secrets.FOLDER }} && git pull
+          command: cd ${{ secrets.FOLDER }} && git pull origin master
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER_NAME }}
           privateKey: ${{ secrets.PRIVATE_KEY}}
