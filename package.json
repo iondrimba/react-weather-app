@@ -51,7 +51,7 @@
     "swiper": "^6.3.5",
     "terser-webpack-plugin": "4.2.3",
     "url-loader": "4.1.1",
-    "webpack": "4.44.0",
+    "webpack": "4.44.2",
     "webpack-dev-server": "^3.11.0",
     "webpack-manifest-plugin": "2.2.0",
     "whatwg-fetch": "3.5.0",
