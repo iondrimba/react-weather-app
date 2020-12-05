@@ -36,7 +36,7 @@
     "postcss-flexbugs-fixes": "4.2.1",
     "postcss-loader": "3.0.0",
     "postcss-preset-env": "6.7.0",
-    "postcss-safe-parser": "4.0.1",
+    "postcss-safe-parser": "5.0.2",
     "promise": "8.0.3",
     "prop-types": "^15.7.2",
     "raf": "3.4.1",
