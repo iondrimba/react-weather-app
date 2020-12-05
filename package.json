@@ -10,7 +10,7 @@
     "@svgr/webpack": "5.5.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.1.0",
-    "babel-loader": "8.2.1",
+    "babel-loader": "8.2.2",
     "babel-plugin-named-asset-import": "^0.3.5",
     "babel-preset-react-app": "^10.0.0",
     "bfj": "7.0.2",
