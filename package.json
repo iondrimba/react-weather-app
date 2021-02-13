@@ -6,7 +6,7 @@
     "node": ">=15"
   },
   "dependencies": {
-    "@babel/core": "7.12.13",
+    "@babel/core": "7.12.16",
     "@svgr/webpack": "5.5.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.1.0",
