@@ -6,7 +6,7 @@
     "node": ">=15"
   },
   "dependencies": {
-    "@babel/core": "7.12.17",
+    "@babel/core": "7.13.8",
     "@svgr/webpack": "5.5.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.1.0",
@@ -14,7 +14,7 @@
     "babel-plugin-named-asset-import": "^0.3.5",
     "babel-preset-react-app": "^10.0.0",
     "bfj": "7.0.2",
-    "case-sensitive-paths-webpack-plugin": "2.3.0",
+    "case-sensitive-paths-webpack-plugin": "2.4.0",
     "chalk": "4.1.0",
     "css-loader": "5.0.2",
     "dotenv": "8.2.0",
