@@ -48,7 +48,7 @@
     "resolve": "1.20.0",
     "sass-loader": "10.1.1",
     "style-loader": "2.0.0",
-    "swiper": "^6.4.15",
+    "swiper": "^6.5.0",
     "terser-webpack-plugin": "4.2.3",
     "url-loader": "4.1.1",
     "webpack": "4.46.0",
