@@ -167,6 +167,6 @@
     "nock": "^13.0.10",
     "sass": "^1.32.8",
     "sass-loader": "^10.1.1",
-    "stylelint-config-standard": "^20.0.0"
+    "stylelint-config-standard": "^21.0.0"
   }
 }
