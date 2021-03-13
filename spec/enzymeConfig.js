@@ -1,5 +1,5 @@
-import Adapter from 'enzyme-adapter-react-16';
 import Enzyme, { shallow, mount } from 'enzyme';
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
 const enzymeConfig = () => { Enzyme.configure({ adapter: new Adapter() }); };
 
