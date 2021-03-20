@@ -5,7 +5,7 @@ name: deploy
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   deploy:
@@ -17,7 +17,7 @@ jobs:
       - name: SSH Deploy
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: cd ${{ secrets.FOLDER }} && git pull origin master
+          command: cd ${{ secrets.FOLDER }} && git pull origin main
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER_NAME }}
           privateKey: ${{ secrets.PRIVATE_KEY}}
@@ -27,9 +27,9 @@ jobs:
       matrix:
         node-version: [15.x]
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@main
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@master
+      uses: actions/setup-node@main
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
