@@ -7,7 +7,7 @@ on:
   push:
     branches: [ '*' ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -30,9 +30,9 @@ jobs:
       matrix:
         node-version: [15.x]
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@main
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@master
+      uses: actions/setup-node@main
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
