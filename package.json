@@ -55,7 +55,6 @@
     "optimize-css-assets-webpack-plugin": "5.0.4",
     "pnp-webpack-plugin": "1.6.4",
     "postcss-flexbugs-fixes": "5.0.2",
-    "postcss-loader": "3.0.0",
     "postcss-normalize": "9.0.0",
     "postcss-preset-env": "6.7.0",
     "postcss-safe-parser": "5.0.2",
@@ -166,6 +165,8 @@
     "jest": "^26.4.2",
     "jest-localstorage-mock": "^2.4.8",
     "nock": "^13.0.10",
+    "postcss": "^8.2.8",
+    "postcss-loader": "^4.2.0",
     "sass": "^1.32.8",
     "sass-loader": "^10.1.1",
     "stylelint-config-standard": "^21.0.0"
