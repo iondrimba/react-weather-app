@@ -70,7 +70,7 @@
     "sass-loader": "^10.0.5",
     "semver": "7.3.4",
     "style-loader": "2.0.0",
-    "swiper": "^6.5.0",
+    "swiper": "^6.5.7",
     "terser-webpack-plugin": "4.2.3",
     "ts-pnp": "1.2.0",
     "url-loader": "4.1.1",
