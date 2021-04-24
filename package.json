@@ -167,7 +167,7 @@
     "nock": "^13.0.10",
     "postcss": "^8.2.8",
     "postcss-loader": "^4.2.0",
-    "sass": "^1.32.8",
+    "sass": "^1.32.10",
     "sass-loader": "^10.1.1",
     "stylelint-config-standard": "^21.0.0"
   }
