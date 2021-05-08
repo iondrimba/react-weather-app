@@ -165,7 +165,7 @@
     "jest": "^26.4.2",
     "jest-localstorage-mock": "^2.4.8",
     "nock": "^13.0.10",
-    "postcss": "^8.2.8",
+    "postcss": "^8.2.12",
     "postcss-loader": "^4.2.0",
     "sass": "^1.32.11",
     "sass-loader": "^10.1.1",
