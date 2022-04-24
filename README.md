@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ![build](https://github.com/iondrimba/react-weather-app/workflows/build/badge.svg?branch=main)
 ![deploy](https://github.com/iondrimba/react-weather-app/workflows/deploy/badge.svg?branch=main)
-[![Maintainability](https://api.codeclimate.com/v1/badges/8cd55ce66e034c44f03a/maintainability)](https://codeclimate.com/github/iondrimba/react-weather-app/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/8cd55ce66e034c44f03a/test_coverage)](https://codeclimate.com/github/iondrimba/react-weather-app/test_coverage)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/8cd55ce66e034c44f03a/test_coverage)](https://codeclimate.com/github/iondrimba/react-weather-app/test_coverage)
 
 ![Demo](https://raw.githubusercontent.com/iondrimba/images/master/weather.gif?raw=true)
 
