@@ -60,7 +60,9 @@ export default class Storage {
     } else {
       await this.ipFetcher.fetch();
 
-      localStorage.setItem('ip', this.ipFetcher.ip);
+      if (this.ipFetcher.isValid()) {
+        localStorage.setItem('ip', this.ipFetcher.ip);
+      }
     }
   }
 
@@ -70,7 +72,9 @@ export default class Storage {
     } else {
       await this.ipGeoLocation.fetch(this.ipFetcher.ip);
 
-      localStorage.setItem('geoLocation', JSON.stringify(this.ipGeoLocation.data));
+      if (this.ipGeoLocation.data.city) {
+        localStorage.setItem('geoLocation', JSON.stringify(this.ipGeoLocation.data));
+      }
     }
   }
 
@@ -80,13 +84,17 @@ export default class Storage {
     } else {
       await this.foreCastAPI.fetch(this.ipGeoLocation.data.latitude, this.ipGeoLocation.data.longitude);
 
-      localStorage.setItem('lastupdate', new Date().getTime());
-
-      localStorage.setItem('forecast', JSON.stringify(this.foreCastAPI.data));
+      if (this.foreCastAPI.data.timezone) {
+        localStorage.setItem('lastupdate', new Date().toString());
+        localStorage.setItem('forecast', JSON.stringify(this.foreCastAPI.data));
+      }
     }
   }
 
   async fetch() {
+    if (this.updateCache()) {
+      localStorage.clear();
+    }
     await this._updateIP();
     await this._updateGeoLocation();
     await this._updateForecast();
@@ -94,26 +102,33 @@ export default class Storage {
     this.update();
   }
 
-  async getLocation(latitude, longitude) {
+  updateCache() {
     this.currentDate = new Date();
-    const prevDate = Number(localStorage.getItem('lastupdate'));
-    const hoursDiff = Math.abs(this.currentDate.getTime() - prevDate) / 3600000;
+    const prevDate = localStorage.getItem('lastupdate');
+    const ms = this.currentDate - new Date(prevDate);
+    const min = Math.floor((ms / 1000 / 60) << 0);
+    const sec = Math.floor((ms / 1000) % 60);
 
+    return (min > 58 && sec > 0);
+  }
+
+  async getLocation(latitude, longitude) {
     this.foreCastAPI.data.latitude = latitude;
     this.foreCastAPI.data.longitude = longitude;
     this.data.lastUpdate = this.getLastUpdate(this.currentDate);
 
-    await this.reverseGeoLocation.fetch(latitude, longitude);
+    if (this.updateCache()) {
+      localStorage.clear();
 
-    if (hoursDiff > 1.05) {
+      await this.reverseGeoLocation.fetch(latitude, longitude);
       await this.foreCastAPI.fetch(latitude, longitude);
 
-      localStorage.setItem('lastupdate', this.currentDate.getTime());
+      localStorage.setItem('lastupdate', this.currentDate.toString());
       localStorage.setItem('forecast', JSON.stringify(this.foreCastAPI.data));
+
+      this.ipGeoLocation.data.city = this.reverseGeoLocation.data[0].city || this.reverseGeoLocation.data[0].state;
+
+      this.update();
     }
-
-    this.ipGeoLocation.data.city = this.reverseGeoLocation.data[0].city || this.reverseGeoLocation.data[0].state;
-
-    this.update();
   }
 }

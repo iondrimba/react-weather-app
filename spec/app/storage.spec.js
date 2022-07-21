@@ -56,33 +56,14 @@ describe('Storage', () => {
   });
 
   describe('async .getLocation', () => {
-    describe('when last fetch still under and hour', () => {
+    describe('when last fetch exceeds one hour', () => {
       it('updates location', async () => {
         const storage = new Storage();
 
-        localStorage.setItem('lastupdate', new Date().getTime());
+        localStorage.setItem('lastupdate', new Date(2018, 11, 24, 2, 5).toString());
 
         spyOn(storage.reverseGeoLocation, 'fetch').and.callThrough();
         spyOn(storage.foreCastAPI, 'fetch');
-        spyOn(storage, 'update');
-
-        await storage.getLocation(-23.5733, -46.6417);
-
-        expect(storage.foreCastAPI.fetch).not.toBeCalledWith(-23.5733, -46.6417);
-        expect(storage.reverseGeoLocation.fetch).toBeCalledWith(-23.5733, -46.6417);
-        expect(storage.ipGeoLocation.data.city).toBe('Sundern');
-        expect(storage.update).toBeCalled();
-      });
-    });
-
-    describe('when last fetch still under and hour', () => {
-      it('updates location and forecast', async () => {
-        const storage = new Storage();
-
-        localStorage.setItem('lastupdate', new Date(2018, 11, 24, 2, 5).getTime());
-
-        spyOn(storage.reverseGeoLocation, 'fetch').and.callThrough();
-        spyOn(storage.foreCastAPI, 'fetch').and.callThrough();
         spyOn(storage, 'update');
 
         await storage.getLocation(-23.5733, -46.6417);
@@ -91,6 +72,24 @@ describe('Storage', () => {
         expect(storage.reverseGeoLocation.fetch).toBeCalledWith(-23.5733, -46.6417);
         expect(storage.ipGeoLocation.data.city).toBe('Sundern');
         expect(storage.update).toBeCalled();
+      });
+    });
+
+    describe('when last fetch still under and hour', () => {
+      it('does not updates location and forecast', async () => {
+        const storage = new Storage();
+
+        localStorage.setItem('lastupdate', new Date().toString());
+
+        spyOn(storage.reverseGeoLocation, 'fetch').and.callThrough();
+        spyOn(storage.foreCastAPI, 'fetch').and.callThrough();
+        spyOn(storage, 'update');
+
+        await storage.getLocation(-23.5733, -46.6417);
+
+        expect(storage.foreCastAPI.fetch).not.toBeCalledWith(-23.5733, -46.6417);
+        expect(storage.reverseGeoLocation.fetch).not.toBeCalledWith(-23.5733, -46.6417);
+        expect(storage.update).not.toBeCalled();
       });
     });
   });
