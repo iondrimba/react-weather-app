@@ -17,7 +17,7 @@ This is a personal project built in my spare time for learning purposes.
 ### APIs
 
 * <https://api.ipify.org/?format=json> - IP search
-* <http://api.ipstack.com> - Geolocation based on IP
+* [IP Location Finder by KeyCDN](https://tools.keycdn.com/geo)
 * <https://darksky.net/dev> - Forecast based on latitude and longitude
 
 #### Features
