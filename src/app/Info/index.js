@@ -55,7 +55,7 @@ class Info extends PureComponent {
         <h2>APIs</h2>
         <ul>
           <li><a className="link" href="https://www.ipify.org" target="_blank" rel="noopener noreferrer">Ipify (ip address)</a></li>
-          <li><a className="link" href="https://ipstack.com" target="_blank" rel="noopener noreferrer">IpStack (ip based geolocation)</a></li>
+          <li><a className="link" href="https://tools.keycdn.com/geo" target="_blank" rel="noopener noreferrer">IP Location Finder by KeyCDN</a></li>
           <li><a className="link" href="https://darksky.net" target="_blank" rel="noopener noreferrer">DarkSky (weather forecasting)</a></li>
           <li><a className="link" href="https://opencagedata.com/" target="_blank" rel="noopener noreferrer">OpenCage (reverse geolocation)</a></li>
         </ul>
