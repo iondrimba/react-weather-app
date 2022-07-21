@@ -64,11 +64,11 @@ exports[`Info matches snapshot 1`] = `
       <li>
         <a
           className="link"
-          href="https://ipstack.com"
+          href="https://tools.keycdn.com/geo"
           rel="noopener noreferrer"
           target="_blank"
         >
-          IpStack (ip based geolocation)
+          IP Location Finder by KeyCDN
         </a>
       </li>
       <li>

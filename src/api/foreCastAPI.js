@@ -1,7 +1,6 @@
 class ForeCastAPI {
-  constructor(apiSecret) {
-    this.secret = apiSecret;
-    this.endpoint = (latitude, longitude) => `https://weather-api-nodejs.herokuapp.com/api?latitude=${latitude}&longitude=${longitude}`;
+  constructor() {
+    this.endpoint = (latitude, longitude) => `${process.env.REACT_APP_API_ENDPOINT}?latitude=${latitude}&longitude=${longitude}`;
     this.data = null;
   }
 

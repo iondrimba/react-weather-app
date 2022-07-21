@@ -2,7 +2,7 @@ import React from 'react';
 import App from '../../src/app';
 import { enzymeConfig, mount } from '../enzymeConfig';
 
-jest.mock('../../src/api/ipfetcher');
+jest.mock('../../src/api/ipfetcher', () => jest.fn().mockImplementation(() => ({ fetch: () => {}, isValid: () => {} })));;
 jest.mock('../../src/api/ipGeoLocation');
 jest.mock('../../src/api/foreCastAPI');
 

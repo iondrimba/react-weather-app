@@ -1,6 +1,6 @@
 class ReverseGeoLocation {
   constructor() {
-    this.endpoint = (latitude, longitude) => `https://weather-api-nodejs.herokuapp.com/api/geolocation?latitude=${latitude}&longitude=${longitude}`;
+    this.endpoint = (latitude, longitude) => `${process.env.REACT_APP_API_ENDPOINT}/geolocation?latitude=${latitude}&longitude=${longitude}`;
     this.data = null;
   }
 
