@@ -1,3 +1,5 @@
+import ipRegex from 'ip-regex';
+
 class IpFetcher {
   constructor() {
     this.ip = '';
@@ -12,6 +14,10 @@ class IpFetcher {
     } catch (error) {
       throw new Error(`IpFetcher unable to fetch: ${error.message}`);
     }
+  }
+
+  isValid() {
+    return ipRegex().test(this.ip);
   }
 }
 
