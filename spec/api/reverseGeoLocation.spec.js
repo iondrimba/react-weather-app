@@ -1,8 +1,6 @@
 import ReverseGeoLocation from '../../src/api/reverseGeoLocation';
 import nock from 'nock';
 
-const apiSecret = process.env.REACT_APP_IP_STACK;
-
 describe('ReverseGeoLocation', () => {
   describe('constructor', () => {
     it('defines default props', () => {
@@ -14,17 +12,17 @@ describe('ReverseGeoLocation', () => {
 
   describe('endpoint', () => {
     it('returns endpoint with latitude and longitude', () => {
-      const api = new ReverseGeoLocation(apiSecret);
+      const api = new ReverseGeoLocation();
 
-      expect(api.endpoint('40.7021', '-73.9423')).toEqual('https://weather-api-nodejs.herokuapp.com/api/geolocation?latitude=40.7021&longitude=-73.9423');
+      expect(api.endpoint('40.7021', '-73.9423')).toEqual('http://localhost:5000/api/geolocation?latitude=40.7021&longitude=-73.9423');
     });
   });
 
   describe('fetch', () => {
     it('returns weather information based on latitude and longitude', async () => {
-      const api = new ReverseGeoLocation(apiSecret);
+      const api = new ReverseGeoLocation();
 
-      nock('https://weather-api-nodejs.herokuapp.com')
+      nock('http://localhost:5000')
         .get('/api/geolocation')
         .query({ latitude: '40.7021', longitude: '-73.9423' })
         .reply(200, {
@@ -37,9 +35,9 @@ describe('ReverseGeoLocation', () => {
     });
 
     it('returns invalid location based on latitude and longitude', async () => {
-      const api = new ReverseGeoLocation(apiSecret);
+      const api = new ReverseGeoLocation();
 
-      nock('https://weather-api-nodejs.herokuapp.com')
+      nock('http://localhost:5000')
         .get('/api/geolocation')
         .query({ latitude: '111', longitude: '111' })
         .reply(200, { code: 400, error: 'The given location is invalid.' }, { 'Access-Control-Allow-Origin': '*' });
@@ -51,9 +49,9 @@ describe('ReverseGeoLocation', () => {
     });
 
     it('throws error', async () => {
-      const api = new ReverseGeoLocation(apiSecret);
+      const api = new ReverseGeoLocation();
 
-      nock('https://weather-api-nodejs.herokuapp.com')
+      nock('http://localhost:5000')
         .get('/api/geolocation')
         .query({ latitude: '111', longitude: '111' })
         .reply(200, { code: 400, error: 'The given location is invalid.' }, { 'Access-Control-Allow-Origin': '*' });
