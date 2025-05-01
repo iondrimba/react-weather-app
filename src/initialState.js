@@ -6,15 +6,13 @@ export default {
   updating: false,
   lastUpdate: "00:00",
   currentCondition: {
-    currentCondition: {
-      location: "--",
-      temperature: 0,
-      date: "--",
-      weather: "Clear",
-      dayTime: false,
-      humidity: 0,
-      dataLoaded: false
-    },
+    location: "--",
+    temperature: 0,
+    date: "--",
+    weather: "Clear",
+    dayTime: false,
+    humidity: 0,
+    dataLoaded: false,
     foreCastDaily: [
       {
         weekDay: "mon",

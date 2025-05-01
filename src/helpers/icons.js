@@ -24,34 +24,40 @@ export const icons = {
 
 export default (iconKey) => {
   const data = {
-    'clear-day': {
+    1000: {
       id: 'wi-day-sunny'
     },
-    'clear-night': {
+    1000: {
       id: 'wi-night-clear'
     },
-    'partly-cloudy-day': {
+    1003: {
       id: 'wi-day-cloudy'
     },
-    'partly-cloudy-night': {
+    1003: {
       id: 'wi-night-alt-cloudy'
     },
-    cloudy: {
+    1006: {
       id: 'wi-cloudy'
     },
-    rain: {
+    1006: {
+      id: 'wi-cloudy'
+    },
+    1189: {
       id: 'wi-rain'
     },
-    sleet: {
+    1207: {
       id: 'wi-sleet'
     },
-    snow: {
+    1219: {
       id: 'wi-snow'
     },
-    wind: {
+    1030: {
       id: 'wi-windy'
     },
-    fog: {
+    1135: {
+      id: 'wi-fog'
+    },
+    1009: {
       id: 'wi-fog'
     },
   };
@@ -62,5 +68,5 @@ export default (iconKey) => {
     return icon;
   }
 
-  throw new Error(`No icon registered with the key: ${iconKey}`);
+  throw  data[1006];
 }

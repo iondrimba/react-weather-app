@@ -17,7 +17,7 @@ class Location extends PureComponent {
   }
 
   componentDidMount() {
-    rAFTimeout(() => this.animate(), 350);
+    rAFTimeout(() => this.animate(), 1000);
   }
 
   render() {

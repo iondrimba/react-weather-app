@@ -20,6 +20,7 @@ const setupDate = (unixTimestamp) => {
 
 export default function (unixTimestamp, locale = 'en-US') {
   const finalDate = setupDate(unixTimestamp);
+
   const year = finalDate.getFullYear();
   const weekDay = finalDate.getDay();
   let month = finalDate.getMonth() + 1;
@@ -32,7 +33,15 @@ export default function (unixTimestamp, locale = 'en-US') {
   hours = addLeadingZero(hours);
   minutes = addLeadingZero(minutes);
 
-  const localeDateString = finalDate.toLocaleDateString(locale, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+  const localeDateString = finalDate.toLocaleDateString(locale, {
+    weekday: 'long',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+  });
 
   return {
     localeDateString,

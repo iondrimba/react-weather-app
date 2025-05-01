@@ -17,7 +17,7 @@ class App extends Component {
     this.onRefreshClick = this.onRefreshClick.bind(this);
     this.onGPSLocationClick = this.onGPSLocationClick.bind(this);
 
-    this.storage = new Storage(process.env.REACT_APP_DARK_SKY_API_CODE);
+    this.storage = new Storage();
     this.state = { ...this.storage.data };
   }
 

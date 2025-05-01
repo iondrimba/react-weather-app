@@ -1,6 +1,6 @@
 class IpGeoLocation {
   constructor(secret) {
-    this.endpoint = ip => `${process.env.REACT_APP_API_ENDPOINT}/ip?ip=${ip}`;
+    this.endpoint = ip => `${process.env.REACT_APP_API_ENDPOINT}?ip=${ip}`;
     this.data = null;
     this.secret = secret;
   }
@@ -10,7 +10,7 @@ class IpGeoLocation {
       const response = await fetch(this.endpoint(ip));
       const result = await response.json();
 
-      this.data = result.data.geo;
+      this.data = result;
     } catch (error) {
       throw new Error(`IpGeoLocation unable to fetch: ${error.message}`);
     }

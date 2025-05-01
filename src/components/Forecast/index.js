@@ -13,16 +13,14 @@ class Forecast extends PureComponent {
 
   animate() {
     rAFTimeout(() => this.forecast.current.classList.add('animate-in'), 100);
-
     rAFTimeout(() => this.title.classList.add('animate-in'), 200);
-
     rAFTimeout(() => this.icon.classList.add('animate-in'), 250);
 
     rAFTimeout(() => {
       this.temperature.map(elment => elment.classList.add('animate-in'));
     }, 350);
 
-    rAFTimeout(() => this.rain.classList.add('animate-in'), 400);
+    rAFTimeout(() => this.rain.classList.add('animate-in'), 300);
   }
 
   componentDidMount() {

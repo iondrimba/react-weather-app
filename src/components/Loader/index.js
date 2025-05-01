@@ -15,8 +15,7 @@ class Loader extends PureComponent {
     if(this.circle.current) {
       return this.circle.current;
     }
-
-    return document.querySelector('.loader__circle');
+    return document.querySelector('.loader__circle1');
   }
 
   animateIn() {
@@ -36,13 +35,12 @@ class Loader extends PureComponent {
   }
 
   startRotation() {
-    rAFTimeout(() => this._getCircle().classList.add('start-rotation'), 300);
+    rAFTimeout(() => this._getCircle().classList.add('start-rotation'), 400);
   }
 
   animateCircle() {
     rAFTimeout(() => this._getCircle().classList.add('animate-in'), 150);
   }
-
   animateOut() {
     rAFTimeout(() => this._getCircle().classList.add('animate-out'), 550);
 
