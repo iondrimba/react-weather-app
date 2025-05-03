@@ -10,7 +10,6 @@ exports[`Info matches snapshot 1`] = `
     className="transition"
   />
   <section
-    aria-hidden={true}
     className="info "
   >
     <Close
@@ -72,23 +71,14 @@ exports[`Info matches snapshot 1`] = `
         </a>
       </li>
       <li>
+        Powered by 
         <a
-          className="link"
-          href="https://darksky.net"
+          href="https://www.weatherapi.com/"
           rel="noopener noreferrer"
           target="_blank"
+          title="Weather API"
         >
-          DarkSky (weather forecasting)
-        </a>
-      </li>
-      <li>
-        <a
-          className="link"
-          href="https://opencagedata.com/"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          OpenCage (reverse geolocation)
+          WeatherAPI.com
         </a>
       </li>
     </ul>

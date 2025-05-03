@@ -22,7 +22,6 @@ class Info extends PureComponent {
     rAFTimeout(() => this.transition.current.classList.remove('animate-in'), 100);
     rAFTimeout(() => {
       this.props.onInfoClose();
-      this.view.current.setAttribute('aria-hidden', true);
     }, 110);
   }
 
@@ -47,7 +46,7 @@ class Info extends PureComponent {
   render() {
     return <Fragment>
       <div ref={this.transition} className="transition"></div>
-      <section ref={this.view} className={`info ${this.getStyle(this.props.show)}`} aria-hidden={true}>
+      <section ref={this.view} className={`info ${this.getStyle(this.props.show)}`}>
         <Close ref={this.close} onCloseClick={this.onInfoClose} />
         <h1>About</h1>
         <p>PWA Weather Application made with React/Scss/ES6</p>
@@ -56,8 +55,7 @@ class Info extends PureComponent {
         <ul>
           <li><a className="link" href="https://www.ipify.org" target="_blank" rel="noopener noreferrer">Ipify (ip address)</a></li>
           <li><a className="link" href="https://tools.keycdn.com/geo" target="_blank" rel="noopener noreferrer">IP Location Finder by KeyCDN</a></li>
-          <li><a className="link" href="https://darksky.net" target="_blank" rel="noopener noreferrer">DarkSky (weather forecasting)</a></li>
-          <li><a className="link" href="https://opencagedata.com/" target="_blank" rel="noopener noreferrer">OpenCage (reverse geolocation)</a></li>
+          <li>Powered by <a href="https://www.weatherapi.com/"  target="_blank" rel="noopener noreferrer" title="Weather API">WeatherAPI.com</a></li>
         </ul>
         <a target="_blank" rel="noopener noreferrer" href="https://github.com/iondrimba/react-weather-app" className="github" title="Github">
           <img src={svg} alt="Github icon" width="32" height="32" />

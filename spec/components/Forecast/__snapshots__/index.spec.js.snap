@@ -19,7 +19,7 @@ exports[`Forecast matches snapshot 1`] = `
     <img
       alt="icon"
       className="forecast__icon"
-      src="wi-cloudy.svg"
+      src="wi-cloudy"
     />
      
     <h1>

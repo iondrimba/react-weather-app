@@ -8,7 +8,12 @@ describe('Time', () => {
   it('matches localeDateString', () => {
     const result = time(unixTimeStamp);
 
-    expect(result.localeDateString).toEqual(fixture.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }));
+    expect(result.localeDateString).toEqual(fixture.toLocaleDateString('en-US', { 
+      weekday: 'long', 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    }));
   });
 
   it('matches weekDay', () => {

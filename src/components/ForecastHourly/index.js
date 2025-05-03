@@ -9,7 +9,8 @@ class ForecastHourly extends PureComponent {
     return (
       <section className="forecasts__period swiper-slide">
         {
-          this.props.foreCastHourly.map((item, index) => <ForeCast key={`hourly-${index}`} id={`hourly-${index}`} title={`${item.time}:00`} icon={item.icon} animationDelay={index}>
+          this.props.foreCastHourly.map((item, index) => 
+          <ForeCast key={`hourly-${index}`} id={`hourly-${index}`} title={`${item.time}:00`} icon={item.icon} animationDelay={index}>
             <ForeCastTemperature temperature={item.temperature} />
             <RainProbability probability={item.rainProbability} />
           </ForeCast>)

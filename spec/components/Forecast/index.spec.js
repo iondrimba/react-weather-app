@@ -28,12 +28,12 @@ describe('Forecast', () => {
   });
 
   describe('.icon', () => {
-    it('matches source icon path wi-cloudy.svg', () => {
+    it('matches source icon path wi-cloudy', () => {
       const component = mount(ForecastComponent);
 
       component.debug();
 
-      expect(component.find('[src="wi-cloudy.svg"]').length).toEqual(1);
+      expect(component.find('[src="wi-cloudy"]').length).toEqual(1);
     });
   });
 });

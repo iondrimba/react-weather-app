@@ -62,17 +62,5 @@ describe('Info', () => {
 
       expect(instance.transition.current.className).not.toContain('animate-in');
     });
-
-    it('sets aria-hidden true on view.current', () => {
-      const component = mount(<Info onInfoClick={() => { }} onInfoClose={() => { }} show={true} />);
-      const instance = component.instance();
-
-      instance.render(instance.props);
-
-      instance.onInfoClose();
-
-      expect(instance.view.current.attributes['aria-hidden'].value).toBe('true');
-    });
-
   });
 });

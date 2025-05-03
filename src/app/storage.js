@@ -1,5 +1,4 @@
 import IpGeoLocation from '../api/ipGeoLocation';
-import ReverseGeoLocation from '../api/reverseGeoLocation';
 import IpFetcher from '../api/ipfetcher';
 import timeConvert, { addLeadingZero } from '../helpers/time';
 import icons from '../helpers/icons';
@@ -10,7 +9,6 @@ export default class Storage {
   constructor() {
     this.ipFetcher = new IpFetcher();
     this.ipGeoLocation = new IpGeoLocation();
-    this.reverseGeoLocation = new ReverseGeoLocation();
     this.data = { ...initialState };
     this.currentDate = new Date();
   }
@@ -33,13 +31,17 @@ export default class Storage {
         foreCastHourly: nextHours.slice(0, 6).map((item) => ({
           time: timeConvert(item.time_epoch).hours,
           rainProbability: item.chance_of_rain,
-          temperature: item.temp_c,
-          icon: icons(item.condition.code).id
+          temperature: Math.floor(item.temp_c),
+          icon: item.is_day
+            ? `svg/day/${icons(item.condition.code)}.png`	
+            : `svg/night/${icons(item.condition.code)}.png`,
         })),
         foreCastDaily: this.ipGeoLocation.data.forecast.forecastday.slice(1, 6).map(item => ({
           weekDay: weekdays(timeConvert(item.date_epoch).weekDay),
           rainProbability: item.day.daily_chance_of_rain,
-          icon: icons(item.day.condition.code).id,
+          icon: item.day.is_day
+          ? `svg/day/${icons(item.day.condition.code)}.png`	
+          : `svg/night/${icons(item.day.condition.code)}.png`,
           temperature: {
             max: Math.round(item.day.maxtemp_c),
             min: Math.round(item.day.mintemp_c)

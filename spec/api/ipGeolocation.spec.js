@@ -11,22 +11,6 @@ const mockResult = {
       "country_name": "United States",
       "ip": "161.185.160.93",
       "latitude": 40.7021,
-      "location": {
-        "calling_code": "1",
-        "capital": "Washington D.C.",
-        "country_flag": "http://assets.ipstack.com/flags/us.svg",
-        "country_flag_emoji": "🇺🇸",
-        "country_flag_emoji_unicode": "U+1F1FA U+1F1F8",
-        "geoname_id": 5110302,
-        "is_eu": false,
-        "languages": [
-          {
-            "code": "en",
-            "name": "English",
-            "native": "English"
-          }
-        ]
-      },
       "longitude": -73.9423,
       "region_code": "NY",
       "region_name": "New York",
@@ -49,7 +33,7 @@ describe('IpGeoLocation', () => {
     it('returns endpoint with ip addres', () => {
       const result = new IpGeoLocation();
 
-      expect(result.endpoint('111.111.1.11')).toEqual('http://localhost:5000/api/ip?ip=111.111.1.11');
+      expect(result.endpoint('111.111.1.11')).toEqual('http://localhost:5000/api?ip=111.111.1.11');
     });
   });
 
@@ -58,20 +42,20 @@ describe('IpGeoLocation', () => {
       const ipGeoLocation = new IpGeoLocation();
 
       nock('http://localhost:5000')
-        .get('/api/ip')
+        .get('/api')
         .query({ ip: '161.185.160.93' })
         .reply(200, mockResult, { 'Access-Control-Allow-Origin': '*' });
 
       await ipGeoLocation.fetch('161.185.160.93');
 
-      expect(ipGeoLocation.data).toEqual(mockResult.data.geo);
+      expect(ipGeoLocation.data.data.geo).toEqual(mockResult.data.geo);
     });
 
     it('throws error', async () => {
       const ipGeoLocation = new IpGeoLocation();
 
       nock('http://localhost:5000')
-        .get('/api/ip')
+        .get('/api')
         .query({ ip: 'undefined' })
         .reply(200, mockResult, { 'Access-Control-Allow-Origin': '*' });
 

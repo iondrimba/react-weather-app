@@ -1,34 +1,24 @@
 {
   "files": {
     "main.css": "/static/css/main.e4806c6a.chunk.css",
-    "main.js": "/static/js/main.89c7f45e.chunk.js",
-    "main.js.map": "/static/js/main.89c7f45e.chunk.js.map",
+    "main.js": "/static/js/main.706c6a10.chunk.js",
+    "main.js.map": "/static/js/main.706c6a10.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.1463a60a.js",
     "runtime-main.js.map": "/static/js/runtime-main.1463a60a.js.map",
-    "static/js/2.5872e4ce.chunk.js": "/static/js/2.5872e4ce.chunk.js",
-    "static/js/2.5872e4ce.chunk.js.map": "/static/js/2.5872e4ce.chunk.js.map",
+    "static/js/2.79a48f6f.chunk.js": "/static/js/2.79a48f6f.chunk.js",
+    "static/js/2.79a48f6f.chunk.js.map": "/static/js/2.79a48f6f.chunk.js.map",
     "index.html": "/index.html",
     "service-worker.js": "/service-worker.js",
     "service-worker.js.map": "/service-worker.js.map",
     "static/css/main.e4806c6a.chunk.css.map": "/static/css/main.e4806c6a.chunk.css.map",
-    "static/js/2.5872e4ce.chunk.js.LICENSE.txt": "/static/js/2.5872e4ce.chunk.js.LICENSE.txt",
+    "static/js/2.79a48f6f.chunk.js.LICENSE.txt": "/static/js/2.79a48f6f.chunk.js.LICENSE.txt",
     "static/media/github.svg": "/static/media/github.5cb865b1.svg",
-    "static/media/rain-probality.svg": "/static/media/rain-probality.b7a9b35c.svg",
-    "static/media/wi-cloudy.svg": "/static/media/wi-cloudy.3036dcf4.svg",
-    "static/media/wi-day-cloudy.svg": "/static/media/wi-day-cloudy.2d14b4eb.svg",
-    "static/media/wi-day-sunny.svg": "/static/media/wi-day-sunny.a12c7b3b.svg",
-    "static/media/wi-fog.svg": "/static/media/wi-fog.dcbb9c97.svg",
-    "static/media/wi-night-alt-cloudy.svg": "/static/media/wi-night-alt-cloudy.5856194e.svg",
-    "static/media/wi-night-clear.svg": "/static/media/wi-night-clear.22c8b82f.svg",
-    "static/media/wi-rain.svg": "/static/media/wi-rain.58931f0f.svg",
-    "static/media/wi-sleet.svg": "/static/media/wi-sleet.040e9866.svg",
-    "static/media/wi-snow.svg": "/static/media/wi-snow.f6b34506.svg",
-    "static/media/wi-windy.svg": "/static/media/wi-windy.d5931498.svg"
+    "static/media/rain-probality.svg": "/static/media/rain-probality.b7a9b35c.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.1463a60a.js",
-    "static/js/2.5872e4ce.chunk.js",
+    "static/js/2.79a48f6f.chunk.js",
     "static/css/main.e4806c6a.chunk.css",
-    "static/js/main.89c7f45e.chunk.js"
+    "static/js/main.706c6a10.chunk.js"
   ]
 }

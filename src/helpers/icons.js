@@ -1,72 +1,251 @@
-import wi_cloudy from '../svg/wi-cloudy.svg';
-import wi_day_cloudy from '../svg/wi-day-cloudy.svg';
-import wi_day_sunny from '../svg/wi-day-sunny.svg';
-import wi_fog from '../svg/wi-fog.svg';
-import wi_night_alt_cloudy from '../svg/wi-night-alt-cloudy.svg';
-import wi_night_clear from '../svg/wi-night-clear.svg';
-import wi_rain from '../svg/wi-rain.svg';
-import wi_sleet from '../svg/wi-sleet.svg';
-import wi_snow from '../svg/wi-snow.svg';
-import wi_windy from '../svg/wi-windy.svg';
-
-export const icons = {
-  'wi-cloudy': wi_cloudy,
-  'wi-day-cloudy': wi_day_cloudy,
-  'wi-day-sunny': wi_day_sunny,
-  'wi-fog': wi_fog,
-  'wi-night-alt-cloudy': wi_night_alt_cloudy,
-  'wi-night-clear': wi_night_clear,
-  'wi-rain': wi_rain,
-  'wi-sleet': wi_sleet,
-  'wi-snow': wi_snow,
-  'wi-windy': wi_windy,
+export const data = {
+  1000: {
+    day: "Sunny",
+    night: "Clear",
+    icon: 113,
+  },
+  1003: {
+    day: "Partly cloudy",
+    night: "Partly cloudy",
+    icon: 116,
+  },
+  1006: {
+    day: "Cloudy",
+    night: "Cloudy",
+    icon: 119,
+  },
+  1009: {
+    day: "Overcast",
+    night: "Overcast",
+    icon: 122,
+  },
+  1030: {
+    day: "Mist",
+    night: "Mist",
+    icon: 143,
+  },
+  1063: {
+    day: "Patchy rain possible",
+    night: "Patchy rain possible",
+    icon: 176,
+  },
+  1066: {
+    day: "Patchy snow possible",
+    night: "Patchy snow possible",
+    icon: 179,
+  },
+  1069: {
+    day: "Patchy sleet possible",
+    night: "Patchy sleet possible",
+    icon: 182,
+  },
+  1072: {
+    day: "Patchy freezing drizzle possible",
+    night: "Patchy freezing drizzle possible",
+    icon: 185,
+  },
+  1087: {
+    day: "Thundery outbreaks possible",
+    night: "Thundery outbreaks possible",
+    icon: 200,
+  },
+  1114: {
+    day: "Blowing snow",
+    night: "Blowing snow",
+    icon: 227,
+  },
+  1117: {
+    day: "Blizzard",
+    night: "Blizzard",
+    icon: 230,
+  },
+  1135: {
+    day: "Fog",
+    night: "Fog",
+    icon: 248,
+  },
+  1147: {
+    day: "Freezing fog",
+    night: "Freezing fog",
+    icon: 260,
+  },
+  1150: {
+    day: "Patchy light drizzle",
+    night: "Patchy light drizzle",
+    icon: 263,
+  },
+  1153: {
+    day: "Light drizzle",
+    night: "Light drizzle",
+    icon: 266,
+  },
+  1168: {
+    day: "Freezing drizzle",
+    night: "Freezing drizzle",
+    icon: 281,
+  },
+  1171: {
+    day: "Heavy freezing drizzle",
+    night: "Heavy freezing drizzle",
+    icon: 284,
+  },
+  1180: {
+    day: "Patchy light rain",
+    night: "Patchy light rain",
+    icon: 293,
+  },
+  1183: {
+    day: "Light rain",
+    night: "Light rain",
+    icon: 296,
+  },
+  1186: {
+    day: "Moderate rain at times",
+    night: "Moderate rain at times",
+    icon: 299,
+  },
+  1189: {
+    day: "Moderate rain",
+    night: "Moderate rain",
+    icon: 302,
+  },
+  1192: {
+    day: "Heavy rain at times",
+    night: "Heavy rain at times",
+    icon: 305,
+  },
+  1195: {
+    day: "Heavy rain",
+    night: "Heavy rain",
+    icon: 308,
+  },
+  1198: {
+    day: "Light freezing rain",
+    night: "Light freezing rain",
+    icon: 311,
+  },
+  1201: {
+    day: "Moderate or heavy freezing rain",
+    night: "Moderate or heavy freezing rain",
+    icon: 314,
+  },
+  1204: {
+    day: "Light sleet",
+    night: "Light sleet",
+    icon: 317,
+  },
+  1207: {
+    day: "Moderate or heavy sleet",
+    night: "Moderate or heavy sleet",
+    icon: 320,
+  },
+  1210: {
+    day: "Patchy light snow",
+    night: "Patchy light snow",
+    icon: 323,
+  },
+  1213: {
+    day: "Light snow",
+    night: "Light snow",
+    icon: 326,
+  },
+  1216: {
+    day: "Patchy moderate snow",
+    night: "Patchy moderate snow",
+    icon: 329,
+  },
+  1219: {
+    day: "Moderate snow",
+    night: "Moderate snow",
+    icon: 332,
+  },
+  1222: {
+    day: "Patchy heavy snow",
+    night: "Patchy heavy snow",
+    icon: 335,
+  },
+  1225: {
+    day: "Heavy snow",
+    night: "Heavy snow",
+    icon: 338,
+  },
+  1237: {
+    day: "Ice pellets",
+    night: "Ice pellets",
+    icon: 350,
+  },
+  1240: {
+    day: "Light rain shower",
+    night: "Light rain shower",
+    icon: 353,
+  },
+  1243: {
+    day: "Moderate or heavy rain shower",
+    night: "Moderate or heavy rain shower",
+    icon: 356,
+  },
+  1246: {
+    day: "Torrential rain shower",
+    night: "Torrential rain shower",
+    icon: 359,
+  },
+  1249: {
+    day: "Light sleet showers",
+    night: "Light sleet showers",
+    icon: 362,
+  },
+  1252: {
+    day: "Moderate or heavy sleet showers",
+    night: "Moderate or heavy sleet showers",
+    icon: 365,
+  },
+  1255: {
+    day: "Light snow showers",
+    night: "Light snow showers",
+    icon: 368,
+  },
+  1258: {
+    day: "Moderate or heavy snow showers",
+    night: "Moderate or heavy snow showers",
+    icon: 371,
+  },
+  1261: {
+    day: "Light showers of ice pellets",
+    night: "Light showers of ice pellets",
+    icon: 374,
+  },
+  1264: {
+    day: "Moderate or heavy showers of ice pellets",
+    night: "Moderate or heavy showers of ice pellets",
+    icon: 377,
+  },
+  1273: {
+    day: "Patchy light rain with thunder",
+    night: "Patchy light rain with thunder",
+    icon: 386,
+  },
+  1276: {
+    day: "Moderate or heavy rain with thunder",
+    night: "Moderate or heavy rain with thunder",
+    icon: 389,
+  },
+  1279: {
+    day: "Patchy light snow with thunder",
+    night: "Patchy light snow with thunder",
+    icon: 392,
+  },
+  1282: {
+    day: "Moderate or heavy snow with thunder",
+    night: "Moderate or heavy snow with thunder",
+    icon: 395,
+  },
 };
+export default (code) => {
+  const elmt = data[code];
 
-export default (iconKey) => {
-  const data = {
-    1000: {
-      id: 'wi-day-sunny'
-    },
-    1000: {
-      id: 'wi-night-clear'
-    },
-    1003: {
-      id: 'wi-day-cloudy'
-    },
-    1003: {
-      id: 'wi-night-alt-cloudy'
-    },
-    1006: {
-      id: 'wi-cloudy'
-    },
-    1006: {
-      id: 'wi-cloudy'
-    },
-    1189: {
-      id: 'wi-rain'
-    },
-    1207: {
-      id: 'wi-sleet'
-    },
-    1219: {
-      id: 'wi-snow'
-    },
-    1030: {
-      id: 'wi-windy'
-    },
-    1135: {
-      id: 'wi-fog'
-    },
-    1009: {
-      id: 'wi-fog'
-    },
-  };
-
-  const icon = data[iconKey];
-
-  if (icon) {
-    return icon;
+  if (elmt) {
+    return elmt.icon;
   }
 
-  throw  data[1006];
+  return data[1006].icon;
 }
